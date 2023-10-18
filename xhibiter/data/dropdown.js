@@ -23,13 +23,8 @@ export const EthereumDropdown2_data = [
 		image: '/images/chains/ETH.png',
 	},
 	{
-		id: '1Flow',
-		text: 'Flow',
-		image: '/images/chains/FLOW.png',
-	},
-	{
-		id: '2FUSD',
-		text: 'FUSD',
-		image: '/images/chains/FUSD.png',
+		id: '1Polygon(Mumbai)',
+		text: 'Polygon(Mumbai)',
+		image: '/images/chains/polygon@2x.png',
 	},
 ];

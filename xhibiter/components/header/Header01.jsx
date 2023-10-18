@@ -416,7 +416,7 @@ export default function Header01() {
 
   return <>
     {/* main desktop menu sart*/}
-    <header className="js-page-header fixed top-0 z-20 w-full backdrop-blur transition-colors">
+    <header className="js-page-header fixed top-0 z-20 w-full  transition-colors">
       <div className="flex items-center px-6 py-6 xl:px-24 ">
         <Link className="shrink-0" href="/" >
 
@@ -582,7 +582,7 @@ export default function Header01() {
                   <span
                     className={
                       isParentPageActive(explore.pages, route.asPath)
-                        ? "text-accent dark:text-accent"
+                        ? "text-white dark:text-accent"
                         : ""
                     }
                   >

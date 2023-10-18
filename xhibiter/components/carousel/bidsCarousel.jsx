@@ -45,7 +45,7 @@ const BidsCarousel = () => {
         className=" card-slider-4-columns !py-5"
       >
         {bidsData.map((item) => {
-          const { id, image, title, bid_number, eth_number, react_number } =
+          const { id, image, title, bid_number, star, react_number } =
             item;
           const itemLink = image
             .split("/")
@@ -71,7 +71,7 @@ const BidsCarousel = () => {
                   </figure>
                   <div className="mt-4 flex items-center justify-between">
                     <Link href={"/item/" + itemLink}>
-                      <span className="font-display text-jacarta-700 hover:text-accent text-base dark:text-white">
+                      <span className="font-display text-jacarta-700 hover:text-accent text-base dark:text-white" style={{ fontSize: "20px"}}>
                         {title}
                       </span>
                     </Link>
@@ -80,35 +80,36 @@ const BidsCarousel = () => {
                         <Image
                           width={12}
                           height={12}
-                          src="/images/eth-icon.svg"
+                          src="/images/star.jpg"
                           alt="icon"
                           className="w-3 h-3 mr-1"
                         />
+                        
                       </Tippy>
-
                       <span className="text-green text-sm font-medium tracking-tight">
-                        {eth_number} ETH
+                        {star} 
                       </span>
                     </span>
                   </div>
                   <div className="mt-2 text-sm">
-                    <span className="dark:text-jacarta-300 text-jacarta-500">
+                    {/* <span className="dark:text-jacarta-300 text-jacarta-500">
                       Current Bid
                     </span>
                     <span className="dark:text-jacarta-100 text-jacarta-700">
                       {bid_number} ETH
-                    </span>
+                    </span> */}
+                    <p></p>
                   </div>
+                  <p>Gives Consultation about AI and ML</p>
 
                   <div className="mt-8 flex items-center justify-between">
                     <button
                       type="button"
                       className="text-accent font-display text-sm font-semibold"
-                      onClick={() => dispatch(bidsModalShow())}
+                      // onClick={() => dispatch(bidsModalShow())}
                     >
-                      Place bid
+                      Book a Session
                     </button>
-
                     <Likes
                       like={react_number}
                       classes="flex items-center space-x-1"

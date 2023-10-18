@@ -2,7 +2,7 @@ import React from "react";
 import {
   Hero,
   Bids,
-  Top_collection,
+  // Top_collection,
   Tranding_category,
   NewseLatter,
 } from "../../components/component";
@@ -14,7 +14,7 @@ const Home_1 = () => {
       <Meta title="Home 1" />
       <Hero />
       <Bids />
-      <Top_collection />
+      {/* <Top_collection /> */}
       <Tranding_category />
       <NewseLatter />
     </main>

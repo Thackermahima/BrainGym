@@ -23,7 +23,7 @@ const Bids = ({ classes = "pt-10 pb-24", bgWhite }) => {
       )}
       <div className="container">
         <HeadLine
-          text="Hot Bids"
+          text="Top Experts"
           image="https://cdn.jsdelivr.net/npm/emoji-datasource-apple@7.0.2/img/apple/64/1f525.png"
           classes="font-display text-jacarta-700 mb-8 text-center text-3xl dark:text-white"
         />
