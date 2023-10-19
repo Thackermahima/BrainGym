@@ -80,8 +80,8 @@ const Create = () => {
             {/* <!-- File Upload --> */}
             <div className="mb-6">
               <label className="font-display text-jacarta-700 mb-2 block dark:text-white">
-                Image, Video, Audio, or 3D Model
-                <span className="text-red">*</span>
+                Image
+                {/* <span className="text-red">*</span> */}
               </label>
 
               {file ? (
@@ -90,7 +90,7 @@ const Create = () => {
                 </p>
               ) : (
                 <p className="dark:text-jacarta-300 text-2xs mb-3">
-                  Drag or choose your file to upload
+                  choose your image to upload
                 </p>
               )}
 
@@ -107,8 +107,7 @@ const Create = () => {
                     <path d="M16 13l6.964 4.062-2.973.85 2.125 3.681-1.732 1-2.125-3.68-2.223 2.15L16 13zm-2-7h2v2h5a1 1 0 0 1 1 1v4h-2v-3H10v10h4v2H9a1 1 0 0 1-1-1v-5H6v-2h2V9a1 1 0 0 1 1-1h5V6zM4 14v2H2v-2h2zm0-4v2H2v-2h2zm0-4v2H2V6h2zm0-4v2H2V2h2zm4 0v2H6V2h2zm4 0v2h-2V2h2zm4 0v2h-2V2h2z" />
                   </svg>
                   <p className="dark:text-jacarta-300 mx-auto max-w-xs text-xs">
-                    JPG, PNG, GIF, SVG, MP4, WEBM, MP3, WAV, OGG, GLB, GLTF. Max
-                    size: 100 MB
+
                   </p>
                 </div>
                 <div className="dark:bg-jacarta-600 bg-jacarta-50 absolute inset-4 cursor-pointer rounded opacity-0 group-hover:opacity-100 ">
@@ -130,7 +129,8 @@ const Create = () => {
                 htmlFor="item-name"
                 className="font-display text-jacarta-700 mb-2 block dark:text-white"
               >
-                Name<span className="text-red">*</span>
+                Title
+                {/* <span className="text-red">*</span> */}
               </label>
               <input
                 type="text"
@@ -138,27 +138,6 @@ const Create = () => {
                 className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 px-3 hover:ring-2 dark:text-white"
                 placeholder="Item name"
                 required
-              />
-            </div>
-
-            {/* <!-- External Link --> */}
-            <div className="mb-6">
-              <label
-                htmlFor="item-external-link"
-                className="font-display text-jacarta-700 mb-2 block dark:text-white"
-              >
-                External link
-              </label>
-              <p className="dark:text-jacarta-300 text-2xs mb-3">
-                We will include a link to this URL on this {"item's"} detail
-                page, so that users can click to learn more about it. You are
-                welcome to link to your own webpage with more details.
-              </p>
-              <input
-                type="url"
-                id="item-external-link"
-                className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 px-3 hover:ring-2 dark:text-white"
-                placeholder="https://yoursite.io/item/123"
               />
             </div>
 
@@ -183,36 +162,33 @@ const Create = () => {
               ></textarea>
             </div>
 
+            {/* <!-- Price --> */}
+            <div className="mb-6">
+              <label
+                htmlFor="item-name"
+                className="font-display text-jacarta-700 mb-2 block dark:text-white"
+              >
+                Price
+                {/* <span className="text-red">*</span> */}
+              </label>
+              <input
+                type="number"
+                id="item-name"
+                className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 px-3 hover:ring-2 dark:text-white"
+                placeholder="Price"
+                required
+              />
+            </div>
             {/* <!-- Collection --> */}
             <div className="relative">
               <div>
                 <label className="font-display text-jacarta-700 mb-2 block dark:text-white">
-                What all do you plan to offer?
+                  What do you plan to offer?
                 </label>
                 <div className="mb-3 flex items-center space-x-2">
                   <p className="dark:text-jacarta-300 text-2xs">
-                Choose plan that you would like to offer
-                    <Tippy
-                      theme="tomato-theme"
-                      content={
-                        <span>
-                                         Choose plan that you would like to offer 
-                        </span>
-                      }
-                    >
-                      <span className="inline-block">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          width="24"
-                          height="24"
-                          className="dark:fill-jacarta-300 fill-jacarta-500 ml-1 -mb-[3px] h-4 w-4"
-                        >
-                          <path fill="none" d="M0 0h24v24H0z"></path>
-                          <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z"></path>
-                        </svg>
-                      </span>
-                    </Tippy>
+                    Choose plan that you would like to offer
+
                   </p>
                 </div>
               </div>
@@ -227,48 +203,26 @@ const Create = () => {
             </div>
 
             {/* <!-- Properties --> */}
-           
+
 
             {/* <!-- Supply --> */}
             <div className="mb-6">
               <label
                 htmlFor="item-supply"
                 className="font-display text-jacarta-700 mb-2 block dark:text-white"
-              >
-                Supply
+              > <br></br>
+                NFT collection
               </label>
 
               <div className="mb-3 flex items-center space-x-2">
                 <p className="dark:text-jacarta-300 text-2xs">
-                  The number of items that can be minted. No gas cost to you!
-                  <Tippy
-                    content={
-                      <span>
-                        Setting your asset as explicit and sensitive content,
-                        like pornography and other not safe for work (NSFW)
-                        content, will protect users with safe search while
-                        browsing Xhibiter.
-                      </span>
-                    }
-                  >
-                    <span className="inline-block">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        height="24"
-                        className="dark:fill-jacarta-300 fill-jacarta-500 ml-1 -mb-[3px] h-4 w-4"
-                      >
-                        <path fill="none" d="M0 0h24v24H0z"></path>
-                        <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z"></path>
-                      </svg>
-                    </span>
-                  </Tippy>
+                  The number of items that can be minted.
+
                 </p>
               </div>
 
               <input
-                type="text"
+                type="number"
                 id="item-supply"
                 className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 px-3 hover:ring-2 dark:text-white"
                 placeholder="1"
@@ -291,7 +245,7 @@ const Create = () => {
             </div>
 
             {/* <!-- Freeze metadata --> */}
-            <div className="mb-6">
+            {/* <div className="mb-6">
               <div className="mb-2 flex items-center space-x-2">
                 <label
                   htmlFor="item-freeze-metadata"
@@ -338,7 +292,7 @@ const Create = () => {
                 className="dark:bg-jacarta-700 bg-jacarta-50 border-jacarta-100 dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 px-3 dark:text-white"
                 placeholder="To freeze your metadata, you must create your item first."
               />
-            </div>
+            </div> */}
 
             {/* <!-- Submit --> */}
             <button

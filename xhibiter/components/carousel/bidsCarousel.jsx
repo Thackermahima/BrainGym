@@ -110,10 +110,11 @@ const BidsCarousel = () => {
                     >
                       Book a Session
                     </button>
-                    <Likes
+                    <span>1.5 ETH</span>
+                    {/* <Likes
                       like={react_number}
                       classes="flex items-center space-x-1"
-                    />
+                    /> */}
                   </div>
                 </div>
               </article>

@@ -39,7 +39,7 @@ const hero = () => {
             </h1> */}
             <h1 className="text-white text-center font-bold md:text-center xl: text-5xl lg: text-center xl: text-center" style={{ textAlign: "center"}}>
             A Place To Connect And Brainstorm With Like-Minded People.
-            </h1>
+            </h1><br></br><br></br>
             <div className="flex space-x-4">
               <Link
                 href="/create"

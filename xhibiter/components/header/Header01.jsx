@@ -419,8 +419,10 @@ export default function Header01() {
     <header className="js-page-header fixed top-0 z-20 w-full  transition-colors">
       <div className="flex items-center px-6 py-6 xl:px-24 ">
         <Link className="shrink-0" href="/" >
-
-          <div className="dark:hidden">
+          <div>
+            <h1 style={{ fontSize: "30px", color: "#8358FF", fontWeight: "bolder" }}>BrainGym</h1>
+          </div>
+          {/* <div className="dark:hidden">
             <Image
               src={Logo}
               height={28}
@@ -428,7 +430,7 @@ export default function Header01() {
               alt="Xhibiter | NFT Marketplace"
               className="max-h-7 h-auto "
             />
-          </div>
+          </div> */}
           <div className="hidden dark:block">
             <Image
               src={WhiteLogo}
@@ -499,14 +501,13 @@ export default function Header01() {
                       <Link
                         href={page.path}
                         className="dark:hover:bg-jacarta-600  hover:text-accent focus:text-accent hover:bg-jacarta-50 flex items-center rounded-xl px-5 py-2 transition-colors justify-between "
-                        >
+                      >
 
                         <span
-                          className={`font-display ${
-                            isChildrenPageActive(page.path, route.asPath)
-                              ? "text-accent dark:text-accent"
-                              : "text-jacarta-700"
-                          } text-sm dark:text-white`}
+                          className={`font-display ${isChildrenPageActive(page.path, route.asPath)
+                            ? "text-accent dark:text-accent"
+                            : "text-jacarta-700"
+                            } text-sm dark:text-white`}
                         >
                           {page.name}
                         </span>
@@ -610,7 +611,7 @@ export default function Header01() {
                       <Link
                         href="/"
                         className="dark:hover:bg-jacarta-600 hover:text-accent focus:text-accent hover:bg-jacarta-50 flex items-center rounded-xl px-5 py-2 transition-colors"
-                        >
+                      >
 
                         <span className="bg-light-base mr-3 rounded-xl p-[0.375rem]">
                           {page?.icon}
@@ -748,7 +749,7 @@ export default function Header01() {
                 <Link
                   href="/user/avatar_6"
                   className="dark:hover:bg-jacarta-600 hover:text-accent focus:text-accent hover:bg-jacarta-50 flex items-center space-x-2 rounded-xl px-5 py-2 transition-colors"
-                  >
+                >
 
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -768,7 +769,7 @@ export default function Header01() {
                 <Link
                   href="/profile/user_avatar"
                   className="dark:hover:bg-jacarta-600 hover:text-accent focus:text-accent hover:bg-jacarta-50 flex items-center space-x-2 rounded-xl px-5 py-2 transition-colors"
-                  >
+                >
 
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -788,7 +789,7 @@ export default function Header01() {
                 <Link
                   href="/login"
                   className="dark:hover:bg-jacarta-600 hover:text-accent focus:text-accent hover:bg-jacarta-50 flex items-center space-x-2 rounded-xl px-5 py-2 transition-colors"
-                  >
+                >
 
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -818,7 +819,7 @@ export default function Header01() {
             href="/profile/user_avatar"
             className="border-jacarta-100 hover:bg-accent focus:bg-accent group dark:hover:bg-accent ml-2 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
             aria-label="profile"
-            >
+          >
 
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -858,9 +859,8 @@ export default function Header01() {
 
     {/* start mobile menu and it's other materials  */}
     <div
-      className={`lg:hidden js-mobile-menu dark:bg-jacarta-800 invisible fixed inset-0 z-20 ml-auto items-center bg-white opacity-0 lg:visible lg:relative lg:inset-auto lg:bg-transparent lg:opacity-100 dark:lg:bg-transparent ${
-        toggle ? "nav-menu--is-open" : "hidden"
-      }`}
+      className={`lg:hidden js-mobile-menu dark:bg-jacarta-800 invisible fixed inset-0 z-20 ml-auto items-center bg-white opacity-0 lg:visible lg:relative lg:inset-auto lg:bg-transparent lg:opacity-100 dark:lg:bg-transparent ${toggle ? "nav-menu--is-open" : "hidden"
+        }`}
     >
       <div className="t-0 dark:bg-jacarta-800 fixed left-0 z-10 flex w-full items-center justify-between bg-white p-6 lg:hidden">
         <div className="dark:hidden">
@@ -952,23 +952,21 @@ export default function Header01() {
             </button>
 
             <ul
-              className={`dropdown-menu dark:bg-jacarta-800 left-0 top-[85%] z-10 min-w-[200px] gap-x-4 whitespace-nowrap rounded-xl bg-white transition-all will-change-transform group-hover:visible group-hover:opacity-100 lg:invisible lg:absolute lg:grid lg:translate-y-4 lg:py-4 lg:px-2 lg:opacity-0 lg:shadow-2xl lg:group-hover:translate-y-2 relative ${
-                isCollapse === home.id ? "block" : "hidden"
-              }`}
+              className={`dropdown-menu dark:bg-jacarta-800 left-0 top-[85%] z-10 min-w-[200px] gap-x-4 whitespace-nowrap rounded-xl bg-white transition-all will-change-transform group-hover:visible group-hover:opacity-100 lg:invisible lg:absolute lg:grid lg:translate-y-4 lg:py-4 lg:px-2 lg:opacity-0 lg:shadow-2xl lg:group-hover:translate-y-2 relative ${isCollapse === home.id ? "block" : "hidden"
+                }`}
             >
               {home?.pages?.map((page) => (
                 <li key={page.id} onClick={() => setToggle(false)}>
                   <Link
                     href={page.path}
                     className="dark:hover:bg-jacarta-600 hover:text-accent focus:text-accent hover:bg-jacarta-50 flex items-center rounded-xl px-5 py-2 transition-colors justify-between"
-                    >
+                  >
 
                     <span
-                      className={`font-display ${
-                        isChildrenPageActive(route.asPath, page.path)
-                          ? "text-accent dark:text-accent"
-                          : "text-jacarta-700"
-                      } text-sm dark:text-white`}
+                      className={`font-display ${isChildrenPageActive(route.asPath, page.path)
+                        ? "text-accent dark:text-accent"
+                        : "text-jacarta-700"
+                        } text-sm dark:text-white`}
                     >
                       {page.name}
                     </span>
@@ -1011,16 +1009,15 @@ export default function Header01() {
               </i>
             </button>
             <ul
-              className={`dropdown-menu left-0 top-[85%] z-10 grid-flow-row grid-cols-[repeat(2,_1fr)] gap-x-4 whitespace-nowrap rounded-xl bg-white transition-all will-change-transform group-hover:visible group-hover:opacity-100 dark:bg-jacarta-800 lg:invisible lg:absolute lg:!grid lg:translate-y-4 lg:py-8 lg:px-2 lg:opacity-0 lg:shadow-2xl lg:group-hover:translate-y-2 relative ${
-                isCollapse === page.id ? "block" : "hidden"
-              }`}
+              className={`dropdown-menu left-0 top-[85%] z-10 grid-flow-row grid-cols-[repeat(2,_1fr)] gap-x-4 whitespace-nowrap rounded-xl bg-white transition-all will-change-transform group-hover:visible group-hover:opacity-100 dark:bg-jacarta-800 lg:invisible lg:absolute lg:!grid lg:translate-y-4 lg:py-8 lg:px-2 lg:opacity-0 lg:shadow-2xl lg:group-hover:translate-y-2 relative ${isCollapse === page.id ? "block" : "hidden"
+                }`}
             >
               {page?.pages?.map((page) => (
                 <li key={page.id} onClick={() => setToggle(false)}>
                   <Link
                     href={page.path}
                     className="dark:hover:bg-jacarta-600 hover:text-accent focus:text-accent hover:bg-jacarta-50 flex items-center rounded-xl px-5 py-2 transition-colors justify-between"
-                    >
+                  >
 
                     <span
                       className={
@@ -1070,9 +1067,8 @@ export default function Header01() {
               </i>
             </button>
             <ul
-              className={`dropdown-menu left-0 top-[85%] z-10 grid-flow-row grid-cols-[repeat(2,_1fr)] gap-x-4 whitespace-nowrap rounded-xl bg-white transition-all will-change-transform group-hover:visible group-hover:opacity-100 dark:bg-jacarta-800 lg:invisible lg:absolute lg:!grid lg:translate-y-4 lg:py-8 lg:px-2 lg:opacity-0 lg:shadow-2xl lg:group-hover:translate-y-2 relative ${
-                isCollapse === explore.id ? "block" : "hidden"
-              }`}
+              className={`dropdown-menu left-0 top-[85%] z-10 grid-flow-row grid-cols-[repeat(2,_1fr)] gap-x-4 whitespace-nowrap rounded-xl bg-white transition-all will-change-transform group-hover:visible group-hover:opacity-100 dark:bg-jacarta-800 lg:invisible lg:absolute lg:!grid lg:translate-y-4 lg:py-8 lg:px-2 lg:opacity-0 lg:shadow-2xl lg:group-hover:translate-y-2 relative ${isCollapse === explore.id ? "block" : "hidden"
+                }`}
               aria-labelledby="navDropdown-1"
             >
               {explore?.pages?.map((page) => (
@@ -1080,7 +1076,7 @@ export default function Header01() {
                   <Link
                     href="/"
                     className="dark:hover:bg-jacarta-600 hover:text-accent focus:text-accent hover:bg-jacarta-50 flex items-center rounded-xl px-5 py-2 transition-colors"
-                    >
+                  >
 
                     <span className="bg-light-base mr-3 rounded-xl p-[0.375rem]">
                       {page.icon}
@@ -1122,9 +1118,8 @@ export default function Header01() {
               </i>
             </button>
             <ul
-              className={`dropdown-menu left-0 top-[85%] z-10 grid-flow-row grid-cols-[repeat(2,_1fr)] gap-x-4 whitespace-nowrap rounded-xl bg-white transition-all will-change-transform group-hover:visible group-hover:opacity-100 dark:bg-jacarta-800 lg:invisible lg:absolute lg:!grid lg:translate-y-4 lg:py-8 lg:px-2 lg:opacity-0 lg:shadow-2xl lg:group-hover:translate-y-2 relative ${
-                isCollapse === resource.id ? "block" : "hidden"
-              }`}
+              className={`dropdown-menu left-0 top-[85%] z-10 grid-flow-row grid-cols-[repeat(2,_1fr)] gap-x-4 whitespace-nowrap rounded-xl bg-white transition-all will-change-transform group-hover:visible group-hover:opacity-100 dark:bg-jacarta-800 lg:invisible lg:absolute lg:!grid lg:translate-y-4 lg:py-8 lg:px-2 lg:opacity-0 lg:shadow-2xl lg:group-hover:translate-y-2 relative ${isCollapse === resource.id ? "block" : "hidden"
+                }`}
               aria-labelledby="navDropdown-4"
             >
               {resource?.pages?.map((page) => (
@@ -1132,14 +1127,13 @@ export default function Header01() {
                   <Link
                     href={page.path}
                     className="dark:hover:bg-jacarta-600 hover:text-accent focus:text-accent hover:bg-jacarta-50 flex items-center rounded-xl px-5 py-2 transition-colors"
-                    >
+                  >
 
                     <span
-                      className={`font-display text-jacarta-700 text-sm dark:text-white ${
-                        isChildrenPageActive(page.path, route.asPath)
-                          ? "text-accent dark:text-accent"
-                          : ""
-                      }`}
+                      className={`font-display text-jacarta-700 text-sm dark:text-white ${isChildrenPageActive(page.path, route.asPath)
+                        ? "text-accent dark:text-accent"
+                        : ""
+                        }`}
                     >
                       {page.name}
                     </span>
