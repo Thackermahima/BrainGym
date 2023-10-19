@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-
 const hero = () => {
  
+
+
+
+
   return (
     <section className="relative pb-60 pt-40 md:pt-60 h-1527">
      
@@ -47,6 +50,13 @@ const hero = () => {
               >
                 Start My Page
               </Link>
+
+
+
+
+
+
+           
               <Link
                 href="/collection/explore_collection"
                 className="text-accent shadow-white-volume hover:bg-accent-dark hover:shadow-accent-volume w-36 rounded-full bg-white py-3 px-8 text-center font-semibold transition-all hover:text-white"
