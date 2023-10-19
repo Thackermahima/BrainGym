@@ -35,26 +35,6 @@ const Create = () => {
     setFile(file.name);
   };
 
-  const popupItemData = [
-    {
-      id: 1,
-      name: "proparties",
-      text: "Textual traits that show up as rectangles.",
-      icon: "proparties-icon",
-    },
-    {
-      id: 2,
-      name: "levels",
-      text: "Numerical traits that show as a progress bar.",
-      icon: "level-icon",
-    },
-    {
-      id: 3,
-      name: "stats",
-      text: "Numerical traits that just show as numbers.",
-      icon: "stats-icon",
-    },
-  ];
 
   return (
     <div>
@@ -161,9 +141,31 @@ const Create = () => {
                 placeholder="Provide a detailed description of your item."
               ></textarea>
             </div>
+            {/* time duration */}
+            <label
+                htmlFor="item-description"
+                className="font-display text-jacarta-700 mb-2 block dark:text-white"
+              >
+                Session for:
+              </label>
+            <div style={{display:"inline-flex"}} >
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+                <label class="form-check-label ml-3" for="inlineRadio1">15 min</label>
+              </div>
+              <div class="form-check form-check-inline ml-5">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+                <label class="form-check-label ml-3" for="inlineRadio2 ">30 min</label>
+              </div>
+              <div class="form-check form-check-inline ml-5">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" />
+                <label class="form-check-label ml-3" for="inlineRadio3">60 min</label>
+              </div>
+            </div>
+
 
             {/* <!-- Price --> */}
-            <div className="mb-6">
+            <div className="mb-6 mt-5">
               <label
                 htmlFor="item-name"
                 className="font-display text-jacarta-700 mb-2 block dark:text-white"

@@ -42,6 +42,7 @@ const Error_page = () => {
               >
                 Navigate Back Home
               </Link>
+              
             </div>
           </div>
         </section>
