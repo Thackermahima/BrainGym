@@ -733,12 +733,6 @@
   "resolved" "https://registry.npmjs.org/@fastify/busboy/-/busboy-2.0.0.tgz"
   "version" "2.0.0"
 
-<<<<<<< HEAD:BrainGym/yarn.lock
-"@floating-ui/core@^1.3.1":
-  "integrity" "sha512-Bu+AMaXNjrpjh41znzHqaz3r2Nr8hHuHZT6V2LBKMhyMl0FgKA62PNYbqnfgmzOhoWZj70Zecisbo4H1rotP5g=="
-  "resolved" "https://registry.npmjs.org/@floating-ui/core/-/core-1.3.1.tgz"
-  "version" "1.3.1"
-=======
 "@firebase/analytics-compat@0.2.6":
   "integrity" "sha512-4MqpVLFkGK7NJf/5wPEEP7ePBJatwYpyjgJ+wQHQGHfzaCDgntOnl9rL2vbVGGKCnRqWtZDIWhctB86UWXaX2Q=="
   "resolved" "https://registry.npmjs.org/@firebase/analytics-compat/-/analytics-compat-0.2.6.tgz"
@@ -1111,13 +1105,10 @@
   "resolved" "https://registry.npmjs.org/@firebase/webchannel-wrapper/-/webchannel-wrapper-0.10.3.tgz"
   "version" "0.10.3"
 
-"@floating-ui/core@^1.4.2":
-  "integrity" "sha512-kK1h4m36DQ0UHGj5Ah4db7R0rHemTqqO0QLvUqi1/mUUp3LuAWbWxdxSIf/XsnH9VS6rRVPLJCncjRzUvyCLXg=="
-  "resolved" "https://registry.npmjs.org/@floating-ui/core/-/core-1.5.0.tgz"
-  "version" "1.5.0"
-  dependencies:
-    "@floating-ui/utils" "^0.1.3"
->>>>>>> dhruv:xhibiter/yarn.lock
+"@floating-ui/core@^1.3.1":
+  "integrity" "sha512-Bu+AMaXNjrpjh41znzHqaz3r2Nr8hHuHZT6V2LBKMhyMl0FgKA62PNYbqnfgmzOhoWZj70Zecisbo4H1rotP5g=="
+  "resolved" "https://registry.npmjs.org/@floating-ui/core/-/core-1.3.1.tgz"
+  "version" "1.3.1"
 
 "@floating-ui/dom@^1.2.1":
   "integrity" "sha512-21hhDEPOiWkGp0Ys4Wi6Neriah7HweToKra626CIK712B5m9qkdz54OP9gVldUg+URnBTpv/j/bi/skmGdstXQ=="
@@ -1142,13 +1133,6 @@
     "aria-hidden" "^1.1.3"
     "tabbable" "^6.0.1"
 
-<<<<<<< HEAD:BrainGym/yarn.lock
-=======
-"@floating-ui/utils@^0.1.3":
-  "integrity" "sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A=="
-  "resolved" "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.1.6.tgz"
-  "version" "0.1.6"
-
 "@grpc/grpc-js@~1.9.0":
   "integrity" "sha512-yMaA/cIsRhGzW3ymCNpdlPcInXcovztlgu/rirThj2b87u3RzWUszliOqZ/pldy7yhmJPS8uwog+kZSTa4A0PQ=="
   "resolved" "https://registry.npmjs.org/@grpc/grpc-js/-/grpc-js-1.9.7.tgz"
@@ -1167,7 +1151,6 @@
     "protobufjs" "^7.2.4"
     "yargs" "^17.7.2"
 
->>>>>>> dhruv:xhibiter/yarn.lock
 "@humanwhocodes/config-array@^0.9.2":
   "integrity" "sha512-ObyMyWxZiCu/yTisA7uzx81s40xR2fD5Cg/2Kq7G02ajkNubJf6BopgDTmDyc3U7sXpNKM8cYOw7s7Tyr+DnCw=="
   "resolved" "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.9.5.tgz"
@@ -1760,17 +1743,10 @@
   "resolved" "https://registry.npmjs.org/@types/minimist/-/minimist-1.2.4.tgz"
   "version" "1.2.4"
 
-<<<<<<< HEAD:BrainGym/yarn.lock
-"@types/node@^18.0.0", "@types/node@>=13.7.0":
+"@types/node@^18.0.0", "@types/node@>=12.12.47", "@types/node@>=13.7.0":
   "integrity" "sha512-wf3Vz+jCmOQ2HV1YUJuCWdL64adYxumkrxtc+H1VUQlnQI04+5HtH+qZCOE21lBE7gIrt+CwX2Wv8Acrw5Ak6w=="
   "resolved" "https://registry.npmjs.org/@types/node/-/node-18.18.6.tgz"
   "version" "18.18.6"
-=======
-"@types/node@^18.0.0", "@types/node@>=12.12.47", "@types/node@>=13.7.0":
-  "integrity" "sha512-N+0kuo9KgrUQ1Sn/ifDXsvg0TTleP7rIy4zOBGECxAljqvqfqpTfzx0Q1NUedOixRMBfe2Whhb056a42cWs26Q=="
-  "resolved" "https://registry.npmjs.org/@types/node/-/node-18.15.13.tgz"
-  "version" "18.15.13"
->>>>>>> dhruv:xhibiter/yarn.lock
 
 "@types/normalize-package-data@^2.4.0":
   "integrity" "sha512-ehPtgRgaULsFG8x0NeYJvmyH1hmlfsNLujHe9dQEia/7MAJYdzMSi19JtchUHjmBA6XC/75dK55mzZH+RyieSg=="
@@ -2479,12 +2455,6 @@
   "resolved" "https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz"
   "version" "0.0.1"
 
-<<<<<<< HEAD:BrainGym/yarn.lock
-"clsx@^1.1.0", "clsx@^1.2.1":
-  "integrity" "sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg=="
-  "resolved" "https://registry.npmjs.org/clsx/-/clsx-1.2.1.tgz"
-  "version" "1.2.1"
-=======
 "cliui@^8.0.1":
   "integrity" "sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ=="
   "resolved" "https://registry.npmjs.org/cliui/-/cliui-8.0.1.tgz"
@@ -2494,11 +2464,10 @@
     "strip-ansi" "^6.0.1"
     "wrap-ansi" "^7.0.0"
 
-"clsx@^2.0.0":
-  "integrity" "sha512-rQ1+kcj+ttHG0MKVGBUXwayCCF1oh39BF5COIpRzuCEv8Mwjv0XucrI2ExNTOn9IlLifGClWQcU9BrZORvtw6Q=="
-  "resolved" "https://registry.npmjs.org/clsx/-/clsx-2.0.0.tgz"
-  "version" "2.0.0"
->>>>>>> dhruv:xhibiter/yarn.lock
+"clsx@^1.1.0", "clsx@^1.2.1":
+  "integrity" "sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg=="
+  "resolved" "https://registry.npmjs.org/clsx/-/clsx-1.2.1.tgz"
+  "version" "1.2.1"
 
 "color-convert@^1.9.0":
   "integrity" "sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg=="
@@ -3468,16 +3437,12 @@
   "resolved" "https://registry.npmjs.org/gensync/-/gensync-1.0.0-beta.2.tgz"
   "version" "1.0.0-beta.2"
 
-<<<<<<< HEAD:BrainGym/yarn.lock
-"get-intrinsic@^1.0.2", "get-intrinsic@^1.1.1", "get-intrinsic@^1.1.3", "get-intrinsic@^1.2.0":
-=======
 "get-caller-file@^2.0.5":
   "integrity" "sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg=="
   "resolved" "https://registry.npmjs.org/get-caller-file/-/get-caller-file-2.0.5.tgz"
   "version" "2.0.5"
 
-"get-intrinsic@^1.0.2", "get-intrinsic@^1.1.1", "get-intrinsic@^1.1.3", "get-intrinsic@^1.2.0", "get-intrinsic@^1.2.1":
->>>>>>> dhruv:xhibiter/yarn.lock
+"get-intrinsic@^1.0.2", "get-intrinsic@^1.1.1", "get-intrinsic@^1.1.3", "get-intrinsic@^1.2.0":
   "integrity" "sha512-2DcsyfABl+gVHEfCOaTrWgyt+tb6MSEGmKq+kI5HwLbIYgjgmMcV8KQ41uaKz1xxUcn9tJtgFbQUEVcEbd0FYw=="
   "resolved" "https://registry.npmjs.org/get-intrinsic/-/get-intrinsic-1.2.1.tgz"
   "version" "1.2.1"
@@ -3745,7 +3710,11 @@
     "relateurl" "0.2.x"
     "uglify-js" "3.0.x"
 
-<<<<<<< HEAD:BrainGym/yarn.lock
+"http-parser-js@>=0.5.1":
+  "integrity" "sha512-SGeBX54F94Wgu5RH3X5jsDtf4eHyRogWX1XGT3b4HuW3tQPM4AaBzoUji/4AAJNXCEOWZ5O0DgZmJw1947gD5Q=="
+  "resolved" "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.5.8.tgz"
+  "version" "0.5.8"
+
 "human-signals@^2.1.0":
   "integrity" "sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw=="
   "resolved" "https://registry.npmjs.org/human-signals/-/human-signals-2.1.0.tgz"
@@ -3755,12 +3724,6 @@
   "integrity" "sha512-nZXjEF2nbo7lIw3mgYjItAfgQXog3OjJogSbKa2CQIIvSGWcKgeJnQlNXip6NglNzYH45nSRiEVimMvYL8DDqQ=="
   "resolved" "https://registry.npmjs.org/human-signals/-/human-signals-4.3.1.tgz"
   "version" "4.3.1"
-=======
-"http-parser-js@>=0.5.1":
-  "integrity" "sha512-SGeBX54F94Wgu5RH3X5jsDtf4eHyRogWX1XGT3b4HuW3tQPM4AaBzoUji/4AAJNXCEOWZ5O0DgZmJw1947gD5Q=="
-  "resolved" "https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.5.8.tgz"
-  "version" "0.5.8"
->>>>>>> dhruv:xhibiter/yarn.lock
 
 "iconv-lite@^0.6.2":
   "integrity" "sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw=="
@@ -4204,23 +4167,12 @@
   "resolved" "https://registry.npmjs.org/is-extglob/-/is-extglob-2.1.1.tgz"
   "version" "2.1.1"
 
-<<<<<<< HEAD:BrainGym/yarn.lock
-"is-generator-function@^1.0.7":
-=======
-"is-finalizationregistry@^1.0.2":
-  "integrity" "sha512-0by5vtUJs8iFQb5TYUHHPudOR+qXYIMKtiUzvLIZITZUjknFmziyBJuLhVRc+Ds0dREFlskDNJKYIdIzu/9pfw=="
-  "resolved" "https://registry.npmjs.org/is-finalizationregistry/-/is-finalizationregistry-1.0.2.tgz"
-  "version" "1.0.2"
-  dependencies:
-    "call-bind" "^1.0.2"
-
 "is-fullwidth-code-point@^3.0.0":
   "integrity" "sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg=="
   "resolved" "https://registry.npmjs.org/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz"
   "version" "3.0.0"
 
-"is-generator-function@^1.0.10", "is-generator-function@^1.0.7":
->>>>>>> dhruv:xhibiter/yarn.lock
+"is-generator-function@^1.0.7":
   "integrity" "sha512-jsEjy9l3yiXEQ+PsXdmBwEPcOxaXWLspKdplFUVI9vq1iZgIekeC0L167qeu86czQaxed3q/Uzuw0swL0irL8A=="
   "resolved" "https://registry.npmjs.org/is-generator-function/-/is-generator-function-1.0.10.tgz"
   "version" "1.0.10"
@@ -4978,9 +4930,6 @@
   dependencies:
     "whatwg-url" "^5.0.0"
 
-<<<<<<< HEAD:BrainGym/yarn.lock
-"node-releases@^2.0.12":
-=======
 "node-fetch@2.6.7":
   "integrity" "sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ=="
   "resolved" "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.7.tgz"
@@ -4988,8 +4937,7 @@
   dependencies:
     "whatwg-url" "^5.0.0"
 
-"node-releases@^2.0.13":
->>>>>>> dhruv:xhibiter/yarn.lock
+"node-releases@^2.0.12":
   "integrity" "sha512-uYr7J37ae/ORWdZeQ1xxMJe3NtdmqMC/JZK+geofDrkLUApKRHPd18/TxtBOJ4A0/+uUIliorNrfYV6s1b02eQ=="
   "resolved" "https://registry.npmjs.org/node-releases/-/node-releases-2.0.13.tgz"
   "version" "2.0.13"
@@ -5762,21 +5710,7 @@
   dependencies:
     "queue-microtask" "^1.2.2"
 
-<<<<<<< HEAD:BrainGym/yarn.lock
-"safe-buffer@^5.0.1", "safe-buffer@~5.2.0":
-=======
-"safe-array-concat@^1.0.1":
-  "integrity" "sha512-6XbUAseYE2KtOuGueyeobCySj9L4+66Tn6KQMOPQJrAJEowYKW/YR/MGJZl7FdydUdaFu4LYyDZjxf4/Nmo23Q=="
-  "resolved" "https://registry.npmjs.org/safe-array-concat/-/safe-array-concat-1.0.1.tgz"
-  "version" "1.0.1"
-  dependencies:
-    "call-bind" "^1.0.2"
-    "get-intrinsic" "^1.2.1"
-    "has-symbols" "^1.0.3"
-    "isarray" "^2.0.5"
-
 "safe-buffer@^5.0.1", "safe-buffer@>=5.1.0", "safe-buffer@~5.2.0":
->>>>>>> dhruv:xhibiter/yarn.lock
   "integrity" "sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ=="
   "resolved" "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz"
   "version" "5.2.1"

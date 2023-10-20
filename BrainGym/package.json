@@ -20,12 +20,7 @@
     "buffer": "^6.0.3",
     "chart.js": "^3.8.0",
     "ethers": "^5.7.0",
-<<<<<<< HEAD:BrainGym/package.json
-    "metamask-react": "^2.4.0",
-    "buffer": "^6.0.3",
-=======
     "firebase": "^10.5.0",
->>>>>>> dhruv:xhibiter/package.json
     "ipfs-http-client": "^60.0.0",
     "metamask-react": "^2.4.0",
     "moment": "^2.29.4",
