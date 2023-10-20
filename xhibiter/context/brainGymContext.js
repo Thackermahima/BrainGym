@@ -26,15 +26,15 @@ export const BrainGymAuthContextProvider = (props) => {
 //     getSignerFromProvider();
 //   }, [])
 
-//   const firebaseConfig = {
-//     apiKey: "AIzaSyDllIicX42GplfgbeZTqZG5aqI_Xg3PUt0",
-//     authDomain: "supercool-fbc8f.firebaseapp.com",
-//     projectId: "supercool-fbc8f",
-//     storageBucket: "supercool-fbc8f.appspot.com",
-//     messagingSenderId: "76744592998",
-//     appId: "1:76744592998:web:c7a075000ef0629135e7a7",
-//     measurementId: "G-QJZKGMDTX3"
-//   };
+//     const firebaseConfig = {
+//   apiKey: "AIzaSyDabE8BEXQknn_AJ8i18UNscrI1g_-5h5s",
+//   authDomain: "braingym-db041.firebaseapp.com",
+//   projectId: "braingym-db041",
+//   storageBucket: "braingym-db041.appspot.com",
+//   messagingSenderId: "578803923022",
+//   appId: "1:578803923022:web:e2928f285bbc318c826b1f"
+// };
+
 
 
 //   const app = initializeApp(firebaseConfig);

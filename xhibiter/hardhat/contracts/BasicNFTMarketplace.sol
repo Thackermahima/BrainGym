@@ -59,7 +59,10 @@ contract BasicNFTMarketplace is ERC721 {
         Items[tokenId].owner = payable(to);
 
     }
- 
+    
+    function getTokenCounter() public view returns(uint){
+        return tokenCounter;
+    }
 
 
 }
