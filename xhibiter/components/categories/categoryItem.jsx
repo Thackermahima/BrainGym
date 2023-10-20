@@ -22,11 +22,8 @@ const CategoryItem = () => {
           image,
           title,
           price,
-          bidLimit,
-          bidCount,
           likes,
-          creator,
-          owner,
+          time_duration
         } = item;
         const itemLink = image
           .split("/")
@@ -49,33 +46,6 @@ const CategoryItem = () => {
                 </Link>
 
                 <Likes like={likes} />
-
-                <div className="absolute left-3 -bottom-3">
-                  <div className="flex -space-x-2">
-                    <Link href={`/item/${itemLink}`}>
-                      <Tippy content={<span>creator: {creator.name}</span>}>
-                        <Image
-                          width={21}
-                          height={21}
-                          src={creator.image}
-                          alt="creator"
-                          className="dark:border-jacarta-600 hover:border-accent dark:hover:border-accent h-6 w-6 rounded-full border-2 border-white"
-                        />
-                      </Tippy>
-                    </Link>
-                    <Link href={`/item/${itemLink}`}>
-                      <Tippy content={<span>creator: {owner.name}</span>}>
-                        <Image
-                          width={21}
-                          height={21}
-                          src={owner.image}
-                          alt="owner"
-                          className="dark:border-jacarta-600 hover:border-accent dark:hover:border-accent h-6 w-6 rounded-full border-2 border-white"
-                        />
-                      </Tippy>
-                    </Link>
-                  </div>
-                </div>
               </figure>
               <div className="mt-7 flex items-center justify-between">
                 <Link href={`/item/${itemLink}`}>
@@ -83,16 +53,10 @@ const CategoryItem = () => {
                     {title}
                   </span>
                 </Link>
-
-                {/* auction dropdown  */}
-                <Auctions_dropdown classes="dark:hover:bg-jacarta-600 dropup hover:bg-jacarta-100 rounded-full " />
               </div>
               <div className="mt-2 text-sm">
                 <span className="dark:text-jacarta-200 text-jacarta-700 mr-1">
                   {price}
-                </span>
-                <span className="dark:text-jacarta-300 text-jacarta-500">
-                  {bidCount}/{bidLimit}
                 </span>
               </div>
 
@@ -101,7 +65,7 @@ const CategoryItem = () => {
                   className="text-accent font-display text-sm font-semibold"
                   onClick={() => dispatch(buyModalShow())}
                 >
-                  Buy now
+                  Book now
                 </button>
                 <Link
                   href={`/item/${itemLink}`}
@@ -111,7 +75,7 @@ const CategoryItem = () => {
                     <use xlinkHref="/icons.svg#icon-history"></use>
                   </svg>
                   <span className="group-hover:text-accent font-display dark:text-jacarta-200 text-sm font-semibold">
-                    View History
+                    {time_duration}
                   </span>
                 </Link>
               </div>

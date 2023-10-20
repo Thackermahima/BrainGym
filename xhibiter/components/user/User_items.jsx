@@ -10,29 +10,24 @@ const User_items = () => {
   const tabItem = [
     {
       id: 1,
-      text: "on sale",
-      icon: "on-sale",
+      text: "All",
+      icon: "all",
     },
     {
       id: 2,
-      text: "owned",
-      icon: "owned",
+      text: "1:1 Call",
+      icon: "1:1 Call",
     },
     {
       id: 3,
-      text: "created(20)",
-      icon: "created",
+      text: "Priority DM",
+      icon: "Priority DM",
     },
     {
       id: 4,
-      text: "collections",
-      icon: "listing",
-    },
-    {
-      id: 5,
-      text: "Activity",
-      icon: "activity",
-    },
+      text: "Digital Product",
+      icon: "product",
+    }
   ];
   return (
     <>
