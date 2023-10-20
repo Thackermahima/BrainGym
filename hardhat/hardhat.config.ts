@@ -1,6 +1,4 @@
 require("@nomicfoundation/hardhat-toolbox");
-require("dotenv").config({ path: ".env" });
-
 const QUICKNODE_HTTP_URL = process.env.NEXT_PUBLIC_REACT_APP_QUICK_NODE_HTTP_URL;
 const PRIVATE_KEY = process.env.NEXT_PUBLIC_PRIVATE_KEY;
 console.log('q node url', QUICKNODE_HTTP_URL);
@@ -19,7 +17,7 @@ console.log('p key', PRIVATE_KEY);
 // };
 
 
-
+// scroll sepolia config
 module.exports = {
   solidity: "0.8.20",
   networks: {
@@ -30,3 +28,17 @@ module.exports = {
     },
   },
 };
+
+
+// const config: HardhatUserConfig = {
+//   solidity: "0.8.20", // solidity version
+//   networks: {
+//       mantleTest: {
+//       url: "https://rpc.testnet.mantle.xyz", // testnet
+//       accounts: [PRIVATE_KEY],
+//       }
+//   },
+//   etherscan: {
+//       apiKey: process.env.API_KEY,
+//   },
+// };
