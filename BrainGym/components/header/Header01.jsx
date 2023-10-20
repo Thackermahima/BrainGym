@@ -72,7 +72,7 @@ export default function Header01() {
               src={WhiteLogo}
               height={28}
               width={130}
-              alt="Xhibiter | NFT Marketplace"
+              alt="brainGym | NFT Marketplace"
             />
           </div>
 
@@ -341,7 +341,7 @@ export default function Header01() {
             src={Logo}
             height={28}
             width={130}
-            alt="Xhibiter | NFT Marketplace"
+            alt="brainGym | NFT Marketplace"
             className="max-h-7 h-auto "
           />
         </div>
@@ -351,7 +351,7 @@ export default function Header01() {
             src={WhiteLogo}
             height={28}
             width={130}
-            alt="Xhibiter | NFT Marketplace"
+            alt="brainGym | NFT Marketplace"
           />
         </div>
 

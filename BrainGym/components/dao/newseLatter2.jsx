@@ -40,7 +40,7 @@ const NewseLatter2 = () => {
 
           <p className="mx-auto max-w-2xl text-center text-lg text-jacarta-700 dark:text-white">
             Join our mailing list to stay in the loop with our newest feature
-            releases, NFT drops, and tips and tricks for navigating Xhibiter
+            releases, NFT drops, and tips and tricks for navigating brainGym
           </p>
 
           <div className="mx-auto mt-7 max-w-md text-center">

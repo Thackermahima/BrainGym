@@ -13,7 +13,7 @@ import Image from "next/image";
 const Partners = () => {
   return (
     <div>
-      <Meta title="Partners || Xhibiter | NFT Marketplace Next.js Template" />
+      <Meta title="Partners || " />
       <div className="pt-[5.5rem] lg:pt-24">
         {/* <!-- Benefits --> */}
         <section className="relative pt-32 pb-24">
@@ -42,10 +42,10 @@ const Partners = () => {
           <div className="container">
             <div className="mx-auto max-w-xl text-center">
               <h1 className="font-display text-jacarta-700 mb-6 text-center text-4xl font-medium dark:text-white">
-                Xhibiter Affiliate Partnership
+                brainGym Affiliate Partnership
               </h1>
               <p className="dark:text-jacarta-200 mb-16 text-lg leading-normal">
-                Interested in making money with Xhibiter? Earn A 20% Commission
+                Interested in making money with brainGym? Earn A 20% Commission
                 For Every Sale You Refer By Recommending The Most Powerful NFT
                 marketplace.
               </p>
@@ -165,7 +165,7 @@ const Partners = () => {
               <div className="mb-4 md:mb-0">
                 <p className="text-jacarta-700 text-lg leading-normal dark:text-white">
                   {
-                    "Xhibiter is one of the most exciting, important companies in the world right now because it's the portal to the new digital economy. If you're interested in shaping a new business model for creators, this is the team to join."
+                    "brainGym is one of the most exciting, important companies in the world right now because it's the portal to the new digital economy. If you're interested in shaping a new business model for creators, this is the team to join."
                   }
                 </p>
                 <span className="text-jacarta-700 font-display text-md mt-12 block font-medium dark:text-white">
@@ -201,7 +201,7 @@ const Partners = () => {
               <p className="mb-10 text-lg leading-normal text-white">
                 Join our mailing list to stay in the loop with our newest
                 feature releases, NFT drops, and tips and tricks for navigating
-                Xhibiter
+                brainGym
               </p>
               <Link
                 href="/contact"

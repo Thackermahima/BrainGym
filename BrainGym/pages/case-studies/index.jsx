@@ -8,7 +8,7 @@ import Image from "next/image";
 const Case_studies = () => {
   return (
     <div>
-      <Meta title="Case_studies || Xhibiter | NFT Marketplace Next.js Template" />
+      <Meta title="Case_studies || " />
       {/* <!-- Page Title --> */}
       <section className="relative py-32 mt-[95px]">
         <picture className="pointer-events-none absolute inset-0 -z-10 dark:hidden">
