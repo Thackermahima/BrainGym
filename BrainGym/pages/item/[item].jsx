@@ -6,7 +6,7 @@ import Link from "next/link";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import Items_Countdown_timer from "../../components/items_countdown_timer";
-import { ItemsTabs } from "../../components/component";
+// import { ItemsTabs } from "../../components/component";
 import More_items from "./more_items";
 import Likes from "../../components/likes";
 import Meta from "../../components/Meta";
@@ -23,7 +23,7 @@ const Item = () => {
 
   return (
     <>
-      <Meta title={`${pid} || Xhibiter | NFT Marketplace Next.js Template`} />
+      <Meta title={`${pid} || `} />
       {/*  <!-- Item --> */}
       <section className="relative lg:mt-24 lg:pt-24 lg:pb-24 mt-24 pt-12 pb-24">
         <picture className="pointer-events-none absolute inset-0 -z-10 dark:hidden">
@@ -329,7 +329,7 @@ const Item = () => {
                 </div>
               );
             })}
-          <ItemsTabs />
+          {/* <ItemsTabs /> */}
         </div>
       </section>
       {/* <!-- end item --> */}

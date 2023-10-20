@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 const hero = () => {
- 
+
 
 
 
 
   return (
     <section className="relative pb-60 pt-40 md:pt-60 h-1527">
-     
+
       {/* Background Image with Blur */}
       <div className="absolute inset-0 pointer-events-none">
         <Image
@@ -21,7 +21,7 @@ const hero = () => {
 
         />
       </div>
-      
+
       <picture className="pointer-events-none absolute inset-x-0 top-0 -z-10 hidden dark:block">
         <Image
           width={1519}
@@ -40,8 +40,8 @@ const hero = () => {
             {/* <h1 className="text-jacarta-700 font-bold font-display mb-6 text-center text-5xl dark:text-white md:text-left lg:text-6xl xl:text-7xl">
              Unity Hub
             </h1> */}
-            <h1 className="text-white text-center font-bold md:text-center xl: text-5xl lg: text-center xl: text-center" style={{ textAlign: "center"}}>
-            Brainstorm with experts and like minded peers of your industry.
+            <h1 className="text-white text-center font-bold md:text-center xl: text-5xl lg: text-center xl: text-center" style={{ textAlign: "center" }}>
+              Brainstorm with experts and like minded peers of your industry.
             </h1><br></br><br></br>
             <div className="flex space-x-4">
               <Link
@@ -51,12 +51,6 @@ const hero = () => {
                 Start My Page
               </Link>
 
-
-
-
-
-
-           
               <Link
                 href="/collection/explore_collection"
                 className="text-accent shadow-white-volume hover:bg-accent-dark hover:shadow-accent-volume w-36 rounded-full bg-white py-3 px-8 text-center font-semibold transition-all hover:text-white"
@@ -87,11 +81,11 @@ const hero = () => {
           </div> */}
         </div>
       </div>
-     
+
     </section>
-    
+
   );
-  
+
 };
 
 export default hero;

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React, { useState } from "react";
-import News_item from "../../components/blog/news_item";
 import { news_data } from "../../data/news_data";
 import Meta from "../../components/Meta";
 import Image from "next/image";
@@ -15,7 +14,7 @@ const Blog = () => {
   };
   return (
     <>
-      <Meta title="Blog || Xhibiter | NFT Marketplace Next.js Template" />
+      <Meta title="Blog || " />
       {/* <!-- Blog --> */}
       <section className="relative  pt-[5.5rem] lg:pt-24">
         <div className="py-16 md:py-24">
@@ -85,7 +84,6 @@ const Blog = () => {
               </div>
             </article>
 
-            <News_item data={data} />
 
             {/* <!-- Load More --> */}
             {loadMoreBtn && (
