@@ -8,7 +8,7 @@ import { MetaMaskProvider } from "metamask-react";
 import Meta from "../components/Meta";
 import UserContext from "../components/UserContext";
 import { useRef } from "react";
-
+import { BrainGymAuthContextProvider } from "../context/brainGymContext";
 if (typeof window !== "undefined") {
   require("bootstrap/dist/js/bootstrap");
 }
@@ -27,6 +27,7 @@ function MyApp({ Component, pageProps }) {
       <Provider store={store}>
         <ThemeProvider enableSystem={true} attribute="class">
           <MetaMaskProvider>
+          <BrainGymAuthContextProvider>
             <UserContext.Provider value={{ scrollRef: scrollRef }}>
               {pid === "/login" ? (
                 <Component {...pageProps} />
@@ -36,6 +37,7 @@ function MyApp({ Component, pageProps }) {
                 </Layout>
               )}
             </UserContext.Provider>
+            </BrainGymAuthContextProvider>
           </MetaMaskProvider>
         </ThemeProvider>
       </Provider>

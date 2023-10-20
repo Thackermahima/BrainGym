@@ -53,11 +53,11 @@ const Collection_dropdown2 = ({ data, collection }) => {
             <Image
               width={20}
               height={20}
-              src="/images/chains/ETH.png"
+              src="/images/chains/mantle.png"
               alt="eth"
               className="mr-2 h-5 w-5 rounded-full"
             />
-            Ethereum
+            Mantle
           </span>
           <svg
             xmlns="http://www.w3.org/2000/svg"

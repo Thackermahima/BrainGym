@@ -18,12 +18,22 @@ export const collectionDropdown2_data = [
 ];
 export const EthereumDropdown2_data = [
 	{
-		id: '0Ethereum',
+		id: '0Mantle',
+		text: 'Mantle',
+		image: '/images/chains/mantle.png',
+	},
+	{
+		id: '1Scroll',
+		text: 'Scroll',
+		image: '/images/chains/scroll.png',
+	},
+	{
+		id: '2Ethereum',
 		text: 'Ethereum',
 		image: '/images/chains/ETH.png',
 	},
 	{
-		id: '1Polygon(Mumbai)',
+		id: '3Polygon(Mumbai)',
 		text: 'Polygon(Mumbai)',
 		image: '/images/chains/polygon@2x.png',
 	},
