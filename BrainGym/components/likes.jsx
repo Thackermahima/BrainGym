@@ -20,20 +20,14 @@ const Likes = ({
 
   return (
     <div className={classes} onClick={handleLike}>
-      <Tippy content={<span>Favorite</span>}>
+      <Tippy content={<span>Call</span>}>
         <button className="js-likes relative cursor-pointer">
-          {likeState === likeNumber ? (
-            <svg className="icon icon-heart-fill dark:fill-jacarta-200 fill-jacarta-500 hover:fill-red dark:hover:fill-red h-4 w-4">
-              <use xlinkHref="/icons.svg#icon-hert-fill"></use>
-            </svg>
-          ) : (
-            <svg className="icon icon-heart-fill dark:fill-jacarta-200 fill-jacarta-500 hover:fill-red dark:hover:fill-red h-4 w-4">
-              <use xlinkHref="/icons.svg#icon-heart-fill"></use>
-            </svg>
-          )}
+          <svg className="icon icon-calender dark:fill-jacarta-200 fill-jacarta-500 hover:fill-red dark:hover:fill-red h-4 w-4">
+            <use xlinkHref="/icons.svg#icon-hert-fill"></use>
+          </svg>
         </button>
       </Tippy>
-      <span className="dark:text-jacarta-200 text-sm">{likeNumber}</span>
+      <span className="dark:text-jacarta-200 text-sm">1:1 Call</span>
     </div>
   );
 };
