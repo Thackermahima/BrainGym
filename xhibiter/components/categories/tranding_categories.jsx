@@ -6,12 +6,15 @@ import Trending_categories_items from "./trending_categories_items";
 
 const Tranding_category = () => {
   return (
-    <section className="py-24">
+    <section 
+    // className="py-24"
+    >
       <div className="container">
         <HeadLine
-          text="Trending categories"
+          // text="Trending categories"
+          text="Top Experts"
           image="https://cdn.jsdelivr.net/npm/emoji-datasource-apple@7.0.2/img/apple/64/26a1.png"
-          classes="font-display text-jacarta-700 mb-8 text-center text-3xl dark:text-white"
+          classes="font-display text-jacarta-700 mb-8 text-center text-3xl dark:text-white mt-0"
         />
 
         {/* trending categories */}

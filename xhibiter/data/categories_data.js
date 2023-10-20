@@ -6,34 +6,34 @@ const tranding_category_filter = [
   {
     id: 1,
     svg: "art",
-    text: "art",
+    text: "1:1 Call",
   },
 
   {
     id: 2,
     svg: "collection",
-    text: "Collectibles",
+    text: "Priority DM",
   },
   {
     id: 3,
     svg: "domain",
-    text: "domain",
+    text: "Digital Product",
   },
-  {
-    id: 4,
-    svg: "music",
-    text: "music",
-  },
-  {
-    id: 5,
-    svg: "photography",
-    text: "photography",
-  },
-  {
-    id: 6,
-    svg: "world",
-    text: "virtual world",
-  },
+  // {
+  //   id: 4,
+  //   svg: "music",
+  //   text: "music",
+  // },
+  // {
+  //   id: 5,
+  //   svg: "photography",
+  //   text: "photography",
+  // },
+  // {
+  //   id: 6,
+  //   svg: "world",
+  //   text: "virtual world",
+  // },
 ];
 
 const trendingCategoryData = [
@@ -48,9 +48,9 @@ const trendingCategoryData = [
     addDate: 1,
     sortPrice: 8.49,
     price: "From 8.49 ETH",
-    bidLimit: 8,
-    bidCount: 2,
-    likes: 15,
+    // bidLimit: 8,
+    // bidCount: 2,
+    // likes: 15,
     creator: {
       name: "Sussygirl",
       image: "/images/avatars/creator_1.png",

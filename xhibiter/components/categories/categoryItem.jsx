@@ -99,7 +99,7 @@ const CategoryItem = () => {
               <div className="mt-8 flex items-center justify-between">
                 <button
                   className="text-accent font-display text-sm font-semibold"
-                  onClick={() => dispatch(buyModalShow())}
+                  // onClick={() => dispatch(buyModalShow())}
                 >
                   Buy now
                 </button>

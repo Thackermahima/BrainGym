@@ -2,12 +2,12 @@ import React, { useState } from "react";
 
 const Categories = () => {
   const categories = [
-    { name: "Art", color: "accent" },
-    { name: "Collectibles", color: "jacarta" },
-    { name: "Domain", color: "jacarta" },
-    { name: "Music", color: "jacarta" },
-    { name: "Photography", color: "jacarta" },
-    { name: "Virtual World", color: "jacarta" },
+    { name: "1:1 call", color: "accent" },
+    { name: "Priority DM", color: "jacarta" },
+    { name: "Digital Product", color: "jacarta" },
+    // { name: "Music", color: "jacarta" },
+    // { name: "Photography", color: "jacarta" },
+    // { name: "Virtual World", color: "jacarta" },
   ];
 
   const [activeCategory, setActiveCategory] = useState(0);
