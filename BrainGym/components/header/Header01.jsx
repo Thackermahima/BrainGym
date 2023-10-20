@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 
 export default function Header01() {
   const [toggle, setToggle] = useState(false);
-
+  const [sticky, setSticky] = useState(false);
   const [walletAddress, setWalletAddress] = useState('');
   const [isConnected, setIsConnected] = useState(walletAddress !== '');
 
@@ -25,6 +25,18 @@ export default function Header01() {
       }
     });
   });
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleScroll = () => {
+    if (window.scrollY > 70) {
+      setSticky(true);
+    } else if (window.scrollY < 70) {
+      setSticky(false);
+    }
+  };
 
   useEffect(() => {
     if (walletAddress) {
@@ -60,7 +72,7 @@ export default function Header01() {
 
   return <>
     {/* main desktop menu sart*/}
-    <header className="js-page-header fixed top-0 z-20 w-full  transition-colors">
+    <header className={`js-page-header fixed top-0 z-20 w-full ${sticky ? 'backdrop-blur' : ''} transition-colors`}>
       <div className="flex items-center px-6 py-6 xl:px-24 ">
         <Link className="shrink-0" href="/" >
           <div>
@@ -72,7 +84,7 @@ export default function Header01() {
               src={WhiteLogo}
               height={28}
               width={130}
-              alt="brainGym | NFT Marketplace"
+              alt="brainGym"
             />
           </div>
 
@@ -162,11 +174,6 @@ export default function Header01() {
                 </button>
               </div>
             )}
-
-
-
-
-
 
 
             <div className="js-nav-dropdown group-dropdown relative">
