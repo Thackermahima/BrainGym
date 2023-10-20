@@ -53,7 +53,7 @@ const Collection_dropdown2 = ({ data, collection }) => {
             <Image
               width={20}
               height={20}
-              src="/images/chains/mantle.png"
+              src="/images/images/chains/mantle.png"
               alt="eth"
               className="mr-2 h-5 w-5 rounded-full"
             />
