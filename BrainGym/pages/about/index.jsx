@@ -7,7 +7,7 @@ const About = () => {
   const [video, setVideo] = useState(false);
   return (
     <>
-      <Meta title="About || " />
+      <Meta title="About " />
       {/* <!-- Page title --> */}
       <section className="relative pt-24 lg:pb-96">
         <picture className="pointer-events-none absolute inset-0 -z-10 dark:hidden">

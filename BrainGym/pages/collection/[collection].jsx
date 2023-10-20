@@ -22,7 +22,7 @@ const Collection = () => {
 
   return (
     <>
-      <Meta title={`${pid} || `} />
+      <Meta title={`${pid} `} />
 
       <div className="pt-[5.5rem] lg:pt-24">
         {/* <!-- Banner --> */}
