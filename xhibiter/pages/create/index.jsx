@@ -6,35 +6,108 @@ import {
   collectionDropdown2_data,
   EthereumDropdown2_data,
 } from "../../data/dropdown";
+// import ethers from 'ethers';
+const { ethers } = require('ethers');
+
+import { RECORD_KEEPER_CONTRACT, basicABI, recordABI } from "../../constant/constant";
 import { FileUploader } from "react-drag-drop-files";
 import Proparties_modal from "../../components/modal/proparties_modal";
 import { useDispatch } from "react-redux";
 import { showPropatiesModal } from "../../redux/counterSlice";
 import Meta from "../../components/Meta";
 import Image from "next/image";
+import { BrainGymAuthContext } from "../../context/brainGymContext";
+
 
 const Create = () => {
-  const fileTypes = [
-    "JPG",
-    "PNG",
-    "GIF",
-    "SVG",
-    "MP4",
-    "WEBM",
-    "MP3",
-    "WAV",
-    "OGG",
-    "GLB",
-    "GLTF",
-  ];
-  const [file, setFile] = useState("");
 
-  const dispatch = useDispatch();
+  const superCbrainGymContext = React.useContext(BrainGymAuthContext);
+  const { handleImgUpload, uploadOnIpfs } = superCbrainGymContext;
+  const [image, setImage] = useState();
+  const [title, setTitle] = useState();
+  const [description, setDescription] = useState();
+  const [sessionTime, SetSessionTime] = useState();
+  const [numberOfCollection, setNumberOfCollection] = useState();
+  const [price, setPrice] = useState();
+  const [chain, setChain] = useState();
 
-  const handleChange = (file) => {
-    setFile(file.name);
+
+
+  const handleChange = async (event) => {
+    let img = await handleImgUpload(event.target.files[0]);
+    console.log(img);
+    setImage(img);
+
+  };
+  const handleOptionChange = (event) => {
+    SetSessionTime(event.target.value);
+    console.log(sessionTime);
   };
 
+
+
+const getCounter = async () => {
+  const provider = await new ethers.providers.Web3Provider(window.ethereum);
+  const signer = provider.getSigner();
+  let contractAdd = '0x00E1a7Ab90D26BBf6e4EA66Ab488ff438c2C3675';
+  const contract = new ethers.Contract(
+    contractAdd,
+    basicABI,
+    provider
+  );
+  console.log(contract);
+  const result = await contract.getTokenCounter();
+  console.log(result.toNumber());
+
+}
+
+
+  const GenerateCollection = async () => {
+
+    const nftCollectionData = {
+      title: title,
+      description: description,
+      price: price,
+      chain: chain,
+      img: image,
+      numOfCollection : numberOfCollection,
+      sessionTime : sessionTime,
+      owner: localStorage.getItem('walletAddress'),
+    }
+
+    console.log(nftCollectionData);
+    let metadataurl = await uploadOnIpfs(nftCollectionData);
+    console.log(metadataurl);
+
+
+    const provider = await new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const contract = new ethers.Contract(
+      RECORD_KEEPER_CONTRACT,
+      recordABI,
+      signer
+    );
+    const tx = await contract.createNFTCollection("dhruv", "DRV");
+    let txc = await tx.wait();
+    if (txc) {
+      console.log(txc, "Successfully created!");
+    }
+
+    let event = txc.events[0];
+    console.log(event, "Event");
+    let tokenContractAddress = event.args[1];
+    console.log(tokenContractAddress, "token add");
+    let address = localStorage.getItem("walletAddress")
+    
+    let transactionBulkMint = await contract.bulkMintERC721(
+      address,
+      tokenContractAddress,
+      numberOfCollection,
+      parseInt(price),
+    );
+    let txb = await transactionBulkMint.wait();
+    console.log('bulk tx',txb);
+  }
 
   return (
     <div>
@@ -64,9 +137,9 @@ const Create = () => {
                 {/* <span className="text-red">*</span> */}
               </label>
 
-              {file ? (
+              {image ? (
                 <p className="dark:text-jacarta-300 text-2xs mb-3">
-                  successfully uploaded : {file}
+                  successfully uploaded : {image}
                 </p>
               ) : (
                 <p className="dark:text-jacarta-300 text-2xs mb-3">
@@ -91,13 +164,12 @@ const Create = () => {
                   </p>
                 </div>
                 <div className="dark:bg-jacarta-600 bg-jacarta-50 absolute inset-4 cursor-pointer rounded opacity-0 group-hover:opacity-100 ">
-                  <FileUploader
-                    handleChange={handleChange}
-                    name="file"
-                    types={fileTypes}
-                    classes="file-drag"
-                    maxSize={100}
-                    minSize={0}
+
+                  <input
+                    type="file"
+                    accept="image/*"
+                    className="absolute inset-0 cursor-pointer opacity-0"
+                    onChange={(e) => handleChange(e)}
                   />
                 </div>
               </div>
@@ -113,11 +185,13 @@ const Create = () => {
                 {/* <span className="text-red">*</span> */}
               </label>
               <input
+                value={title}
                 type="text"
                 id="item-name"
                 className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 px-3 hover:ring-2 dark:text-white"
                 placeholder="Item name"
                 required
+                onChange={(e) => setTitle(e.target.value)}
               />
             </div>
 
@@ -137,28 +211,36 @@ const Create = () => {
                 id="item-description"
                 className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 px-3 hover:ring-2 dark:text-white"
                 rows="4"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
                 required
                 placeholder="Provide a detailed description of your item."
               ></textarea>
             </div>
             {/* time duration */}
             <label
-                htmlFor="item-description"
-                className="font-display text-jacarta-700 mb-2 block dark:text-white"
-              >
-                Session for:
-              </label>
-            <div style={{display:"inline-flex"}} >
+              htmlFor="item-description"
+              className="font-display text-jacarta-700 mb-2 block dark:text-white"
+            >
+              Session for:
+            </label>
+            <div style={{ display: "inline-flex" }} >
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="15 min"
+                  checked={sessionTime === "15 min"}
+                  onChange={handleOptionChange} />
                 <label class="form-check-label ml-3" for="inlineRadio1">15 min</label>
               </div>
               <div class="form-check form-check-inline ml-5">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="30 min"
+                  checked={sessionTime === "30 min"}
+                  onChange={handleOptionChange} />
                 <label class="form-check-label ml-3" for="inlineRadio2 ">30 min</label>
               </div>
               <div class="form-check form-check-inline ml-5">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" />
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="60 min"
+                  checked={sessionTime === "60 min"}
+                  onChange={handleOptionChange} />
                 <label class="form-check-label ml-3" for="inlineRadio3">60 min</label>
               </div>
             </div>
@@ -174,6 +256,8 @@ const Create = () => {
                 {/* <span className="text-red">*</span> */}
               </label>
               <input
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
                 type="number"
                 id="item-name"
                 className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 px-3 hover:ring-2 dark:text-white"
@@ -228,6 +312,8 @@ const Create = () => {
                 id="item-supply"
                 className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 px-3 hover:ring-2 dark:text-white"
                 placeholder="1"
+                value={numberOfCollection}
+                onChange={(e) => setNumberOfCollection(e.target.value)}
               />
             </div>
 
@@ -245,60 +331,11 @@ const Create = () => {
                 <Collection_dropdown2 data={EthereumDropdown2_data} />
               </div>
             </div>
-
-            {/* <!-- Freeze metadata --> */}
-            {/* <div className="mb-6">
-              <div className="mb-2 flex items-center space-x-2">
-                <label
-                  htmlFor="item-freeze-metadata"
-                  className="font-display text-jacarta-700 block dark:text-white"
-                >
-                  Freeze metadata
-                </label>
-
-                <Tippy
-                  content={
-                    <span className="bg-jacarta-300">
-                      Setting your asset as explicit and sensitive content, like
-                      pornography and other not safe for work (NSFW) content,
-                      will protect users with safe search while browsing
-                      Xhibiter.
-                    </span>
-                  }
-                >
-                  <span className="inline-block">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      height="24"
-                      className="dark:fill-jacarta-300 fill-jacarta-500 mb-[2px] h-5 w-5"
-                    >
-                      <path fill="none" d="M0 0h24v24H0z"></path>
-                      <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z"></path>
-                    </svg>
-                  </span>
-                </Tippy>
-              </div>
-
-              <p className="dark:text-jacarta-300 text-2xs mb-3">
-                Freezing your metadata will allow you to permanently lock and
-                store all of this
-                {"item's"} content in decentralized file storage.
-              </p>
-
-              <input
-                type="text"
-                disabled
-                id="item-freeze-metadata"
-                className="dark:bg-jacarta-700 bg-jacarta-50 border-jacarta-100 dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 px-3 dark:text-white"
-                placeholder="To freeze your metadata, you must create your item first."
-              />
-            </div> */}
+ 
 
             {/* <!-- Submit --> */}
             <button
-              disabled
+            onClick={GenerateCollection}
               className="bg-accent-lighter cursor-default rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
             >
               Create
