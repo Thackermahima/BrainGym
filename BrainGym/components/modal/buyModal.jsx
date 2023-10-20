@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { buyModalHide } from "../../redux/counterSlice";
 import { Confirm_checkout } from "../metamask/Metamask";
 import Image from "next/image";
+import ContactForm from "../contact/ContactForm";
 
 const BuyModal = () => {
   const { buyModal } = useSelector((state) => state.counter);
@@ -17,7 +18,7 @@ const BuyModal = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="buyNowModalLabel">
-                Complete checkout
+                Book a 1:1 call
               </h5>
               <button
                 type="button"
@@ -39,70 +40,47 @@ const BuyModal = () => {
 
             {/* <!-- Body --> */}
             <div className="modal-body p-6">
-              <div className="mb-2 flex items-center justify-between">
-                <span className="font-display text-jacarta-700 text-sm font-semibold dark:text-white">
-                  Item
-                </span>
-                <span className="font-display text-jacarta-700 text-sm font-semibold dark:text-white">
-                  Subtotal
-                </span>
-              </div>
 
-              <div className="dark:border-jacarta-600 border-jacarta-100 relative flex items-center border-t border-b py-4">
-                <figure className="mr-5 self-start">
-                  <Image
-                    width={150}
-                    height={150}
-                    src="/images/avatars/avatar_2.jpg"
-                    alt="avatar 2"
-                    className="rounded-2lg"
-                    loading="lazy"
+              <div className="flex space-x-7">
+                <div className="mb-6 w-1/2">
+                  <label className="font-display text-jacarta-700 mb-1 block text-sm dark:text-white">
+                    Name<span className="text-red">*</span>
+                  </label>
+                  <input
+                    name="name"
+                    className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 hover:ring-2 dark:text-white"
+                    id="name"
+                    type="text"
+                    required
                   />
-                </figure>
-
-                <div>
-                  <a href="collection.html" className="text-accent text-sm">
-                    Elon Musk #709
-                  </a>
-                  <h3 className="font-display text-jacarta-700 mb-1 text-base font-semibold dark:text-white">
-                    Lazyone Panda
-                  </h3>
-                  <div className="flex flex-wrap items-center">
-                    <span className="dark:text-jacarta-300 text-jacarta-500 mr-1 block text-sm">
-                      Creator Earnings: 5%
-                    </span>
-                    <span data-tippy-content="The creator of this collection will receive 5% of the sale total from future sales of this item.">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        height="24"
-                        className="dark:fill-jacarta-300 fill-jacarta-700 h-4 w-4"
-                      >
-                        <path fill="none" d="M0 0h24v24H0z" />
-                        <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z" />
-                      </svg>
-                    </span>
-                  </div>
                 </div>
 
-                <div className="ml-auto">
-                  <span className="mb-1 flex items-center whitespace-nowrap">
-                    <span data-tippy-content="ETH">
-                      <svg className="h-4 w-4">
-                        <use xlinkHref="/icons.svg#icon-ETH"></use>
-                      </svg>
-                    </span>
-                    <span className="dark:text-jacarta-100 text-sm font-medium tracking-tight">
-                      1.55 ETH
-                    </span>
-                  </span>
-                  <div className="dark:text-jacarta-300 text-right text-sm">
-                    $130.82
-                  </div>
+                <div className="mb-6 w-1/2">
+                  <label className="font-display text-jacarta-700 mb-1 block text-sm dark:text-white">
+                    Email<span className="text-red">*</span>
+                  </label>
+                  <input
+                    name="email"
+                    className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 hover:ring-2 dark:text-white"
+                    id="email"
+                    type="email"
+                    required
+                  />
                 </div>
               </div>
 
+              <div className="mb-4">
+                <label className="font-display text-jacarta-700 mb-1 block text-sm dark:text-white">
+                  Message<span className="text-red">*</span>
+                </label>
+                <textarea
+                  id="message"
+                  className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 hover:ring-2 dark:text-white"
+                  required
+                  name="message"
+                  rows="3"
+                ></textarea>
+              </div>
               {/* <!-- Total --> */}
               <div className="dark:border-jacarta-600 border-jacarta-100 mb-2 flex items-center justify-between border-b py-2.5">
                 <span className="font-display text-jacarta-700 hover:text-accent font-semibold dark:text-white">

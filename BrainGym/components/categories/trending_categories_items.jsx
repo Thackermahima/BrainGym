@@ -23,24 +23,6 @@ const Trending_categories_items = () => {
     }
   };
 
-  const sortText = [
-    {
-      id: 1,
-      text: "Recently Added",
-    },
-    {
-      id: 2,
-      text: "Price: Low to High",
-    },
-    {
-      id: 3,
-      text: "Price: high to low",
-    },
-    {
-      id: 4,
-      text: "Auction Ending Soon",
-    },
-  ];
 
   useEffect(() => {
     dispatch(updateTrendingCategoryItemData(itemdata.slice(0, 8)));
@@ -48,6 +30,7 @@ const Trending_categories_items = () => {
 
   return (
     <>
+<<<<<<< HEAD
       {/* <!-- Filter --> */}
       <div className="mb-8 flex flex-wrap items-center justify-between">
         <ul className="flex flex-wrap items-center">
@@ -108,6 +91,8 @@ const Trending_categories_items = () => {
       </div>
 
       {/* <!-- Grid --> */}
+=======
+>>>>>>> master
       <CategoryItem />
     </>
   );
