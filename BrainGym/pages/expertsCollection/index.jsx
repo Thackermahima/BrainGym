@@ -10,6 +10,8 @@ import Tippy from "@tippyjs/react";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 import { buyModalShow } from "../../redux/counterSlice";
 import { useDispatch } from "react-redux";
+import { isChildrenPageActive } from "../../utils/daynamicNavigation";
+import { useRouter } from "next/router";
 // import Likes from "../likes";
 
 const ExpertsCollection = () => {
@@ -17,6 +19,8 @@ const ExpertsCollection = () => {
   const handleclick = () => {
     console.log("clicked on ");
   };
+  const route = useRouter();
+
   return (
     <>
       <h1 style={{ marginTop: "10%", fontSize: "30px", fontWeight: "bolder" }} className="ml-5" >Explore Experts Collections</h1>
