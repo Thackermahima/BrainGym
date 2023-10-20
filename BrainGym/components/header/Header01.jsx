@@ -79,7 +79,7 @@ export default function Header01() {
             <h1 style={{ fontSize: "30px", color: "#8358FF", fontWeight: "bolder" }}>BrainGym</h1>
           </div>
 
-          <div className="hidden dark:block">
+          <div className="hidden dark:hidden">
             <Image
               src={WhiteLogo}
               height={28}
