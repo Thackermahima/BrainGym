@@ -1,5 +1,4 @@
 import React from "react";
-import Activity_item from "../../components/collectrions/Activity_item";
 import Meta from "../../components/Meta";
 import Image from "next/image";
 
@@ -23,7 +22,6 @@ const index = () => {
             Activity
           </h1>
 
-          <Activity_item />
         </div>
       </section>
     </>

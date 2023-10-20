@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import Team from "../../components/about/Team";
 import Partners from "../../components/partners/Partners";
-import About_news from "../../components/blog/about_news";
-import Story from "../../components/about/Story";
 import Meta from "../../components/Meta";
 import Image from "next/image";
 
@@ -169,13 +166,7 @@ const About = () => {
         </div>
       </div>
 
-      {/* <!-- end intro / statistics --> */}
-      {/* <!-- Story --> */}
-      <Story compFor="about" />
-      {/* <!-- end story --> */}
-      <Team />
       <Partners />
-      <About_news />
     </>
   );
 };

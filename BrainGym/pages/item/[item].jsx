@@ -6,7 +6,7 @@ import Link from "next/link";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import Items_Countdown_timer from "../../components/items_countdown_timer";
-import { ItemsTabs } from "../../components/component";
+// import { ItemsTabs } from "../../components/component";
 import More_items from "./more_items";
 import Likes from "../../components/likes";
 import Meta from "../../components/Meta";
@@ -329,7 +329,7 @@ const Item = () => {
                 </div>
               );
             })}
-          <ItemsTabs />
+          {/* <ItemsTabs /> */}
         </div>
       </section>
       {/* <!-- end item --> */}

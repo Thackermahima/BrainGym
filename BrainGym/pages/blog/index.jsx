@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React, { useState } from "react";
-import News_item from "../../components/blog/news_item";
 import { news_data } from "../../data/news_data";
 import Meta from "../../components/Meta";
 import Image from "next/image";
@@ -85,7 +84,6 @@ const Blog = () => {
               </div>
             </article>
 
-            <News_item data={data} />
 
             {/* <!-- Load More --> */}
             {loadMoreBtn && (
