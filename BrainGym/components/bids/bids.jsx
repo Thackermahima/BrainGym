@@ -21,18 +21,18 @@ const Bids = ({ classes = "pt-10 pb-24", bgWhite }) => {
           />
         </picture>
       )}
-      <div className="container">
+      {/* <div className="container">
         <HeadLine
           text="Top Experts"
           image="https://cdn.jsdelivr.net/npm/emoji-datasource-apple@7.0.2/img/apple/64/1f525.png"
           classes="font-display text-jacarta-700 mb-8 text-center text-3xl dark:text-white"
         />
 
-        <div className="relative">
+        <div className="relative"> */}
           {/* <!-- Slider --> */}
-          <BidsCarousel />
-        </div>
-      </div>
+          {/* <BidsCarousel /> */}
+        {/* </div> */}
+      {/* </div> */}
       {/* <!-- end hot bids --> */}
     </section>
   );
