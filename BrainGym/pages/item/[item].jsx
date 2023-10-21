@@ -24,7 +24,7 @@ const Item = () => {
   const superCbrainGymContext = React.useContext(BrainGymAuthContext);
   const { getSingleCollection } = superCbrainGymContext;
   const pid = router.query.item;
-  console.log(pid, '--');
+  // console.log(pid, '--');
   const [collection, setCollection] = useState({});
 
 
@@ -42,7 +42,7 @@ const Item = () => {
     console.log('collection', collection);
     setCollection(collection);
   }
-console.log(collection);
+// console.log(collection);
 
   return (
     <>

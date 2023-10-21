@@ -17,10 +17,7 @@ const CategoryItem = () => {
   const superCbrainGymContext = React.useContext(BrainGymAuthContext);
   const { allCollection } = superCbrainGymContext;
 
-  allCollection.map((item) => {
-    console.log(item);
-    console.log(item.img);
-  })
+
 
   return (
     <div className="grid grid-cols-1 gap-[1.875rem] md:grid-cols-2 lg:grid-cols-4">
