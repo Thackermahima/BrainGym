@@ -20,12 +20,12 @@ export const EthereumDropdown2_data = [
 	{
 		id: '0Mantle',
 		text: 'Mantle',
-		image: '/images/chains/mantle.png',
+		image: '/images/images/chains/mantle.png',
 	},
 	{
 		id: '1Scroll',
 		text: 'Scroll',
-		image: '/images/chains/scroll.png',
+		image: '/images/images/chains/scroll.png',
 	},
 	{
 		id: '2Ethereum',

@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import { collection_item_data } from "../../data/collection_data";
 import Auctions_dropdown from "../../components/dropdown/Auctions_dropdown";
 import Social_dropdown from "../../components/dropdown/Social_dropdown";
-import Collection_items from "../../components/collectrions/Collection_items";
 import Image from "next/image";
 import Link from "next/link";
 import Meta from "../../components/Meta";
@@ -23,7 +22,7 @@ const Collection = () => {
 
   return (
     <>
-      <Meta title={`${pid} || Xhibiter | NFT Marketplace Next.js Template`} />
+      <Meta title={`${pid} `} />
 
       <div className="pt-[5.5rem] lg:pt-24">
         {/* <!-- Banner --> */}
@@ -166,7 +165,6 @@ const Collection = () => {
 
         {/* <!-- end profile --> */}
       </div>
-      <Collection_items />
     </>
   );
 };

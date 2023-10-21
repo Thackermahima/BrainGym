@@ -46,20 +46,20 @@ const Create = () => {
 
 
 
-const getCounter = async () => {
-  const provider = await new ethers.providers.Web3Provider(window.ethereum);
-  const signer = provider.getSigner();
-  let contractAdd = '0x00E1a7Ab90D26BBf6e4EA66Ab488ff438c2C3675';
-  const contract = new ethers.Contract(
-    contractAdd,
-    basicABI,
-    provider
-  );
-  console.log(contract);
-  const result = await contract.getTokenCounter();
-  console.log(result.toNumber());
+  const getCounter = async () => {
+    const provider = await new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    let contractAdd = '0x00E1a7Ab90D26BBf6e4EA66Ab488ff438c2C3675';
+    const contract = new ethers.Contract(
+      contractAdd,
+      basicABI,
+      provider
+    );
+    console.log(contract);
+    const result = await contract.getTokenCounter();
+    console.log(result.toNumber());
 
-}
+  }
 
 
   const GenerateCollection = async () => {
@@ -70,8 +70,8 @@ const getCounter = async () => {
       price: price,
       chain: chain,
       img: image,
-      numOfCollection : numberOfCollection,
-      sessionTime : sessionTime,
+      numOfCollection: numberOfCollection,
+      sessionTime: sessionTime,
       owner: localStorage.getItem('walletAddress'),
     }
 
@@ -104,7 +104,7 @@ const getCounter = async () => {
     }
 
     let address = localStorage.getItem("walletAddress")
-    
+
     let transactionBulkMint = await contract.bulkMintERC721(
       address,
       tokenContractAddress,
@@ -118,7 +118,7 @@ const getCounter = async () => {
 
   return (
     <div>
-      <Meta title="Create || Xhibiter | NFT Marketplace Next.js Template" />
+      <Meta title="Create" />
       {/* <!-- Create --> */}
       <section className="relative py-24">
         <picture className="pointer-events-none absolute inset-0 -z-10 dark:hidden">
@@ -263,8 +263,8 @@ const getCounter = async () => {
                 {/* <span className="text-red">*</span> */}
               </label>
               <input
-              value={price}
-              onChange={(e) => setPrice(e.target.value)}
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
                 type="number"
                 id="item-name"
                 className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 px-3 hover:ring-2 dark:text-white"
@@ -338,11 +338,11 @@ const getCounter = async () => {
                 <Collection_dropdown2 data={EthereumDropdown2_data} />
               </div>
             </div>
- 
+
 
             {/* <!-- Submit --> */}
             <button
-            onClick={GenerateCollection}
+              onClick={GenerateCollection}
               className="bg-accent-lighter cursor-default rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
             >
               Create

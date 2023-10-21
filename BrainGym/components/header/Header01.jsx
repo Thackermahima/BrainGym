@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import DarkMode from "../mode/DarkMode";
-import Logo from "./../../public/images/logo.png";
+import Logo from "./../../public/images/brain_logo.png";
 import WhiteLogo from "./../../public/images/logo_white.png";
 import { v4 as uuidv4 } from "uuid";
 import { useRouter } from "next/router";
@@ -15,7 +15,7 @@ import { BrainGymAuthContext } from "../../context/brainGymContext";
 
 export default function Header01() {
   const [toggle, setToggle] = useState(false);
-
+  const [sticky, setSticky] = useState(false);
   const [walletAddress, setWalletAddress] = useState('');
   const [isConnected, setIsConnected] = useState(walletAddress !== '');
   const superCbrainGymContext = React.useContext(BrainGymAuthContext);
@@ -29,26 +29,52 @@ export default function Header01() {
     });
   });
 
-  
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleScroll = () => {
+    if (window.scrollY > 70) {
+      setSticky(true);
+    } else if (window.scrollY < 70) {
+      setSticky(false);
+    }
+  };
+
+  useEffect(() => {
+    if (walletAddress) {
+      localStorage.setItem('walletAddress', walletAddress);
+    } else {
+      localStorage.removeItem('walletAddress');
+    }
+  }, [walletAddress]);
+
   const route = useRouter();
  
 
 
   return <>
     {/* main desktop menu sart*/}
-    <header className="js-page-header fixed top-0 z-20 w-full  transition-colors">
+    <header className={`js-page-header fixed top-0 z-20 w-full ${sticky ? 'backdrop-blur' : ''} transition-colors`}>
       <div className="flex items-center px-6 py-6 xl:px-24 ">
         <Link className="shrink-0" href="/" >
           <div>
-            <h1 style={{ fontSize: "30px", color: "#8358FF", fontWeight: "bolder" }}>BrainGym</h1>
+          <Image
+            src={Logo}
+            height={128}
+            width={130}
+            alt="brainGym"
+            style={{height:"60px", width:"220px"}}
+          />
+            {/* <h1 style={{ fontSize: "30px", color: "#8358FF", fontWeight: "bolder" }}>BrainGym</h1> */}
           </div>
-
-          <div className="hidden dark:block">
+          
+          <div className="hidden dark:hidden">
             <Image
               src={WhiteLogo}
               height={28}
               width={130}
-              alt="Xhibiter | NFT Marketplace"
+              alt="brainGym"
             />
           </div>
 
@@ -135,11 +161,6 @@ export default function Header01() {
                   </svg>
                 </button>
               </div>
-
-
-
-
-
 
 
             <div className="js-nav-dropdown group-dropdown relative">
@@ -312,7 +333,7 @@ export default function Header01() {
             src={Logo}
             height={28}
             width={130}
-            alt="Xhibiter | NFT Marketplace"
+            alt="brainGym | NFT Marketplace"
             className="max-h-7 h-auto "
           />
         </div>
@@ -322,7 +343,7 @@ export default function Header01() {
             src={WhiteLogo}
             height={28}
             width={130}
-            alt="Xhibiter | NFT Marketplace"
+            alt="brainGym | NFT Marketplace"
           />
         </div>
 

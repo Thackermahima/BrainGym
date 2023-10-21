@@ -22,21 +22,21 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <Meta title="Home 1" />
+      <Meta title="Home" />
 
       <Provider store={store}>
         <ThemeProvider enableSystem={true} attribute="class">
           <MetaMaskProvider>
-          <BrainGymAuthContextProvider>
-            <UserContext.Provider value={{ scrollRef: scrollRef }}>
-              {pid === "/login" ? (
-                <Component {...pageProps} />
-              ) : (
-                <Layout>
+            <BrainGymAuthContextProvider>
+              <UserContext.Provider value={{ scrollRef: scrollRef }}>
+                {pid === "/login" ? (
                   <Component {...pageProps} />
-                </Layout>
-              )}
-            </UserContext.Provider>
+                ) : (
+                  <Layout>
+                    <Component {...pageProps} />
+                  </Layout>
+                )}
+              </UserContext.Provider>
             </BrainGymAuthContextProvider>
           </MetaMaskProvider>
         </ThemeProvider>
