@@ -19,7 +19,7 @@ export default function Header01() {
   const [walletAddress, setWalletAddress] = useState('');
   const [isConnected, setIsConnected] = useState(walletAddress !== '');
   const superCbrainGymContext = React.useContext(BrainGymAuthContext);
-  const { login, logout } = superCbrainGymContext;
+  const { login, logout, allCollection } = superCbrainGymContext;
   // window resize
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -52,6 +52,9 @@ export default function Header01() {
   const route = useRouter();
 
 
+  allCollection.map((header) => {
+    console.log('header', header);
+  })
 
   return <>
     {/* main desktop menu sart*/}

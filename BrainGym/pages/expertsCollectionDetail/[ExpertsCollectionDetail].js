@@ -70,7 +70,7 @@ const ExpertsCollectionDetail = () => {
                         <div className="mt-7  items-center justify-between" style={{ textAlign: "center" }} >
 
                             <span className="font-display text-jacarta-700 hover:text-accent text-base dark:text-white " >
-                                21 DSA
+                                0 BRG
                             </span>
                             <div className="font-display text-jacarta-700 hover:text-accent text-base dark:text-white mt-5 mb-3">
 

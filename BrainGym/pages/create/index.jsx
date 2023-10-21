@@ -29,7 +29,7 @@ const Create = () => {
   const [sessionTime, SetSessionTime] = useState();
   const [numberOfCollection, setNumberOfCollection] = useState();
   const [price, setPrice] = useState();
-  const [chain, setChain] = useState();
+  const [chain, setChain] = useState("");
 
 
 
@@ -76,10 +76,10 @@ const Create = () => {
     }
 
     console.log(nftCollectionData);
-   
 
 
-    const provider = await new ethers.providers.Web3Provider(window.ethereum);
+
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const contract = new ethers.Contract(
       RECORD_KEEPER_CONTRACT,
@@ -87,13 +87,17 @@ const Create = () => {
       signer
     );
     const tx = await contract.createNFTCollection("dhruv", "DRV");
+    console.log(tx,'--tx');
     let txc = await tx.wait();
+    console.log(txc,"txc");
     let event = txc.events[0];
+    console.log('event', event);
     let tokenContractAddress = event.args[1];
+    console.log('tokenContractAddress', tokenContractAddress);
 
     if (txc) {
-   
-    console.log(tokenContractAddress, "token add");
+
+      console.log(tokenContractAddress, "token add");
 
       nftCollectionData.tokenContractAddress = tokenContractAddress;
 
@@ -113,7 +117,7 @@ const Create = () => {
     );
     let txb = await transactionBulkMint.wait();
     // console.log('bulk tx', txb);
-    console.log('bulk tx',txb);
+    console.log('bulk tx', txb);
     await getCollection();
   }
 
