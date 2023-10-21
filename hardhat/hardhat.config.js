@@ -24,7 +24,7 @@ module.exports = {
     scrollSepolia: {
       url: "https://sepolia-rpc.scroll.io/" || "",
       accounts:
-      [PRIVATE_KEY],
+      ['022cee959834961a1d85fe253789846d986ed1e375ea7f5cf5d2d170e1b31e7c'],
     },
   },
 };

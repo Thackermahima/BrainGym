@@ -9,14 +9,17 @@ import {
   isChildrenPageActive,
   isParentPageActive,
 } from "../../utils/daynamicNavigation";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { BrainGymAuthContext } from "../../context/brainGymContext";
+
 
 export default function Header01() {
   const [toggle, setToggle] = useState(false);
 
   const [walletAddress, setWalletAddress] = useState('');
   const [isConnected, setIsConnected] = useState(walletAddress !== '');
-
+  const superCbrainGymContext = React.useContext(BrainGymAuthContext);
+  const { login, logout } = superCbrainGymContext;
   // window resize
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -26,36 +29,9 @@ export default function Header01() {
     });
   });
 
-  useEffect(() => {
-    if (walletAddress) {
-      localStorage.setItem('walletAddress', walletAddress);
-    } else {
-      localStorage.removeItem('walletAddress');
-    }
-  }, [walletAddress]);
-
+  
   const route = useRouter();
-
-  const connectWallet = async () => {
-    try {
-      // Request connection to the wallet
-      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-      if (accounts.length > 0) {
-        localStorage.setItem('walletAddress', accounts[0]);
-        setWalletAddress(accounts[0]);
-        setIsConnected(true);
-      }
-    } catch (error) {
-      console.error('Error connecting to wallet', error);
-    }
-  };
-
-  const disconnectWallet = () => {
-    setWalletAddress('');
-    setIsConnected(false);
-    localStorage.removeItem('walletAddress');
-
-  };
+ 
 
 
   return <>
@@ -139,14 +115,12 @@ export default function Header01() {
 
 
 
-            {isConnected ? (
               <div>
                 {/* <button onClick={disconnectWallet}>Disconnect Wallet</button> */}
               </div>
-            ) : (
               <div>
                 <button
-                  onClick={connectWallet}
+                  onClick={login}
                   className="js-wallet border-jacarta-100 hover:bg-accent focus:bg-accent group dark:hover:bg-accent flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
                 >
                   <svg
@@ -161,7 +135,6 @@ export default function Header01() {
                   </svg>
                 </button>
               </div>
-            )}
 
 
 
@@ -173,7 +146,6 @@ export default function Header01() {
 
 
 
-              {isConnected ? (
                 <div>
                   <button className="dropdown-toggle border-jacarta-100 hover:bg-accent focus:bg-accent group dark:hover:bg-accent ml-2 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]">
                     <svg
@@ -188,7 +160,6 @@ export default function Header01() {
                     </svg>
                   </button>
                 </div>
-              ) : ""}
 
               <div className="dropdown-menu dark:bg-jacarta-800 group-dropdown-hover:opacity-100 group-dropdown-hover:visible !-right-4 !top-[85%] !left-auto z-10 min-w-[14rem] whitespace-nowrap rounded-xl bg-white transition-all will-change-transform before:absolute before:-top-3 before:h-3 before:w-full lg:absolute lg:grid lg:!translate-y-4 lg:py-4 lg:px-2 lg:shadow-2xl hidden lg:invisible lg:opacity-0">
                 <div>
@@ -274,7 +245,7 @@ export default function Header01() {
                     <path fill="none" d="M0 0h24v24H0z" />
                     <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zM7 11V8l-5 4 5 4v-3h8v-2H7z" />
                   </svg>
-                  <span onClick={disconnectWallet} className="font-display text-jacarta-700 mt-1 text-sm dark:text-white">
+                  <span onClick={logout} className="font-display text-jacarta-700 mt-1 text-sm dark:text-white">
                     Sign out
                   </span>
 
