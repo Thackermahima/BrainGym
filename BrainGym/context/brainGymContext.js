@@ -108,30 +108,37 @@ export const BrainGymAuthContextProvider = (props) => {
 
 
   const getTokensOfCollection = async (tokenContractAddress) => {
+    console.log("addr:", tokenContractAddress);
 
     const querySnapshot = await getDocs(collectionRef);
     const data = querySnapshot.docs.map((doc) => doc.data());
     console.log("Fetched data:", data);
+    const metadatas = [];
+ 
+    const provider = await new ethers.providers.Web3Provider(window.ethereum);
+    const contract = new ethers.Contract(
+      tokenContractAddress,
+      basicABI,
+      provider
+    );
+    const result = await contract.getCounter();
+    let count = result.toNumber();
+    console.log("cccc:", count);
 
+    for (let i = 0; i <= data.length - 1; i++) {
+      if(data[i].tokenContractAddress == tokenContractAddress){
+        for(let j = 0; j < count; j++){
+          let tokenURI = data[i].url;
+          const response = await fetch(tokenURI);
+          const metadata = await response.json();
+          metadatas.push(metadata);
+        }
+      }
 
+    }
+    console.log('final data',metadatas);
 
-    // console.log('both----', tokenContractAddress);
-    // const q = query(
-    //   collection(firestore, "NFTCollection"),
-    //   where("tokenContractAddress", "==", tokenContractAddress)
-    // );
-
-
-    // const provider = await new ethers.providers.Web3Provider(window.ethereum);
-    // const contract = new ethers.Contract(
-    //   tokenContractAddress,
-    //   basicABI,
-    //   provider
-    // );
-    // const result = await contract.getCounter();
-    // let count = result.toNumber();
-
-
+    return metadatas;
 
     // const querySnapshot = await getDocs(q);
     // console.log(querySnapshot);
