@@ -70,11 +70,8 @@ const Create = () => {
       signer
     );
     const tx = await contract.createNFTCollection("dhruv", "DRV");
-    console.log(tx,'--tx');
     let txc = await tx.wait();
-    console.log(txc,"txc");
     let event = txc.events[0];
-    console.log('event', event);
     let tokenContractAddress = event.args[1];
     console.log('tokenContractAddress', tokenContractAddress);
 

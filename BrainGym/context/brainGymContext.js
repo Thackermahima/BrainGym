@@ -7,6 +7,7 @@ import { ethers } from 'ethers';
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc, getDocs, query, where } from "firebase/firestore";
 import { basicABI } from "../constant/constant";
+import { formatEther } from "ethers/lib/utils";
 
 // import { getDatabase, ref, set } from "firebase/database";
 export const BrainGymAuthContext = createContext(undefined);
@@ -149,14 +150,17 @@ export const BrainGymAuthContextProvider = (props) => {
     const provider = await new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     let userAdd = localStorage.getItem("walletAddress");
+    console.log(userAdd);
     const contract = new ethers.Contract(
       contractAdd,
       basicABI,
       signer
     );
-console.log(contract);
+    const value = price + 100000000000000000;
+
+
 // let tx = await contract.purchaseItem(tokenId,)
-    let tx = await contract.purchaseItem(tokenId, 0x80980101952Ba45879A567dc6A885D23fA8D116c, { value: ethers.utils.parseUnits(price.toString(), "ether"), })
+    let tx = await contract.purchaseItem(tokenId,userAdd , { value: value.toString() });
     let txc = await tx.wait();
   }
 
