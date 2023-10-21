@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 const { ethers } = require('ethers');
 import { BrainGymAuthContext } from '../../context/brainGymContext';
 import { basicABI } from '../../constant/constant';
-import { count } from 'firebase/firestore';
 const ExpertsCollectionDetail = () => {
 
     const router = useRouter();
@@ -12,41 +11,27 @@ const ExpertsCollectionDetail = () => {
     console.log();
     const superCbrainGymContext = React.useContext(BrainGymAuthContext);
     const { getTokensOfCollection } = superCbrainGymContext;
+    const [allNfts, setAllNfts] = useState([]);
 
     useEffect(() => {
-      // Call your function here
-      // if ( contractAdd && contractAdd != undefined){
-      //   let count = getCounter();
-      //   getTokensOfCollection(contractAdd, count);    
-      // }
-
-
-
-              
       const delay = 2000; 
       const timer = setTimeout(() => {
-        // Call your function here
-        // let count = getCounter(); 
-        getTokensOfCollection(contractAdd);    
+      getTokens();
       }, delay);
   
       return () => clearTimeout(timer);
-
-
     }, [contractAdd]);
-    console.log(contractAdd, '---contractAdd');
-
-    const getCounter = async () => {
-      const provider = await new ethers.providers.Web3Provider(window.ethereum);
-      const contract = new ethers.Contract(
-        contractAdd,
-        basicABI,
-        provider
-      );
-      const result = await contract.getCounter();
-      console.log(result.toNumber());
-    return result.toNumber();
+    console.log(allNfts, '---alltokens');
+ 
+    const getTokens = async ()=> {
+      let allTokens = await getTokensOfCollection(contractAdd);    
+      console.log('alltkns', allTokens);
+      setAllNfts(allTokens);
     }
+
+
+
+
     return (
          <>
       <h1 style={{ marginTop: "10%", fontSize: "30px", fontWeight: "bolder" }} className="ml-5" > Disha' Collections</h1>
@@ -55,9 +40,9 @@ const ExpertsCollectionDetail = () => {
         style={{ marginTop: "5%" }}>
 
   
-
-
-        <article >
+      { allNfts?.length > 0 && allNfts.map((item) => {
+        return(
+          <article >
           {/* <Link
             href="/expertsCollectionDetail/[id]"
             as={`/expertsCollectionDetail/${2}`}  // Manually set the ID for now
@@ -65,10 +50,10 @@ const ExpertsCollectionDetail = () => {
            
             <div className="dark:bg-jacarta-700 dark:border-jacarta-700 border-jacarta-100 rounded-2.5xl block border bg-white p-[1.1875rem] transition-shadow hover:shadow-lg">
               <figure className="relative">
-                 <Image
+                 <img
                   width={230}
                   height={230}
-                  src="/images/meme.jpeg"
+                  src={item?.img}
                   alt="item 5"
                   className="w-full h-[230px] rounded-[0.625rem] object-cover"
                 />
@@ -79,7 +64,7 @@ const ExpertsCollectionDetail = () => {
               </figure>
               <div className="mt-7 flex items-center justify-between">
                  <span className="font-display text-jacarta-700 hover:text-accent text-base dark:text-white">
-                  Expert's name
+                 {item?.title}
                 </span>
                 
               </div>
@@ -95,13 +80,17 @@ const ExpertsCollectionDetail = () => {
                  
 
                 <span className="group-hover:text-accent font-display dark:text-jacarta-200 text-sm font-semibold">
-                  DM : 60 min
+                  DM :{item?.sessionTime}
                 </span>
                 {/* </Link> */}
               </div>
             </div>
           {/* </Link> */}
         </article>
+        )
+      })}
+
+        
 
       </div>
 
