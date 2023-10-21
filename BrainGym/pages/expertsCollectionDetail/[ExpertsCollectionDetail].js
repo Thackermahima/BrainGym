@@ -1,15 +1,54 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
 
+const { ethers } = require('ethers');
+import { BrainGymAuthContext } from '../../context/brainGymContext';
+import { basicABI } from '../../constant/constant';
+import { count } from 'firebase/firestore';
 const ExpertsCollectionDetail = () => {
 
     const router = useRouter();
-    const id = router.query.ExpertsCollectionDetail;
+    const contractAdd = router.query.ExpertsCollectionDetail;
+    console.log();
+    const superCbrainGymContext = React.useContext(BrainGymAuthContext);
+    const { getTokensOfCollection } = superCbrainGymContext;
 
-    console.log(id, '---id');
+    useEffect(() => {
+        // Call your function here
+        // if ( contractAdd && contractAdd != undefined){
+        //   let count = getCounter();
+        //   getTokensOfCollection(contractAdd, count);    
+        // }
 
+
+
+
+        const delay = 2000;
+        const timer = setTimeout(() => {
+            // Call your function here
+            // let count = getCounter(); 
+            getTokensOfCollection(contractAdd);
+        }, delay);
+
+        return () => clearTimeout(timer);
+
+
+    }, [contractAdd]);
+    console.log(contractAdd, '---contractAdd');
+
+    const getCounter = async () => {
+        const provider = await new ethers.providers.Web3Provider(window.ethereum);
+        const contract = new ethers.Contract(
+            contractAdd,
+            basicABI,
+            provider
+        );
+        const result = await contract.getCounter();
+        console.log(result.toNumber());
+        return result.toNumber();
+    }
     return (
         <>
             <h1 style={{ marginTop: "10%", fontSize: "30px", fontWeight: "bolder" }} className="ml-5" > Disha' Collections</h1>
@@ -48,8 +87,8 @@ const ExpertsCollectionDetail = () => {
                     </div>
                 </article>
 
-                
-              
+
+
 
             </div>
 

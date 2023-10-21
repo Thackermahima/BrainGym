@@ -7,11 +7,12 @@ contract NFTRecordKeeper {
     mapping(address => uint256[]) contractTokenIds;
     address[] tokenContracts;
 
-
+ event TokenCreated(address, address);
     function createNFTCollection(string memory name, string memory symbol)
         public
     {
         address _address = address(new BasicNFTMarketplace(name, symbol)); // Created Token contract.
+         emit TokenCreated(msg.sender, _address);
     }
 
     function bulkMintERC721(

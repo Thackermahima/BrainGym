@@ -19,6 +19,10 @@ contract BasicNFTMarketplace is ERC721 {
         bool sold;
     }
 
+    function getCounter() public view returns (uint){
+        return tokenCounter;
+    }
+
 
     constructor(string memory _name, string memory _symbol)
         ERC721(_name, _symbol)
