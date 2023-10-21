@@ -72,12 +72,11 @@ const ExpertsCollectionDetail = () => {
                   <div className="font-display text-jacarta-700 hover:text-accent text-base dark:text-white mt-5 mb-3">
 
 
-                    <Link
-                      href="/collection/explore_collection"
-                      className=" mt-5 text-accent shadow-white-volume hover:bg-accent-dark hover:shadow-accent-volume w-36 rounded-full bg-white py-3 px-8 text-center font-semibold transition-all hover:text-white "
+                    <button
+                      className=" mt-5 text-accent shadow-white-volume hover:bg-accent-dark hover:shadow-accent-volume w-36 rounded-full bg-white py-3 px-3 text-center font-semibold transition-all hover:text-white "
                     >
                       Buy for : 1 MNT
-                    </Link>
+                    </button>
                   </div>
 
                 </div>

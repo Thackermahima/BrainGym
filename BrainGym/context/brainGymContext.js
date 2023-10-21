@@ -106,6 +106,24 @@ export const BrainGymAuthContextProvider = (props) => {
   //   })
   // }
 
+  const getSingleCollection = async (tokenContractAddress) => {
+
+    const querySnapshot = await getDocs(collectionRef);
+    const data = querySnapshot.docs.map((doc) => doc.data());
+    console.log("Fetched data:", data);
+    const metadatas = [];
+ 
+    for (let i = 0; i <= data.length - 1; i++) {
+      if(data[i].tokenContractAddress == tokenContractAddress){
+        let tokenURI = data[i].url;
+          const response = await fetch(tokenURI);
+          const metadata = await response.json();
+          metadatas.push(metadata); 
+      }
+    }
+    return metadatas;
+  }
+
 
   const getTokensOfCollection = async (tokenContractAddress) => {
     console.log("addr:", tokenContractAddress);
@@ -139,37 +157,10 @@ export const BrainGymAuthContextProvider = (props) => {
     console.log('final data',metadatas);
 
     return metadatas;
-
-    // const querySnapshot = await getDocs(q);
-    // console.log(querySnapshot);
-    // for (let i = 0; i < count; i++) {
-    //   console.log('log in loop');
-    //   const fire = querySnapshot.data;
-    //   console.log('fire h', fire);
+ 
+  } 
 
 
-  }
-  // querySnapshot.forEach((fire) => {
-  //   const data = {
-  //     owner: localStorage.getItem('address'),
-  //   };
-  //   const dataref = doc(db, "TokenUri", fire.id);
-  //   updateDoc(dataref, data);
-  // })
-// }
-
-//   // fetchAllDataFromCollection()
-
-//   async function getSignerFromProvider() {
-//     if (typeof window !== "undefined" && window.ethereum) {
-//       const provider = new ethers.providers.Web3Provider(window.ethereum);
-//       setProvider(provider);
-//       const signer = provider.getSigner();
-//       setSigner(signer);
-//     } else {
-//       console.log('No wallet connected or logged out');
-//     }
-//   }
 
 
 const login = async () => {
@@ -264,7 +255,7 @@ return (
       logout,
       uploadOnIpfs,
       handleImgUpload,
-      // getProfileData,
+      getSingleCollection,
       getCollection,
       allCollection,
       storeDataInFirebase,

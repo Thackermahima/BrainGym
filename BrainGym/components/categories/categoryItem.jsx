@@ -15,10 +15,16 @@ const CategoryItem = () => {
   );
   const dispatch = useDispatch();
   const superCbrainGymContext = React.useContext(BrainGymAuthContext);
-  const { login, logout, allCollection } = superCbrainGymContext;
+  const { allCollection } = superCbrainGymContext;
+
+  allCollection.map((item) => {
+    console.log(item);
+    console.log(item.img);
+  })
+
   return (
     <div className="grid grid-cols-1 gap-[1.875rem] md:grid-cols-2 lg:grid-cols-4">
-      {sortedtrendingCategoryItemData.map((item) => {
+      {/* {sortedtrendingCategoryItemData.map((item) => {
         const {
           id,
           image,
@@ -32,59 +38,71 @@ const CategoryItem = () => {
           .slice(-1)
           .toString()
           .replace(".jpg", "")
-          .replace(".gif", "");
-        return (
-          <article key={id}>
-            <div className="dark:bg-jacarta-700 dark:border-jacarta-700 border-jacarta-100 rounded-2.5xl block border bg-white p-[1.1875rem] transition-shadow hover:shadow-lg">
-              <figure className="relative">
-                <Link href={`/item/${itemLink}`}>
-                  <Image
-                    width={230}
-                    height={230}
-                    src={image}
-                    alt="item 5"
-                    className="w-full h-[230px] rounded-[0.625rem] object-cover"
-                  />
-                </Link>
+          .replace(".gif", ""); */}
+      {/* return ( */}
 
-                <Likes like={likes} />
-              </figure>
-              <div className="mt-7 flex items-center justify-between">
-                <Link href={`/item/${itemLink}`}>
-                  <span className="font-display text-jacarta-700 hover:text-accent text-base dark:text-white">
-                    {title}
-                  </span>
-                </Link>
-              </div>
-              <div className="mt-2 text-sm">
-                <span className="dark:text-jacarta-200 text-jacarta-700 mr-1">
-                  {price}
-                </span>
-              </div>
+      {
+        allCollection.map((item) => {
+          return (
+            <article >
+              <div className="dark:bg-jacarta-700 dark:border-jacarta-700 border-jacarta-100 rounded-2.5xl block border bg-white p-[1.1875rem] transition-shadow hover:shadow-lg">
+                <figure className="relative">
+                  <Link href={`/item/${item?.tokenContractAddress}`}>
+                    <img
+                      width={230}
+                      height={230}
+                      src={item.img}
+                      alt="item 5"
+                      className="w-full h-[230px] rounded-[0.625rem] object-cover"
+                    />
+                  </Link>
 
-              <div className="mt-8 flex items-center justify-between">
-                <button
-                  className="text-accent font-display text-sm font-semibold"
-                // onClick={() => dispatch(buyModalShow())}
-                >
-                  Book now
-                </button>
-                <Link
-                  href={`/item/${itemLink}`}
-                  className="group flex items-center"
-                >
-                  <svg className="icon icon-history group-hover:fill-accent dark:fill-jacarta-200 fill-jacarta-500 mr-1 mb-[3px] h-4 w-4">
-                    <use xlinkHref="/icons.svg#icon-history"></use>
-                  </svg>
-                  <span className="group-hover:text-accent font-display dark:text-jacarta-200 text-sm font-semibold">
-                    {time_duration}
+                  {/* <Likes like={likes} /> */}
+                </figure>
+                <div className="mt-7 flex items-center justify-between">
+                  <Link href={`/item/${item?.tokenContractAddress}`}>
+
+                    <span className="font-display text-jacarta-700 hover:text-accent text-base dark:text-white">
+                      {item.title}
+                    </span>
+                  </Link>
+                </div>
+                <div className="mt-2 text-sm">
+                  <span className="dark:text-jacarta-200 text-jacarta-700 mr-1">
+                    {item.price} ETH
                   </span>
-                </Link>
+                </div>
+
+                <div className="mt-8 flex items-center justify-between">
+                  <Link href={`/item/${item?.tokenContractAddress}`}>
+                    <button
+                      className="text-accent font-display text-sm font-semibold"
+                    // onClick={() => dispatch(buyModalShow())}
+                    >
+                      Book now
+                    </button>
+                  </Link>
+
+                  <Link href={`/item/${item?.tokenContractAddress}`}
+                    className="group flex items-center"
+                  >
+                    <svg className="icon icon-history group-hover:fill-accent dark:fill-jacarta-200 fill-jacarta-500 mr-1 mb-[3px] h-4 w-4">
+                      <use xlinkHref="/icons.svg#icon-history"></use>
+                    </svg>
+                    <span className="group-hover:text-accent font-display dark:text-jacarta-200 text-sm font-semibold">
+                      {item.sessionTime}
+                    </span>
+                  </Link>
+                </div>
               </div>
-            </div>
-          </article>
-        );
-      })}
+            </article>
+          )
+
+        })
+      }
+
+      {/* );
+      })} */}
     </div>
   );
 };
