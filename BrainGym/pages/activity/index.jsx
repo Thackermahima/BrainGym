@@ -5,7 +5,7 @@ import Image from "next/image";
 const index = () => {
   return (
     <>
-      <Meta title="Activity || " />
+      <Meta title="Activity" />
       <section className="relative mt-24 lg:pb-48 pb-24">
         <picture className="pointer-events-none absolute inset-0 -z-10 dark:hidden">
           <Image

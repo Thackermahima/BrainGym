@@ -14,7 +14,7 @@ const Blog = () => {
   };
   return (
     <>
-      <Meta title="Blog || " />
+      <Meta title="Blog" />
       {/* <!-- Blog --> */}
       <section className="relative  pt-[5.5rem] lg:pt-24">
         <div className="py-16 md:py-24">

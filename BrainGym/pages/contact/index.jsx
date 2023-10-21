@@ -10,7 +10,7 @@ const Contact = () => {
 
   return (
     <div>
-      <Meta title="Contact || " />
+      <Meta title="Contact" />
       <div className="pt-[5.5rem] lg:pt-24">
         <ImageTitle text="Get in touch" image={bgImage} />
 
