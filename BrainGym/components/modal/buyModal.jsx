@@ -68,7 +68,18 @@ const BuyModal = () => {
                   />
                 </div>
               </div>
-
+              <div className="mb-6 ">
+                <label className="font-display text-jacarta-700 mb-1 block text-sm dark:text-white">
+                  Wallet Address:<span className="text-red">*</span>
+                </label>
+                <input
+                  name="address"
+                  className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 hover:ring-2 dark:text-white"
+                  id="address"
+                  type="text"
+                  required
+                />
+              </div>
               <div className="mb-4">
                 <label className="font-display text-jacarta-700 mb-1 block text-sm dark:text-white">
                   Message<span className="text-red">*</span>
@@ -125,7 +136,12 @@ const BuyModal = () => {
 
             <div className="modal-footer">
               <div className="flex items-center justify-center space-x-4">
-                <Confirm_checkout />
+                <button
+                  type="button"
+                  className="bg-accent shadow-accent-volume hover:bg-accent-dark rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
+                >
+                  Send Request
+                </button>
               </div>
             </div>
           </div>

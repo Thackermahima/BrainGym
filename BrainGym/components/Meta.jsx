@@ -4,7 +4,7 @@ const Meta = ({ title, keyword, desc }) => {
   return (
     <div>
       <Head>
-        <title>{title} || brainGym NFT Marketplace Next.js Template</title>
+        <title>{title} || brainGym</title>
         <link rel="icon" href="/favicon.png" />
         <meta name="description" content={desc} />
         <meta name="keyword" content={keyword} />

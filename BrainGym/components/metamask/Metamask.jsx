@@ -198,7 +198,7 @@ const Metamask_comp_icon = ({ prop }) => {
               ? "js-wallet border-jacarta-100  focus:bg-accent group hover:bg-accent flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent border-transparent bg-white/[.15]"
               : "js-wallet border-jacarta-100 hover:bg-accent focus:bg-accent group dark:hover:bg-accent flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
           }
-          // onClick={() => dispatch(walletModalShow())}
+        // onClick={() => dispatch(walletModalShow())}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -227,7 +227,7 @@ const Metamask_comp_icon = ({ prop }) => {
               ? "js-wallet border-jacarta-100  focus:bg-accent group hover:bg-accent flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent border-transparent bg-white/[.15]"
               : "js-wallet border-jacarta-100 hover:bg-accent focus:bg-accent group dark:hover:bg-accent flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
           }
-          // onClick={() => dispatch(walletModalShow())}
+        // onClick={() => dispatch(walletModalShow())}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -284,7 +284,7 @@ const Metamask_comp_icon = ({ prop }) => {
               ? "js-wallet border-jacarta-100  focus:bg-accent group hover:bg-accent flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent border-transparent bg-white/[.15]"
               : "js-wallet border-jacarta-100 hover:bg-accent focus:bg-accent group dark:hover:bg-accent flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
           }
-          // onClick={() => dispatch(walletModalShow())}
+        // onClick={() => dispatch(walletModalShow())}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

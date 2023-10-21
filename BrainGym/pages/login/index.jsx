@@ -28,7 +28,7 @@ const Login = () => {
 
   return (
     <div>
-      <Meta title="Login || " />
+      <Meta title="Login " />
       {/* <!-- Login --> */}
       <section className="relative h-screen">
         <div className="lg:flex lg:h-full">
