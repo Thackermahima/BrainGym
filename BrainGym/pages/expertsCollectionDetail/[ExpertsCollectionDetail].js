@@ -4,7 +4,6 @@ import Image from 'next/image';
 const { ethers } = require('ethers');
 import { BrainGymAuthContext } from '../../context/brainGymContext';
 import { basicABI } from '../../constant/constant';
-import Link from 'next/link';
 
 const ExpertsCollectionDetail = () => {
 
@@ -12,7 +11,7 @@ const ExpertsCollectionDetail = () => {
   const contractAdd = router.query.ExpertsCollectionDetail;
   console.log();
   const superCbrainGymContext = React.useContext(BrainGymAuthContext);
-  const { getTokensOfCollection } = superCbrainGymContext;
+  const { getTokensOfCollection , buyNftToken} = superCbrainGymContext;
   const [allNfts, setAllNfts] = useState([]);
 
   useEffect(() => {
@@ -31,7 +30,22 @@ const ExpertsCollectionDetail = () => {
     setAllNfts(allTokens);
   }
 
+  // const buyNftToken = async (tokenId,price) => {
 
+  //   const provider = new ethers.providers.Web3Provider(window.ethereum);
+  //   const signer = provider.getSigner();
+  //   const contract = new ethers.Contract(
+  //     contractAdd,
+  //     basicABI,
+  //     signer
+  //   );
+
+  //   let tx = await contract.purchaseItem(tokenId, localStorage.getItem("walletAddress"), { value: ethers.utils.parseUnits(price.toString(), "ether"), })
+  //   let txc = await tx.wait();
+
+  // }
+ 
+  
 
 
   return (
@@ -67,17 +81,19 @@ const ExpertsCollectionDetail = () => {
                 <div className="mt-7  items-center justify-between" style={{ textAlign: "center" }} >
 
                   <span className="font-display text-jacarta-700 hover:text-accent text-base dark:text-white " >
-                    21 DSA
+                    # 21 DSA
                   </span>
                   <div className="font-display text-jacarta-700 hover:text-accent text-base dark:text-white mt-5 mb-3">
 
 
-                    <Link
-                      href="/collection/explore_collection"
-                      className=" mt-5 text-accent shadow-white-volume hover:bg-accent-dark hover:shadow-accent-volume w-36 rounded-full bg-white py-3 px-8 text-center font-semibold transition-all hover:text-white "
+                    <button
+                     onClick={() => {
+                      buyNftToken(contractAdd,item?.tokenid,item?.price);
+                    }}
+                      className=" text-accent shadow-white-volume hover:bg-accent-dark hover:shadow-accent-volume w-56 rounded-full bg-white py-3 px-8 text-center font-semibold transition-all hover:text-white "
                     >
-                      Buy for : 1 MNT
-                    </Link>
+                      Buy for : {item?.price} ETH
+                    </button>
                   </div>
 
                 </div>

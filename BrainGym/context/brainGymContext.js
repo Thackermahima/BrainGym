@@ -114,7 +114,7 @@ export const BrainGymAuthContextProvider = (props) => {
     const data = querySnapshot.docs.map((doc) => doc.data());
     console.log("Fetched data:", data);
     const metadatas = [];
- 
+
     const provider = await new ethers.providers.Web3Provider(window.ethereum);
     const contract = new ethers.Contract(
       tokenContractAddress,
@@ -126,154 +126,145 @@ export const BrainGymAuthContextProvider = (props) => {
     console.log("cccc:", count);
 
     for (let i = 0; i <= data.length - 1; i++) {
-      if(data[i].tokenContractAddress == tokenContractAddress){
-        for(let j = 0; j < count; j++){
+      if (data[i].tokenContractAddress == tokenContractAddress) {
+        for (let j = 0; j < count; j++) {
           let tokenURI = data[i].url;
           const response = await fetch(tokenURI);
           const metadata = await response.json();
+          metadata.tokenid = j;
+          console.log('aa in this', metadata);
           metadatas.push(metadata);
         }
       }
 
     }
-    console.log('final data',metadatas);
+    console.log('final data', metadatas);
 
     return metadatas;
-
-    // const querySnapshot = await getDocs(q);
-    // console.log(querySnapshot);
-    // for (let i = 0; i < count; i++) {
-    //   console.log('log in loop');
-    //   const fire = querySnapshot.data;
-    //   console.log('fire h', fire);
-
-
   }
-  // querySnapshot.forEach((fire) => {
-  //   const data = {
-  //     owner: localStorage.getItem('address'),
-  //   };
-  //   const dataref = doc(db, "TokenUri", fire.id);
-  //   updateDoc(dataref, data);
-  // })
-// }
-
-//   // fetchAllDataFromCollection()
-
-//   async function getSignerFromProvider() {
-//     if (typeof window !== "undefined" && window.ethereum) {
-//       const provider = new ethers.providers.Web3Provider(window.ethereum);
-//       setProvider(provider);
-//       const signer = provider.getSigner();
-//       setSigner(signer);
-//     } else {
-//       console.log('No wallet connected or logged out');
-//     }
-//   }
 
 
-const login = async () => {
-  if (!window.ethereum) return;
-  try {
-    const accounts = await window.ethereum.request({
-      method: "eth_requestAccounts",
-    });
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('walletAddress', accounts[0]);
+  const buyNftToken = async (contractAdd, tokenId, price) => {
+    console.log(contractAdd,tokenId,price);
+    const provider = await new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    let userAdd = localStorage.getItem("walletAddress");
+    const contract = new ethers.Contract(
+      contractAdd,
+      basicABI,
+      signer
+    );
+console.log(contract);
+// let tx = await contract.purchaseItem(tokenId,)
+    let tx = await contract.purchaseItem(tokenId, 0x80980101952Ba45879A567dc6A885D23fA8D116c, { value: ethers.utils.parseUnits(price.toString(), "ether"), })
+    let txc = await tx.wait();
+  }
+
+
+
+  const login = async () => {
+    if (!window.ethereum) return;
+    try {
+      const accounts = await window.ethereum.request({
+        method: "eth_requestAccounts",
+      });
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('walletAddress', accounts[0]);
+      }
+
+    } catch (error) {
+      console.error('Login error:', error);
     }
-
-  } catch (error) {
-    console.error('Login error:', error);
   }
-}
 
-const logout = async () => {
-  localStorage.removeItem('walletAddress');
-}
+  const logout = async () => {
+    localStorage.removeItem('walletAddress');
+  }
 
-const auth =
-  "Basic " +
-  Buffer.from(
-    process.env.infuraProjectKey + ":" + process.env.infuraSecretKey
-  ).toString("base64");
+  const auth =
+    "Basic " +
+    Buffer.from(
+      process.env.infuraProjectKey + ":" + process.env.infuraSecretKey
+    ).toString("base64");
 
-const client = create({
-  host: "ipfs.infura.io",
-  port: 5001,
-  protocol: "https",
-  headers: {
-    authorization: auth,
-  },
-});
-
-
-
-//   const getProfileData = async (add) => {
-//     const provider = new ethers.providers.Web3Provider(window.ethereum);
-//     const signer = provider.getSigner();
-
-//     const contract = new ethers.Contract(
-//       SUPER_COOL_NFT_CONTRACT,
-//       abi,
-//       signer
-//     );
-//     console.log('use add--', add);
-//     if (add !== undefined) {
-//       const dataurl = await contract.getUserProfile(add);
-//       console.log(dataurl);
-//       const response = await axios.get(dataurl);
-//       // console.log(response.data);
-//       return response;
-//     }
-//   }
+  const client = create({
+    host: "ipfs.infura.io",
+    port: 5001,
+    protocol: "https",
+    headers: {
+      authorization: auth,
+    },
+  });
 
 
 
-const uploadOnIpfs = async (e) => {
-  let dataStringify = JSON.stringify(e);
-  const ipfsResult = await client.add(dataStringify);
-  const contentUri = `https://superfun.infura-ipfs.io/ipfs/${ipfsResult.path}`;
+  //   const getProfileData = async (add) => {
+  //     const provider = new ethers.providers.Web3Provider(window.ethereum);
+  //     const signer = provider.getSigner();
 
-  return contentUri;
-}
-
-const handleImgUpload = async (file) => {
-  console.log(file);
-  const added = await client.add(file);
-  const hash = added.path;
-  const ipfsURL = `https://superfun.infura-ipfs.io/ipfs/${hash}`;
-  return ipfsURL;
-};
-
-// Edit profile
-
-//   const uploadDatainIpfs = async (e) => {
-//     let dataStringify = JSON.stringify(e);
-//     const ipfsResult = await client.add(dataStringify);
-//     const contentUri = `https://superfun.infura-ipfs.io/ipfs/${ipfsResult.path}`;
-//     console.log('contentUri', contentUri);
-//     return contentUri;
-//   }
+  //     const contract = new ethers.Contract(
+  //       SUPER_COOL_NFT_CONTRACT,
+  //       abi,
+  //       signer
+  //     );
+  //     console.log('use add--', add);
+  //     if (add !== undefined) {
+  //       const dataurl = await contract.getUserProfile(add);
+  //       console.log(dataurl);
+  //       const response = await axios.get(dataurl);
+  //       // console.log(response.data);
+  //       return response;
+  //     }
+  //   }
 
 
 
-return (
-  <BrainGymAuthContext.Provider
-    value={{
-      login,
-      logout,
-      uploadOnIpfs,
-      handleImgUpload,
-      // getProfileData,
-      getCollection,
-      allCollection,
-      storeDataInFirebase,
-      getTokensOfCollection
-    }}
-    {...props}
-  >
-    {props.children}
-  </BrainGymAuthContext.Provider>
-);
+  const uploadOnIpfs = async (e) => {
+    let dataStringify = JSON.stringify(e);
+    const ipfsResult = await client.add(dataStringify);
+    const contentUri = `https://superfun.infura-ipfs.io/ipfs/${ipfsResult.path}`;
+
+    return contentUri;
+  }
+
+  const handleImgUpload = async (file) => {
+    console.log(file);
+    const added = await client.add(file);
+    const hash = added.path;
+    const ipfsURL = `https://superfun.infura-ipfs.io/ipfs/${hash}`;
+    return ipfsURL;
+  };
+
+  // Edit profile
+
+  //   const uploadDatainIpfs = async (e) => {
+  //     let dataStringify = JSON.stringify(e);
+  //     const ipfsResult = await client.add(dataStringify);
+  //     const contentUri = `https://superfun.infura-ipfs.io/ipfs/${ipfsResult.path}`;
+  //     console.log('contentUri', contentUri);
+  //     return contentUri;
+  //   }
+
+
+
+  return (
+    <BrainGymAuthContext.Provider
+      value={{
+        login,
+        logout,
+        uploadOnIpfs,
+        handleImgUpload,
+        // getProfileData,
+        getCollection,
+        buyNftToken,
+        allCollection,
+        storeDataInFirebase,
+        getTokensOfCollection
+      }}
+      {...props}
+    >
+      {props.children}
+    </BrainGymAuthContext.Provider>
+  );
 };
 

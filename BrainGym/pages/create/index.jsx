@@ -44,24 +44,7 @@ const Create = () => {
     console.log(sessionTime);
   };
 
-
-
-  const getCounter = async () => {
-    const provider = await new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSigner();
-    let contractAdd = '0x00E1a7Ab90D26BBf6e4EA66Ab488ff438c2C3675';
-    const contract = new ethers.Contract(
-      contractAdd,
-      basicABI,
-      provider
-    );
-    console.log(contract);
-    const result = await contract.getTokenCounter();
-    console.log(result.toNumber());
-
-  }
-
-
+ 
   const GenerateCollection = async () => {
 
     const nftCollectionData = {
