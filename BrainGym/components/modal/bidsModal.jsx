@@ -60,7 +60,7 @@ const BidsModal = () => {
 
                 <input
                   type="number"
-                  className="focus:ring-accent h-12 w-full flex-[3] border-0 focus:ring-inse dark:text-jacarta-700"
+                  className="focus:ring-jacarta-500 h-12 w-full flex-[3] border-0 focus:ring-inse dark:text-jacarta-700"
                   placeholder="Amount"
                   value={ETHAmount}
                   onChange={(e) => handleEThAmount(e)}
@@ -82,7 +82,7 @@ const BidsModal = () => {
                 <input
                   type="checkbox"
                   id="terms"
-                  className="checked:bg-accent dark:bg-jacarta-600 text-accent border-jacarta-200 focus:ring-accent/20 dark:border-jacarta-500 h-5 w-5 self-start rounded focus:ring-offset-0"
+                  className="checked:bg-accent dark:bg-jacarta-600 text-accent border-jacarta-200 focus:ring-jacarta-500/20 dark:border-jacarta-500 h-5 w-5 self-start rounded focus:ring-offset-0"
                 />
                 <label
                   htmlFor="terms"
@@ -101,7 +101,7 @@ const BidsModal = () => {
               <div className="flex items-center justify-center space-x-4">
                 <button
                   type="button"
-                  className="bg-accent shadow-accent-volume hover:bg-accent-dark rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
+                  className="bg-accent shadow-accent-volume hover:bg-jacarta-500-dark rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
                 >
                   Place Bid
                 </button>

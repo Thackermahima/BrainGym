@@ -20,13 +20,11 @@ const FilterRightMenu = () => {
       {menuItems.map((menuItem) => (
         <div
           key={menuItem.id}
-          className={`flex h-10 w-full cursor-pointer items-center justify-center whitespace-nowrap border ${
-            activeMenu === menuItem.id
+          className={`flex h-10 w-full cursor-pointer items-center justify-center whitespace-nowrap border ${activeMenu === menuItem.id
               ? "border-transparent bg-accent text-white"
               : "border-jacarta-100 bg-white dark:border-jacarta-600 dark:bg-jacarta-700"
-          } p-3 ${menuItem.id === "24h" ? "first:rounded-l-lg" : ""} ${
-            menuItem.id === "15m" ? "last:rounded-r-lg" : ""
-          } hover:border-transparent hover:bg-accent hover:text-white sm:px-4 sm:py-2`}
+            } p-3 ${menuItem.id === "24h" ? "first:rounded-l-lg" : ""} ${menuItem.id === "15m" ? "last:rounded-r-lg" : ""
+            } hover:border-transparent hover:bg-jacarta-500 hover:text-white sm:px-4 sm:py-2`}
           onClick={() => handleMenuClick(menuItem.id)}
         >
           {menuItem.label}

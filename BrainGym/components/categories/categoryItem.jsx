@@ -49,7 +49,7 @@ const CategoryItem = () => {
               </figure>
               <div className="mt-7 flex items-center justify-between">
                 <Link href={`/item/${itemLink}`}>
-                  <span className="font-display text-jacarta-700 hover:text-accent text-base dark:text-white">
+                  <span className="font-display text-jacarta-700 hover:text-jacarta-500 text-base dark:text-white">
                     {title}
                   </span>
                 </Link>
@@ -62,7 +62,7 @@ const CategoryItem = () => {
 
               <div className="mt-8 flex items-center justify-between">
                 <button
-                  className="text-accent font-display text-sm font-semibold"
+                  className="hover:text-jacarta-500  text-white font-display text-sm font-semibold hover:bg-white  bg-jacarta-500  shadow-md p-2 rounded-lg"
                   onClick={() => dispatch(buyModalShow())}
                 >
                   Book now
@@ -71,10 +71,10 @@ const CategoryItem = () => {
                   href={`/item/${itemLink}`}
                   className="group flex items-center"
                 >
-                  <svg className="icon icon-history group-hover:fill-accent dark:fill-jacarta-200 fill-jacarta-500 mr-1 mb-[3px] h-4 w-4">
+                  <svg className="icon icon-history group-hover:fill-jacarta-300 dark:fill-jacarta-200 fill-jacarta-500 mr-1 mb-[3px] h-4 w-4">
                     <use xlinkHref="/icons.svg#icon-history"></use>
                   </svg>
-                  <span className="group-hover:text-accent font-display dark:text-jacarta-200 text-sm font-semibold">
+                  <span className="group-hover:text-jacarta-500 font-display dark:text-jacarta-200 text-sm font-semibold">
                     {time_duration}
                   </span>
                 </Link>

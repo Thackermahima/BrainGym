@@ -48,6 +48,7 @@ const User_items = () => {
           <Tabs className="tabs">
             <TabList className="nav nav-tabs scrollbar-custom mb-12 flex items-center justify-start overflow-x-auto overflow-y-hidden border-b border-jacarta-100 pb-px dark:border-jacarta-600 md:justify-center">
               {tabItem.map(({ id, text, icon }) => {
+                console.log(id, "ud");
                 return (
                   <Tab
                     className="nav-item"
@@ -77,23 +78,23 @@ const User_items = () => {
             <TabPanel>
               <div>
                 {/* <!-- Filter --> */}
-                <CategoryItem />
+                <Trending_categories_items />
               </div>
             </TabPanel>
             <TabPanel>
               <div>
                 {/* <!-- Filter --> */}
-                <CategoryItem />
+                <Trending_categories_items />
               </div>
             </TabPanel>
             <TabPanel>
               <div>
                 {/* <!-- Filter --> */}
-                <CategoryItem />
+                <Trending_categories_items />
               </div>
             </TabPanel>
             <TabPanel>
-              <CategoryItem />
+              <Trending_categories_items />
 
             </TabPanel>
             <TabPanel>

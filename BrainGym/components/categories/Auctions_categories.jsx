@@ -108,7 +108,7 @@ const Auctions_categories = () => {
                     </figure>
                     <div className="mt-7 flex items-center justify-between">
                       <Link href={/item/ + itemLink}>
-                        <span className="font-display text-jacarta-700 hover:text-accent text-base dark:text-white">
+                        <span className="font-display text-jacarta-700 hover:text-jacarta-500 text-base dark:text-white">
                           {title}
                         </span>
                       </Link>
@@ -156,7 +156,7 @@ const Auctions_categories = () => {
             <div className="mt-10 text-center">
               <button
                 onClick={handleloadMore}
-                className="bg-accent shadow-accent-volume hover:bg-accent-dark inline-block rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
+                className="bg-accent shadow-accent-volume hover:bg-jacarta-500-dark inline-block rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
               >
                 Load More
               </button>

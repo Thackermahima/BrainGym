@@ -10,7 +10,7 @@ const ContactForm = () => {
           </label>
           <input
             name="name"
-            className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 hover:ring-2 dark:text-white"
+            className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-jacarta-500 dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 hover:ring-2 dark:text-white"
             id="name"
             type="text"
             required
@@ -23,7 +23,7 @@ const ContactForm = () => {
           </label>
           <input
             name="email"
-            className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 hover:ring-2 dark:text-white"
+            className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-jacarta-500 dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 hover:ring-2 dark:text-white"
             id="email"
             type="email"
             required
@@ -37,7 +37,7 @@ const ContactForm = () => {
         </label>
         <textarea
           id="message"
-          className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 hover:ring-2 dark:text-white"
+          className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-jacarta-500 dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 hover:ring-2 dark:text-white"
           required
           name="message"
           rows="5"
@@ -49,7 +49,7 @@ const ContactForm = () => {
           type="checkbox"
           id="contact-form-consent-input"
           name="agree-to-terms"
-          className="checked:bg-accent dark:bg-jacarta-600 text-accent border-jacarta-200 focus:ring-accent/20 dark:border-jacarta-500 h-5 w-5 self-start rounded focus:ring-offset-0 cursor-pointer"
+          className="checked:bg-accent dark:bg-jacarta-600 text-accent border-jacarta-200 focus:ring-jacarta-500/20 dark:border-jacarta-500 h-5 w-5 self-start rounded focus:ring-offset-0 cursor-pointer"
         />
         <label className="dark:text-jacarta-200 text-sm">
           I agree to the{" "}
@@ -61,7 +61,7 @@ const ContactForm = () => {
 
       <button
         type="submit"
-        className="bg-accent shadow-accent-volume hover:bg-accent-dark rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
+        className="bg-accent shadow-accent-volume hover:bg-jacarta-500-dark rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
         id="contact-form-submit"
       >
         Submit

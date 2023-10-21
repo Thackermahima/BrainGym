@@ -18,7 +18,7 @@ export default function WalletButton() {
     return (
       <button
         onClick={walletHandler}
-        className="js-wallet border-jacarta-100 hover:bg-accent focus:bg-accent group dark:hover:bg-accent flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
+        className="js-wallet border-jacarta-100 hover:bg-jacarta-500 focus:bg-jacarta-500 group dark:hover:bg-jacarta-500 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@ export default function WalletButton() {
     return (
       <button
         onClick={connect}
-        className="js-wallet border-jacarta-100 hover:bg-accent focus:bg-accent group dark:hover:bg-accent flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
+        className="js-wallet border-jacarta-100 hover:bg-jacarta-500 focus:bg-jacarta-500 group dark:hover:bg-jacarta-500 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

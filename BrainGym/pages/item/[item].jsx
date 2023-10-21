@@ -171,7 +171,7 @@ const Item = () => {
                       </div>
                     </div>
                     <button
-                      className="bg-accent shadow-accent-volume hover:bg-accent-dark inline-block w-full rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
+                      className="bg-accent shadow-accent-volume hover:bg-jacarta-500-dark inline-block w-full rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
                       onClick={() => dispatch(bidsModalShow())}
                     >
                       Confirm Booking

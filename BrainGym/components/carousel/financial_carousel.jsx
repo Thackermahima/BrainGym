@@ -45,7 +45,7 @@ const Financial_carousel = () => {
                 </span>
               </div>
 
-              <h2 className="mb-5 font-display text-xl text-jacarta-700 hover:text-accent dark:text-white dark:hover:text-accent">
+              <h2 className="mb-5 font-display text-xl text-jacarta-700 hover:text-jacarta-500 dark:text-white dark:hover:text-jacarta-500">
                 <Link href="/single_post/post_1" >
                   {title}
                 </Link>
@@ -57,7 +57,7 @@ const Financial_carousel = () => {
                 <Link
                   href="/single_post/post_1"
                   className="inline-block transition-transform will-change-transform hover:translate-x-1"
-                  >
+                >
 
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

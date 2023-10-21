@@ -108,7 +108,7 @@ const Feature_collections_carousel = () => {
 
                   <Link
                     href={`/item/item_${itemLink}`}
-                    className="font-display hover:text-accent dark:hover:text-accent text-jacarta-700 mt-4 block text-base dark:text-white"
+                    className="font-display hover:text-jacarta-500 dark:hover:text-jacarta-500 text-jacarta-700 mt-4 block text-base dark:text-white"
                   >
                     {title}
                   </Link>

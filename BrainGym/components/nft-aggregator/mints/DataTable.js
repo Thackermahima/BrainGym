@@ -194,9 +194,8 @@ const DataTable = () => {
           >
             <span className="block">{item.initialValue}</span>
             <span
-              className={`text-xs ${
-                item.percentage.includes("-") ? "text-red" : "text-green"
-              }`}
+              className={`text-xs ${item.percentage.includes("-") ? "text-red" : "text-green"
+                }`}
             >
               {item.percentage}
             </span>
@@ -264,7 +263,7 @@ const DataTable = () => {
           >
             <a
               href="#"
-              className="inline-block rounded-full bg-accent py-1 px-4 text-center text-xs font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark"
+              className="inline-block rounded-full bg-accent py-1 px-4 text-center text-xs font-semibold text-white shadow-accent-volume transition-all hover:bg-jacarta-500-dark"
             >
               Mint
             </a>

@@ -11,14 +11,14 @@ const Metamask_comp_text = () => {
 
   if (status === "initializing")
     return (
-      <div className="js-wallet bg-accent shadow-accent-volume hover:bg-accent-dark block w-full rounded-full py-3 px-8 text-center font-semibold text-white transition-all">
+      <div className="js-wallet bg-accent shadow-accent-volume hover:bg-jacarta-500-dark block w-full rounded-full py-3 px-8 text-center font-semibold text-white transition-all">
         Synchronisation with MetaMask ongoing...
       </div>
     );
 
   if (status === "unavailable")
     return (
-      <div className="js-wallet bg-accent shadow-accent-volume hover:bg-accent-dark block w-full rounded-full py-3 px-8 text-center font-semibold text-white transition-all">
+      <div className="js-wallet bg-accent shadow-accent-volume hover:bg-jacarta-500-dark block w-full rounded-full py-3 px-8 text-center font-semibold text-white transition-all">
         MetaMask not available :
       </div>
     );
@@ -26,7 +26,7 @@ const Metamask_comp_text = () => {
   if (status === "notConnected")
     return (
       <button
-        className="js-wallet bg-accent shadow-accent-volume hover:bg-accent-dark block w-full rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
+        className="js-wallet bg-accent shadow-accent-volume hover:bg-jacarta-500-dark block w-full rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
         onClick={connect}
       >
         Connect Wallet
@@ -35,7 +35,7 @@ const Metamask_comp_text = () => {
 
   if (status === "connecting")
     return (
-      <div className="js-wallet bg-accent shadow-accent-volume hover:bg-accent-dark block w-full rounded-full py-3 px-8 text-center font-semibold text-white transition-all">
+      <div className="js-wallet bg-accent shadow-accent-volume hover:bg-jacarta-500-dark block w-full rounded-full py-3 px-8 text-center font-semibold text-white transition-all">
         Connecting...
       </div>
     );
@@ -44,7 +44,7 @@ const Metamask_comp_text = () => {
     return (
       <div>
         <button
-          className="js-wallet bg-accent shadow-accent-volume hover:bg-accent-dark block w-full rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
+          className="js-wallet bg-accent shadow-accent-volume hover:bg-jacarta-500-dark block w-full rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
           onClick={() => dispatch(walletModalShow())}
         >
           Connect Wallet
@@ -58,7 +58,7 @@ const Metamask_comp_login = () => {
 
   if (status === "initializing")
     return (
-      <button className="js-wallet bg-accent hover:bg-accent-dark mb-4 flex w-full items-center justify-center rounded-full border-2 border-transparent py-4 px-8 text-center font-semibold text-white transition-all">
+      <button className="js-wallet bg-accent hover:bg-jacarta-500-dark mb-4 flex w-full items-center justify-center rounded-full border-2 border-transparent py-4 px-8 text-center font-semibold text-white transition-all">
         <Image
           src="/images/wallets/metamask_24.svg"
           className="mr-2.5 inline-block h-6 w-6 object-contain"
@@ -72,7 +72,7 @@ const Metamask_comp_login = () => {
 
   if (status === "unavailable")
     return (
-      <button className="js-wallet bg-accent hover:bg-accent-dark mb-4 flex w-full items-center justify-center rounded-full border-2 border-transparent py-4 px-8 text-center font-semibold text-white transition-all">
+      <button className="js-wallet bg-accent hover:bg-jacarta-500-dark mb-4 flex w-full items-center justify-center rounded-full border-2 border-transparent py-4 px-8 text-center font-semibold text-white transition-all">
         <Image
           src="/images/wallets/metamask_24.svg"
           className="mr-2.5 inline-block h-6 w-6 object-contain"
@@ -87,7 +87,7 @@ const Metamask_comp_login = () => {
   if (status === "notConnected")
     return (
       <button
-        className="js-wallet bg-accent hover:bg-accent-dark mb-4 flex w-full items-center justify-center rounded-full border-2 border-transparent py-4 px-8 text-center font-semibold text-white transition-all"
+        className="js-wallet bg-accent hover:bg-jacarta-500-dark mb-4 flex w-full items-center justify-center rounded-full border-2 border-transparent py-4 px-8 text-center font-semibold text-white transition-all"
         onClick={connect}
       >
         <Image
@@ -103,7 +103,7 @@ const Metamask_comp_login = () => {
 
   if (status === "connecting")
     return (
-      <button className="js-wallet bg-accent hover:bg-accent-dark mb-4 flex w-full items-center justify-center rounded-full border-2 border-transparent py-4 px-8 text-center font-semibold text-white transition-all">
+      <button className="js-wallet bg-accent hover:bg-jacarta-500-dark mb-4 flex w-full items-center justify-center rounded-full border-2 border-transparent py-4 px-8 text-center font-semibold text-white transition-all">
         <Image
           src="/images/wallets/metamask_24.svg"
           className="mr-2.5 inline-block h-6 w-6"
@@ -117,7 +117,7 @@ const Metamask_comp_login = () => {
 
   if (status === "connected")
     return (
-      <button className="js-wallet bg-accent hover:bg-accent-dark mb-4 flex w-full items-center justify-center rounded-full border-2 border-transparent py-4 px-8 text-center font-semibold text-white transition-all">
+      <button className="js-wallet bg-accent hover:bg-jacarta-500-dark mb-4 flex w-full items-center justify-center rounded-full border-2 border-transparent py-4 px-8 text-center font-semibold text-white transition-all">
         <Image
           src="/images/wallets/metamask_24.svg"
           className=" inline-block h-6 w-6"
@@ -137,7 +137,7 @@ const Confirm_checkout = () => {
     return (
       <button
         type="button"
-        className="bg-accent shadow-accent-volume hover:bg-accent-dark rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
+        className="bg-accent shadow-accent-volume hover:bg-jacarta-500-dark rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
       >
         initializing
       </button>
@@ -147,7 +147,7 @@ const Confirm_checkout = () => {
     return (
       <button
         type="button"
-        className="bg-accent shadow-accent-volume hover:bg-accent-dark rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
+        className="bg-accent shadow-accent-volume hover:bg-jacarta-500-dark rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
       >
         unavailable
       </button>
@@ -157,7 +157,7 @@ const Confirm_checkout = () => {
     return (
       <button
         type="button"
-        className="bg-accent shadow-accent-volume hover:bg-accent-dark rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
+        className="bg-accent shadow-accent-volume hover:bg-jacarta-500-dark rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
         onClick={connect}
       >
         Confirm Checkout
@@ -168,7 +168,7 @@ const Confirm_checkout = () => {
     return (
       <button
         type="button"
-        className="bg-accent shadow-accent-volume hover:bg-accent-dark rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
+        className="bg-accent shadow-accent-volume hover:bg-jacarta-500-dark rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
       >
         connecting
       </button>
@@ -178,7 +178,7 @@ const Confirm_checkout = () => {
     return (
       <button
         type="button"
-        className="bg-accent shadow-accent-volume hover:bg-accent-dark rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
+        className="bg-accent shadow-accent-volume hover:bg-jacarta-500-dark rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
       >
         Confirm Checkout
       </button>
@@ -195,8 +195,8 @@ const Metamask_comp_icon = ({ prop }) => {
         <button
           className={
             prop.asPath === "/home/home_3"
-              ? "js-wallet border-jacarta-100  focus:bg-accent group hover:bg-accent flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent border-transparent bg-white/[.15]"
-              : "js-wallet border-jacarta-100 hover:bg-accent focus:bg-accent group dark:hover:bg-accent flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
+              ? "js-wallet border-jacarta-100  focus:bg-jacarta-500 group hover:bg-jacarta-500 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent border-transparent bg-white/[.15]"
+              : "js-wallet border-jacarta-100 hover:bg-jacarta-500 focus:bg-jacarta-500 group dark:hover:bg-jacarta-500 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
           }
         // onClick={() => dispatch(walletModalShow())}
         >
@@ -224,8 +224,8 @@ const Metamask_comp_icon = ({ prop }) => {
         <button
           className={
             prop.asPath === "/home/home_3"
-              ? "js-wallet border-jacarta-100  focus:bg-accent group hover:bg-accent flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent border-transparent bg-white/[.15]"
-              : "js-wallet border-jacarta-100 hover:bg-accent focus:bg-accent group dark:hover:bg-accent flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
+              ? "js-wallet border-jacarta-100  focus:bg-jacarta-500 group hover:bg-jacarta-500 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent border-transparent bg-white/[.15]"
+              : "js-wallet border-jacarta-100 hover:bg-jacarta-500 focus:bg-jacarta-500 group dark:hover:bg-jacarta-500 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
           }
         // onClick={() => dispatch(walletModalShow())}
         >
@@ -252,8 +252,8 @@ const Metamask_comp_icon = ({ prop }) => {
       <button
         className={
           prop.asPath === "/home/home_3"
-            ? "js-wallet border-jacarta-100  focus:bg-accent group hover:bg-accent flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent border-transparent bg-white/[.15]"
-            : "js-wallet border-jacarta-100 hover:bg-accent focus:bg-accent group dark:hover:bg-accent flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
+            ? "js-wallet border-jacarta-100  focus:bg-jacarta-500 group hover:bg-jacarta-500 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent border-transparent bg-white/[.15]"
+            : "js-wallet border-jacarta-100 hover:bg-jacarta-500 focus:bg-jacarta-500 group dark:hover:bg-jacarta-500 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
         }
         // onClick={() => dispatch(walletModalShow())}
         onClick={connect}
@@ -281,8 +281,8 @@ const Metamask_comp_icon = ({ prop }) => {
         <button
           className={
             prop.asPath === "/home/home_3"
-              ? "js-wallet border-jacarta-100  focus:bg-accent group hover:bg-accent flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent border-transparent bg-white/[.15]"
-              : "js-wallet border-jacarta-100 hover:bg-accent focus:bg-accent group dark:hover:bg-accent flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
+              ? "js-wallet border-jacarta-100  focus:bg-jacarta-500 group hover:bg-jacarta-500 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent border-transparent bg-white/[.15]"
+              : "js-wallet border-jacarta-100 hover:bg-jacarta-500 focus:bg-jacarta-500 group dark:hover:bg-jacarta-500 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
           }
         // onClick={() => dispatch(walletModalShow())}
         >
@@ -310,8 +310,8 @@ const Metamask_comp_icon = ({ prop }) => {
         <button
           className={
             prop.asPath === "/home/home_3"
-              ? "js-wallet border-jacarta-100  focus:bg-accent group hover:bg-accent flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent border-transparent bg-white/[.15]"
-              : "js-wallet border-jacarta-100 hover:bg-accent focus:bg-accent group dark:hover:bg-accent flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
+              ? "js-wallet border-jacarta-100  focus:bg-jacarta-500 group hover:bg-jacarta-500 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent border-transparent bg-white/[.15]"
+              : "js-wallet border-jacarta-100 hover:bg-jacarta-500 focus:bg-jacarta-500 group dark:hover:bg-jacarta-500 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
           }
           onClick={() => dispatch(walletModalShow())}
         >

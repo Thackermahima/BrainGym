@@ -62,7 +62,7 @@ const Wallet_modal = () => {
                   href="https://metamask.io/"
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="bg-accent shadow-accent-volume hover:bg-accent-dark rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
+                  className="bg-accent shadow-accent-volume hover:bg-jacarta-500-dark rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
                 >
                   Get Metamask
                 </a>

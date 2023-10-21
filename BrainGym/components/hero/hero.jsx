@@ -7,7 +7,7 @@ const hero = () => {
 
 
   return (
-    <section className="relative pb-60 pt-40 md:pt-60 h-1527">
+    <section className="relative pb-60 pt-40 md:pt-60 h-1527 ">
 
       {/* Background Image with Blur */}
       <div className="absolute inset-0 pointer-events-none">
@@ -17,12 +17,12 @@ const hero = () => {
           src="/images/Limg.jpg"
           alt="gradient"
           className="h-full w-full object-cover"
-          style={{ filter: "brightness(0.7) blur(2px)" }}
+          style={{ filter: "brightness(0.5) blur(3px)" }}
 
         />
       </div>
 
-      <picture className="pointer-events-none absolute inset-x-0 top-0 -z-10 hidden dark:block">
+      <picture className="pointer-events-none absolute inset-x-0 top-0 z-10 hidden dark:block">
         <Image
           width={1519}
           height={760}
@@ -40,20 +40,20 @@ const hero = () => {
             {/* <h1 className="text-jacarta-700 font-bold font-display mb-6 text-center text-5xl dark:text-white md:text-left lg:text-6xl xl:text-7xl">
              Unity Hub
             </h1> */}
-            <h1 className="text-white text-center font-bold md:text-center xl: text-5xl lg: text-center xl: text-center" style={{ textAlign: "center" }}>
+            <h1 className="text-white  font-bold md:text-center xl: text-5xl text-center " >
               Brainstorm with experts and like minded peers of your industry.
             </h1><br></br><br></br>
             <div className="flex space-x-4">
               <Link
                 href="/create"
-                className="bg-accent shadow-accent-volume hover:bg-accent-dark w-44 rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
+                className="bg-white shadow-jacarta-volume hover:bg-jacarta-500 w-44 rounded-full py-3 px-8 text-center font-semibold hover:text-white text-jacarta-700 transition-all"
               >
                 Start My Page
               </Link>
 
               <Link
                 href="/collection/explore_collection"
-                className="text-accent shadow-white-volume hover:bg-accent-dark hover:shadow-accent-volume w-36 rounded-full bg-white py-3 px-8 text-center font-semibold transition-all hover:text-white"
+                className=" text-white bg-jacarta-500  w-36 rounded-full hover:bg-white py-3 px-8 text-center font-semibold transition-all hover:text-jacarta-700"
               >
                 Explore
               </Link>

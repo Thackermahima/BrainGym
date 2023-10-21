@@ -214,7 +214,7 @@ const Recently_added_dropdown = ({ data, dropdownFor }) => {
                         <input
                           type="checkbox"
                           name="check"
-                          className="checked:bg-accent checked:focus:bg-accent checked:hover:bg-accent after:bg-jacarta-400 bg-jacarta-100 relative h-4 w-7 cursor-pointer appearance-none rounded-lg border-none shadow-none after:absolute after:top-0.5 after:left-0.5 after:h-3 after:w-3 after:rounded-full after:transition-all checked:bg-none checked:after:left-3.5 checked:after:bg-white focus:ring-transparent focus:ring-offset-0"
+                          className="checked:bg-accent checked:focus:bg-jacarta-500 checked:hover:bg-jacarta-500 after:bg-jacarta-400 bg-jacarta-100 relative h-4 w-7 cursor-pointer appearance-none rounded-lg border-none shadow-none after:absolute after:top-0.5 after:left-0.5 after:h-3 after:w-3 after:rounded-full after:transition-all checked:bg-none checked:after:left-3.5 checked:after:bg-white focus:ring-transparent focus:ring-offset-0"
                           onChange={(e) => handleInput(e, text)}
                         />
                       </span>
@@ -245,7 +245,7 @@ const Recently_added_dropdown = ({ data, dropdownFor }) => {
     return (
       <div className="my-1 mr-2.5 relative">
         <button
-          className="group dropdown-toggle blockchainDropdown dark:border-jacarta-600 dark:bg-jacarta-700 group dark:hover:bg-accent hover:bg-accent border-jacarta-100 font-display text-jacarta-700 flex h-9 items-center rounded-lg border bg-white px-4 text-sm font-semibold transition-colors hover:border-transparent hover:text-white dark:text-white"
+          className="group dropdown-toggle blockchainDropdown dark:border-jacarta-600 dark:bg-jacarta-700 group dark:hover:bg-jacarta-500 hover:bg-jacarta-500 border-jacarta-100 font-display text-jacarta-700 flex h-9 items-center rounded-lg border bg-white px-4 text-sm font-semibold transition-colors hover:border-transparent hover:text-white dark:text-white"
           onClick={handleBlockChainDropdown}
         >
           <svg
@@ -305,7 +305,7 @@ const Recently_added_dropdown = ({ data, dropdownFor }) => {
     return (
       <div className="my-1 mr-2.5 relative">
         <button
-          className="group dropdown-toggle category-dropdown dark:border-jacarta-600 dark:bg-jacarta-700 dark:hover:bg-accent hover:bg-accent border-jacarta-100 font-display text-jacarta-700 flex h-9 items-center rounded-lg border bg-white px-4 text-sm font-semibold transition-colors hover:border-transparent hover:text-white dark:text-white"
+          className="group dropdown-toggle category-dropdown dark:border-jacarta-600 dark:bg-jacarta-700 dark:hover:bg-jacarta-500 hover:bg-jacarta-500 border-jacarta-100 font-display text-jacarta-700 flex h-9 items-center rounded-lg border bg-white px-4 text-sm font-semibold transition-colors hover:border-transparent hover:text-white dark:text-white"
           onClick={handleCategoryDropdown}
         >
           <svg
@@ -360,7 +360,7 @@ const Recently_added_dropdown = ({ data, dropdownFor }) => {
     return (
       <div className="my-1 mr-2.5 relative">
         <button
-          className="group dropdown-toggle rankingCategoriesDropdown dark:border-jacarta-600 dark:bg-jacarta-700 dark:hover:bg-accent hover:bg-accent border-jacarta-100 font-display text-jacarta-700 flex h-9 items-center rounded-lg border bg-white px-4 text-sm font-semibold transition-colors hover:border-transparent hover:text-white dark:text-white"
+          className="group dropdown-toggle rankingCategoriesDropdown dark:border-jacarta-600 dark:bg-jacarta-700 dark:hover:bg-jacarta-500 hover:bg-jacarta-500 border-jacarta-100 font-display text-jacarta-700 flex h-9 items-center rounded-lg border bg-white px-4 text-sm font-semibold transition-colors hover:border-transparent hover:text-white dark:text-white"
           onClick={handleRenkingCategoriesDropdown}
         >
           <svg
@@ -418,7 +418,7 @@ const Recently_added_dropdown = ({ data, dropdownFor }) => {
     return (
       <div className="my-1 mr-2.5 relative">
         <button
-          className="group dropdown-toggle dropdown-sale dark:border-jacarta-600 dark:bg-jacarta-700 group dark:hover:bg-accent hover:bg-accent border-jacarta-100 font-display text-jacarta-700 flex h-9 items-center rounded-lg border bg-white px-4 text-sm font-semibold transition-colors hover:border-transparent hover:text-white dark:text-white"
+          className="group dropdown-toggle dropdown-sale dark:border-jacarta-600 dark:bg-jacarta-700 group dark:hover:bg-jacarta-500 hover:bg-jacarta-500 border-jacarta-100 font-display text-jacarta-700 flex h-9 items-center rounded-lg border bg-white px-4 text-sm font-semibold transition-colors hover:border-transparent hover:text-white dark:text-white"
           onClick={handleSaleDropdown}
         >
           <svg
@@ -473,13 +473,13 @@ const Recently_added_dropdown = ({ data, dropdownFor }) => {
           <div className="dark:border-jacarta-600 border-jacarta-100 -ml-2 -mr-2 mt-4 flex items-center justify-center space-x-3 border-t px-7 pt-4">
             <button
               type="button"
-              className="text-accent shadow-white-volume hover:bg-accent-dark hover:shadow-accent-volume flex-1 rounded-full bg-white py-2 px-6 text-center text-sm font-semibold transition-all hover:text-white"
+              className="text-accent shadow-white-volume hover:bg-jacarta-500-dark hover:shadow-accent-volume flex-1 rounded-full bg-white py-2 px-6 text-center text-sm font-semibold transition-all hover:text-white"
             >
               Clear
             </button>
             <button
               type="button"
-              className="bg-accent shadow-accent-volume hover:bg-accent-dark flex-1 rounded-full py-2 px-6 text-center text-sm font-semibold text-white transition-all"
+              className="bg-accent shadow-accent-volume hover:bg-jacarta-500-dark flex-1 rounded-full py-2 px-6 text-center text-sm font-semibold text-white transition-all"
             >
               Apply
             </button>
@@ -599,27 +599,27 @@ const Recently_added_dropdown = ({ data, dropdownFor }) => {
                   placeholder="From"
                   value={currencyValFrom}
                   onChange={(e) => handleCurrencyValFrom(e)}
-                  className="text-jacarta-700 placeholder-jacarta-500 focus:ring-accent border-jacarta-100 w-full max-w-[7.5rem] rounded-lg border py-[0.6875rem] px-4 dark:border-transparent dark:bg-white/[.15] dark:text-white dark:placeholder-white"
+                  className="text-jacarta-700 placeholder-jacarta-500 focus:ring-jacarta-500 border-jacarta-100 w-full max-w-[7.5rem] rounded-lg border py-[0.6875rem] px-4 dark:border-transparent dark:bg-white/[.15] dark:text-white dark:placeholder-white"
                 />
                 <input
                   type="number"
                   placeholder="To"
                   value={currencyValTo}
                   onChange={(e) => handleCurrencyValTo(e)}
-                  className="text-jacarta-700 placeholder-jacarta-500 focus:ring-accent border-jacarta-100 w-full max-w-[7.5rem] rounded-lg border py-[0.6875rem] px-4 dark:border-transparent dark:bg-white/[.15] dark:text-white dark:placeholder-white"
+                  className="text-jacarta-700 placeholder-jacarta-500 focus:ring-jacarta-500 border-jacarta-100 w-full max-w-[7.5rem] rounded-lg border py-[0.6875rem] px-4 dark:border-transparent dark:bg-white/[.15] dark:text-white dark:placeholder-white"
                 />
               </div>
 
               <div className="dark:border-jacarta-600 border-jacarta-100 -ml-2 -mr-2 mt-4 flex items-center justify-center space-x-3 border-t px-7 pt-4">
                 <button
                   type="button"
-                  className="text-accent shadow-white-volume hover:bg-accent-dark hover:shadow-accent-volume flex-1 rounded-full bg-white py-2 px-6 text-center text-sm font-semibold transition-all hover:text-white"
+                  className="text-accent shadow-white-volume hover:bg-jacarta-500-dark hover:shadow-accent-volume flex-1 rounded-full bg-white py-2 px-6 text-center text-sm font-semibold transition-all hover:text-white"
                 >
                   Clear
                 </button>
                 <button
                   type="button"
-                  className="bg-accent shadow-accent-volume hover:bg-accent-dark flex-1 rounded-full py-2 px-6 text-center text-sm font-semibold text-white transition-all"
+                  className="bg-accent shadow-accent-volume hover:bg-jacarta-500-dark flex-1 rounded-full py-2 px-6 text-center text-sm font-semibold text-white transition-all"
                 >
                   Apply
                 </button>
@@ -628,7 +628,7 @@ const Recently_added_dropdown = ({ data, dropdownFor }) => {
           }
         >
           <button
-            className="group dropdown-toggle dark:border-jacarta-600 dark:bg-jacarta-700 group dark:hover:bg-accent hover:bg-accent border-jacarta-100 font-display text-jacarta-700 flex h-9 items-center rounded-lg border bg-white px-4 text-sm font-semibold transition-colors hover:border-transparent hover:text-white dark:text-white"
+            className="group dropdown-toggle dark:border-jacarta-600 dark:bg-jacarta-700 group dark:hover:bg-jacarta-500 hover:bg-jacarta-500 border-jacarta-100 font-display text-jacarta-700 flex h-9 items-center rounded-lg border bg-white px-4 text-sm font-semibold transition-colors hover:border-transparent hover:text-white dark:text-white"
             id="priceRangeFilter"
             data-bs-toggle="dropdown"
             data-bs-auto-close="outside"

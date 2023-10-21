@@ -65,7 +65,7 @@ const Proparties_modal = () => {
                   </label>
                   <input
                     type="text"
-                    className="dark:bg-jacarta-700 px-4 dark:border-jacarta-600 focus:ring-accent border-jacarta-100 dark:placeholder-jacarta-300 h-12 w-full border border-r-0 focus:ring-inset dark:text-white"
+                    className="dark:bg-jacarta-700 px-4 dark:border-jacarta-600 focus:ring-jacarta-500 border-jacarta-100 dark:placeholder-jacarta-300 h-12 w-full border border-r-0 focus:ring-inset dark:text-white"
                     placeholder="Character"
                   />
                 </div>
@@ -76,13 +76,13 @@ const Proparties_modal = () => {
                   </label>
                   <input
                     type="text"
-                    className="dark:bg-jacarta-700 px-4 dark:border-jacarta-600 focus:ring-accent border-jacarta-100 dark:placeholder-jacarta-300 h-12 w-full rounded-r-lg border focus:ring-inset dark:text-white"
+                    className="dark:bg-jacarta-700 px-4 dark:border-jacarta-600 focus:ring-jacarta-500 border-jacarta-100 dark:placeholder-jacarta-300 h-12 w-full rounded-r-lg border focus:ring-inset dark:text-white"
                     placeholder="Male"
                   />
                 </div>
               </div>
 
-              <button className="hover:bg-accent border-accent text-accent mt-2 rounded-full border-2 py-2 px-8 text-center text-sm font-semibold transition-all hover:text-white">
+              <button className="hover:bg-jacarta-500 border-accent text-accent mt-2 rounded-full border-2 py-2 px-8 text-center text-sm font-semibold transition-all hover:text-white">
                 Add More
               </button>
             </div>
@@ -92,7 +92,7 @@ const Proparties_modal = () => {
               <div className="flex items-center justify-center space-x-4">
                 <button
                   type="button"
-                  className="bg-accent shadow-accent-volume hover:bg-accent-dark rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
+                  className="bg-accent shadow-accent-volume hover:bg-jacarta-500-dark rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
                 >
                   Save
                 </button>

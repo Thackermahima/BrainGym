@@ -26,7 +26,7 @@ const Create = () => {
   const [image, setImage] = useState();
   const [title, setTitle] = useState();
   const [description, setDescription] = useState();
-  const [sessionTime, SetSessionTime] = useState();
+  const [sessionTime, SetSessionTime] = useState("15 min");
   const [numberOfCollection, setNumberOfCollection] = useState();
   const [price, setPrice] = useState();
   const [chain, setChain] = useState();
@@ -188,7 +188,7 @@ const Create = () => {
                 value={title}
                 type="text"
                 id="item-name"
-                className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 px-3 hover:ring-2 dark:text-white"
+                className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-jacarta-500 dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 px-3 hover:ring-2 dark:text-white"
                 placeholder="Item name"
                 required
                 onChange={(e) => setTitle(e.target.value)}
@@ -209,7 +209,7 @@ const Create = () => {
               </p>
               <textarea
                 id="item-description"
-                className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 px-3 hover:ring-2 dark:text-white"
+                className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-jacarta-500 dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 px-3 hover:ring-2 dark:text-white"
                 rows="4"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
@@ -260,7 +260,7 @@ const Create = () => {
                 onChange={(e) => setPrice(e.target.value)}
                 type="number"
                 id="item-name"
-                className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 px-3 hover:ring-2 dark:text-white"
+                className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-jacarta-500 dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 px-3 hover:ring-2 dark:text-white"
                 placeholder="Price"
                 required
               />
@@ -310,7 +310,7 @@ const Create = () => {
               <input
                 type="number"
                 id="item-supply"
-                className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 px-3 hover:ring-2 dark:text-white"
+                className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-jacarta-500 dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 px-3 hover:ring-2 dark:text-white"
                 placeholder="1"
                 value={numberOfCollection}
                 onChange={(e) => setNumberOfCollection(e.target.value)}
@@ -336,7 +336,7 @@ const Create = () => {
             {/* <!-- Submit --> */}
             <button
               onClick={GenerateCollection}
-              className="bg-accent-lighter cursor-default rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
+              className="bg-jacarta-500  cursor-pointer rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
             >
               Create
             </button>

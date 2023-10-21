@@ -26,9 +26,9 @@ const Newsletter = () => {
               <input
                 type="email"
                 placeholder="Email address"
-                className="w-full rounded-full border border-jacarta-600 bg-jacarta-700 py-3 px-4 text-white placeholder-white focus:ring-accent"
+                className="w-full rounded-full border border-jacarta-600 bg-jacarta-700 py-3 px-4 text-white placeholder-white focus:ring-jacarta-500"
               />
-              <button className="absolute top-2 right-2 rounded-full bg-accent px-6 py-2 font-display text-sm text-white hover:bg-accent-dark">
+              <button className="absolute top-2 right-2 rounded-full bg-accent px-6 py-2 font-display text-sm text-white hover:bg-jacarta-500-dark">
                 Subscribe
               </button>
             </form>

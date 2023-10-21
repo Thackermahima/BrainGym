@@ -40,7 +40,7 @@ const Cta = () => {
                 </p>
                 <Link
                   href="/contact"
-                  className="inline-block rounded-full bg-accent py-3 px-8 text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark"
+                  className="inline-block rounded-full bg-accent py-3 px-8 text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-jacarta-500-dark"
                 >
                   Schedule a Call
                 </Link>

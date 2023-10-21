@@ -21,11 +21,10 @@ const Categories = () => {
       {categories.map((category, index) => (
         <li className="my-1 mr-2.5" key={index}>
           <button
-            className={`group flex h-9 items-center rounded-lg ${
-              index === activeCategory
+            className={`group flex h-9 items-center rounded-lg ${index === activeCategory
                 ? "border-accent bg-accent text-white border"
                 : `border border-jacarta-100 bg-white text-${category.color}-500`
-            } px-4 font-display text-sm font-semibold transition-colors hover:border-transparent hover:bg-accent hover:text-white dark:border-jacarta-600 dark:bg-jacarta-900 dark:text-white dark:hover:border-transparent dark:hover:bg-accent dark:hover:text-white`}
+              } px-4 font-display text-sm font-semibold transition-colors hover:border-transparent hover:bg-jacarta-500 hover:text-white dark:border-jacarta-600 dark:bg-jacarta-900 dark:text-white dark:hover:border-transparent dark:hover:bg-jacarta-500 dark:hover:text-white`}
             onClick={() => handleCategoryClick(index)}
           >
             <span>{category.name}</span>

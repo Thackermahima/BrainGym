@@ -66,7 +66,7 @@ const Edit_user = () => {
             className="h-[18.75rem] w-full object-cover"
           />
           <div className="container relative -translate-y-4">
-            <div className="font-display group hover:bg-accent absolute right-0 bottom-4 flex items-center rounded-lg bg-white py-2 px-4 text-sm">
+            <div className="font-display group hover:bg-jacarta-500 absolute right-0 bottom-4 flex items-center rounded-lg bg-white py-2 px-4 text-sm">
               <input
                 type="file"
                 accept="image/*"
@@ -113,7 +113,7 @@ const Edit_user = () => {
                   <input
                     type="text"
                     id="profile-username"
-                    className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 hover:ring-2 dark:text-white px-3"
+                    className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-jacarta-500 dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 hover:ring-2 dark:text-white px-3"
                     placeholder="Enter username"
                     required
                   />
@@ -124,7 +124,7 @@ const Edit_user = () => {
                   </label>
                   <textarea
                     id="profile-bio"
-                    className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 hover:ring-2 dark:text-white px-3"
+                    className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-jacarta-500 dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 hover:ring-2 dark:text-white px-3"
                     required
                     placeholder="Tell the world your story!"
                   ></textarea>
@@ -136,7 +136,7 @@ const Edit_user = () => {
                   <input
                     type="text"
                     id="profile-email"
-                    className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 hover:ring-2 dark:text-white px-3"
+                    className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-jacarta-500 dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 hover:ring-2 dark:text-white px-3"
                     placeholder="Enter email"
                     required
                   />
@@ -161,7 +161,7 @@ const Edit_user = () => {
                     <input
                       type="text"
                       id="profile-twitter"
-                      className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-t-lg py-3 pl-10 hover:ring-2 focus:ring-inset dark:text-white"
+                      className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-jacarta-500 dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-t-lg py-3 pl-10 hover:ring-2 focus:ring-inset dark:text-white"
                       placeholder="@twittername"
                     />
                   </div>
@@ -181,7 +181,7 @@ const Edit_user = () => {
                     <input
                       type="text"
                       id="profile-instagram"
-                      className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 -mt-px w-full py-3 pl-10 hover:ring-2 focus:ring-inset dark:text-white"
+                      className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-jacarta-500 dark:border-jacarta-600 dark:placeholder:text-jacarta-300 -mt-px w-full py-3 pl-10 hover:ring-2 focus:ring-inset dark:text-white"
                       placeholder="instagramname"
                     />
                   </div>
@@ -199,7 +199,7 @@ const Edit_user = () => {
                     <input
                       type="url"
                       id="profile-website"
-                      className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 -mt-px w-full rounded-b-lg py-3 pl-10 hover:ring-2 focus:ring-inset dark:text-white"
+                      className="dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-jacarta-500 dark:border-jacarta-600 dark:placeholder:text-jacarta-300 -mt-px w-full rounded-b-lg py-3 pl-10 hover:ring-2 focus:ring-inset dark:text-white"
                       placeholder="yoursitename.com"
                     />
                   </div>
@@ -214,7 +214,7 @@ const Edit_user = () => {
                     userId="0x7a9fe22691c811ea339401bbb2leb"
                   />
                 </div>
-                <button className="bg-accent shadow-accent-volume hover:bg-accent-dark rounded-full py-3 px-8 text-center font-semibold text-white transition-all">
+                <button className="bg-accent shadow-accent-volume hover:bg-jacarta-500-dark rounded-full py-3 px-8 text-center font-semibold text-white transition-all">
                   Update Profile
                 </button>
               </div>
@@ -229,7 +229,7 @@ const Edit_user = () => {
                       height={140}
                       width={140}
                     />
-                    <div className="group hover:bg-accent border-jacarta-100 absolute -right-3 -bottom-2 h-8 w-8 overflow-hidden rounded-full border bg-white text-center hover:border-transparent">
+                    <div className="group hover:bg-jacarta-500 border-jacarta-100 absolute -right-3 -bottom-2 h-8 w-8 overflow-hidden rounded-full border bg-white text-center hover:border-transparent">
                       <input
                         type="file"
                         accept="image/*"

@@ -120,27 +120,6 @@ const User = () => {
                       Joined December {joinYear}
                     </span>
 
-                    <div className="mt-6 flex items-center justify-center space-x-2.5 relative">
-                      <div className="dark:border-jacarta-600 dark:hover:bg-jacarta-600 border-jacarta-100 hover:bg-jacarta-100 dark:bg-jacarta-700 rounded-xl border bg-white">
-                        <div className="js-likes relative inline-flex h-10 w-10 cursor-pointer items-center justify-center text-sm">
-                          <button onClick={() => handleLikes()}>
-                            {likesImage ? (
-                              <svg className="icon dark:fill-jacarta-200 fill-jacarta-500 h-4 w-4">
-                                <use xlinkHref="/icons.svg#icon-heart-fill"></use>
-                              </svg>
-                            ) : (
-                              <svg className="icon dark:fill-jacarta-200 fill-jacarta-500 h-4 w-4">
-                                <use xlinkHref="/icons.svg#icon-heart"></use>
-                              </svg>
-                            )}
-                          </button>
-                        </div>
-                      </div>
-
-                      <Social_dropdown />
-
-                      <Auctions_dropdown classes="dark:border-jacarta-600 dark:hover:bg-jacarta-600 border-jacarta-100 dropdown hover:bg-jacarta-100 dark:bg-jacarta-700 rounded-xl border bg-white relative" />
-                    </div>
                   </div>
                 </div>
               </section>

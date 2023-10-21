@@ -51,7 +51,7 @@ const Blog = () => {
                   <div className="mb-3 flex flex-wrap items-center space-x-1 text-xs">
                     <Link
                       href="#"
-                      className="dark:text-jacarta-200 text-jacarta-700 font-display hover:text-accent"
+                      className="dark:text-jacarta-200 text-jacarta-700 font-display hover:text-jacarta-500"
                     >
                       Deothemes
                     </Link>
@@ -62,7 +62,7 @@ const Blog = () => {
                     </span>
                   </div>
 
-                  <h2 className="font-display text-jacarta-700 dark:hover:text-accent hover:text-accent mb-4 text-xl dark:text-white sm:text-3xl">
+                  <h2 className="font-display text-jacarta-700 dark:hover:text-jacarta-500 hover:text-jacarta-500 mb-4 text-xl dark:text-white sm:text-3xl">
                     <Link href="/single_post/post_1">
                       List your collection for secondary sales
                     </Link>
@@ -90,7 +90,7 @@ const Blog = () => {
               <div className="mt-10 text-center">
                 <button
                   onClick={handleLoadMore}
-                  className="bg-accent shadow-accent-volume hover:bg-accent-dark inline-block rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
+                  className="bg-accent shadow-accent-volume hover:bg-jacarta-500-dark inline-block rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
                 >
                   Load More
                 </button>

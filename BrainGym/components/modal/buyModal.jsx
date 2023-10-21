@@ -48,7 +48,7 @@ const BuyModal = () => {
                   </label>
                   <input
                     name="name"
-                    className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 hover:ring-2 dark:text-white"
+                    className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-jacarta-500 dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 hover:ring-2 dark:text-white"
                     id="name"
                     type="text"
                     required
@@ -61,7 +61,7 @@ const BuyModal = () => {
                   </label>
                   <input
                     name="email"
-                    className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 hover:ring-2 dark:text-white"
+                    className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-jacarta-500 dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 hover:ring-2 dark:text-white"
                     id="email"
                     type="email"
                     required
@@ -74,7 +74,7 @@ const BuyModal = () => {
                 </label>
                 <input
                   name="address"
-                  className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 hover:ring-2 dark:text-white"
+                  className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-jacarta-500 dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 hover:ring-2 dark:text-white"
                   id="address"
                   type="text"
                   required
@@ -86,7 +86,7 @@ const BuyModal = () => {
                 </label>
                 <textarea
                   id="message"
-                  className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 hover:ring-2 dark:text-white"
+                  className="contact-form-input dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-jacarta-500 dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 hover:ring-2 dark:text-white"
                   required
                   name="message"
                   rows="3"
@@ -94,7 +94,7 @@ const BuyModal = () => {
               </div>
               {/* <!-- Total --> */}
               <div className="dark:border-jacarta-600 border-jacarta-100 mb-2 flex items-center justify-between border-b py-2.5">
-                <span className="font-display text-jacarta-700 hover:text-accent font-semibold dark:text-white">
+                <span className="font-display text-jacarta-700 hover:text-jacarta-500 font-semibold dark:text-white">
                   Total
                 </span>
                 <div className="ml-auto">
@@ -119,14 +119,14 @@ const BuyModal = () => {
                 <input
                   type="checkbox"
                   id="buyNowTerms"
-                  className="checked:bg-accent dark:bg-jacarta-600 text-accent border-jacarta-200 focus:ring-accent/20 dark:border-jacarta-500 h-5 w-5 self-start rounded focus:ring-offset-0"
+                  className="checked:bg-jacarta-900 dark:bg-jacarta-600 text-jacarta-300 border-jacarta-200 focus:ring-jacarta-500/20 dark:border-jacarta-500 h-5 w-5 self-start rounded focus:ring-offset-0"
                 />
                 <label
                   htmlFor="buyNowTerms"
                   className="dark:text-jacarta-200 text-sm"
                 >
                   By checking this box, I agree to {"brainGym's"}{" "}
-                  <Link href="/tarms" className="text-accent">
+                  <Link href="/tarms" className="text-jacarta-300">
                     Terms of Service
                   </Link>
                 </label>
@@ -138,7 +138,7 @@ const BuyModal = () => {
               <div className="flex items-center justify-center space-x-4">
                 <button
                   type="button"
-                  className="bg-accent shadow-accent-volume hover:bg-accent-dark rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
+                  className="hover:bg-white hover:text-jacarta-500 shadow-lg  bg-jacarta-500  rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
                 >
                   Send Request
                 </button>

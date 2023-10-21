@@ -80,7 +80,7 @@ const ArtsCarousel = () => {
                       </Link>
                       <div>
                         <Link href={`/item/${itemLink}`} className="block">
-                          <span className="font-display hover:text-accent text-jacarta-700 text-lg leading-none dark:text-white">
+                          <span className="font-display hover:text-jacarta-500 text-jacarta-700 text-lg leading-none dark:text-white">
                             {name}
                           </span>
                         </Link>

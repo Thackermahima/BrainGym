@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div className="flex flex-col justify-between gap-4 rounded-t-2lg border-b border-jacarta-100 bg-jacarta-50 p-4 dark:border-jacarta-600 dark:bg-jacarta-800 md:flex-row md:items-center md:gap-6">
       <div className="hidden flex-shrink-0 items-center gap-3 md:flex">
-        <div className="flex h-10 w-10 group cursor-pointer items-center justify-center rounded-2lg dark:bg-jacarta-700 dark:border-jacarta-600 border border-jacarta-100 bg-white dark:hover:bg-accent hover:bg-accent hover:border-accent">
+        <div className="flex h-10 w-10 group cursor-pointer items-center justify-center rounded-2lg dark:bg-jacarta-700 dark:border-jacarta-600 border border-jacarta-100 bg-white dark:hover:bg-jacarta-500 hover:bg-jacarta-500 hover:border-accent">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -29,7 +29,7 @@ const Header = () => {
       <Form />
       <div className="flex flex-wrap justify-between gap-2">
         <div className="flex flex-shrink-0 items-center gap-3 md:hidden">
-          <div className="flex h-10 w-10 group cursor-pointer items-center justify-center rounded-2lg dark:bg-jacarta-700 dark:border-jacarta-600 border border-jacarta-100 bg-white dark:hover:bg-accent hover:bg-accent hover:border-accent">
+          <div className="flex h-10 w-10 group cursor-pointer items-center justify-center rounded-2lg dark:bg-jacarta-700 dark:border-jacarta-600 border border-jacarta-100 bg-white dark:hover:bg-jacarta-500 hover:bg-jacarta-500 hover:border-accent">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"

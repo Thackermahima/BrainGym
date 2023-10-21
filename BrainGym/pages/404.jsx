@@ -38,7 +38,7 @@ const Error_page = () => {
               </p>
               <Link
                 href="/"
-                className="bg-accent shadow-accent-volume hover:bg-accent-dark inline-block rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
+                className="bg-accent shadow-accent-volume hover:bg-jacarta-500-dark inline-block rounded-full py-3 px-8 text-center font-semibold text-white transition-all"
               >
                 Navigate Back Home
               </Link>

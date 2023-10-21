@@ -31,7 +31,7 @@ const Address = () => {
             </span>
             <a
               href="tel:123-123-456"
-              className="hover:text-accent dark:text-jacarta-300 text-sm"
+              className="hover:text-jacarta-500 dark:text-jacarta-300 text-sm"
             >
               (123) 123-456
             </a>
@@ -82,7 +82,7 @@ const Address = () => {
             </span>
             <a
               href="mailto:office@brainGym.com"
-              className="hover:text-accent dark:text-jacarta-300 text-sm not-italic"
+              className="hover:text-jacarta-500 dark:text-jacarta-300 text-sm not-italic"
             >
               office@brainGym.com
             </a>

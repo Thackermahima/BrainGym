@@ -86,7 +86,7 @@ const CoverflowCarousel = () => {
                         </Link>
                         <div>
                           <Link href={"/item/" + itemLink} className="block">
-                            <span className="font-display text-lg leading-none text-jacarta-700 hover:text-accent dark:text-white">
+                            <span className="font-display text-lg leading-none text-jacarta-700 hover:text-jacarta-500 dark:text-white">
                               {title}
                             </span>
                           </Link>

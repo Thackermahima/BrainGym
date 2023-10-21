@@ -54,7 +54,7 @@ const ExpertsCollection = () => {
               </figure>
               <div className="mt-7 flex items-center justify-between">
                 {/* <Link href={`/item/${itemLink}`}> */}
-                <span className="font-display text-jacarta-700 hover:text-accent text-base dark:text-white">
+                <span className="font-display text-jacarta-700 hover:text-jacarta-500 text-base dark:text-white">
                   Expert's name
                 </span>
                 {/* </Link> */}
@@ -81,7 +81,7 @@ const ExpertsCollection = () => {
                   className="group flex items-center"
                 > */}
 
-                <span className="group-hover:text-accent font-display dark:text-jacarta-200 text-sm font-semibold">
+                <span className="group-hover:text-jacarta-500 font-display dark:text-jacarta-200 text-sm font-semibold">
                   DM : 60 min
                 </span>
                 {/* </Link> */}
@@ -115,7 +115,7 @@ const ExpertsCollection = () => {
               </figure>
               <div className="mt-7 flex items-center justify-between">
                 {/* <Link href={`/item/${itemLink}`}> */}
-                <span className="font-display text-jacarta-700 hover:text-accent text-base dark:text-white">
+                <span className="font-display text-jacarta-700 hover:text-jacarta-500 text-base dark:text-white">
                   Expert's name
                 </span>
                 {/* </Link> */}
@@ -142,7 +142,7 @@ const ExpertsCollection = () => {
                   className="group flex items-center"
                 > */}
 
-                <span className="group-hover:text-accent font-display dark:text-jacarta-200 text-sm font-semibold">
+                <span className="group-hover:text-jacarta-500 font-display dark:text-jacarta-200 text-sm font-semibold">
                   DM : 60 min
                 </span>
                 {/* </Link> */}
@@ -178,7 +178,7 @@ const ExpertsCollection = () => {
               </figure>
               <div className="mt-7 flex items-center justify-between">
                 {/* <Link href={`/item/${itemLink}`}> */}
-                <span className="font-display text-jacarta-700 hover:text-accent text-base dark:text-white">
+                <span className="font-display text-jacarta-700 hover:text-jacarta-500 text-base dark:text-white">
                   Expert's name
                 </span>
                 {/* </Link> */}
@@ -205,7 +205,7 @@ const ExpertsCollection = () => {
                   className="group flex items-center"
                 > */}
 
-                <span className="group-hover:text-accent font-display dark:text-jacarta-200 text-sm font-semibold">
+                <span className="group-hover:text-jacarta-500 font-display dark:text-jacarta-200 text-sm font-semibold">
                   DM : 60 min
                 </span>
                 {/* </Link> */}
@@ -240,7 +240,7 @@ const ExpertsCollection = () => {
               </figure>
               <div className="mt-7 flex items-center justify-between">
                 {/* <Link href={`/item/${itemLink}`}> */}
-                <span className="font-display text-jacarta-700 hover:text-accent text-base dark:text-white">
+                <span className="font-display text-jacarta-700 hover:text-jacarta-500 text-base dark:text-white">
                   Expert's name
                 </span>
                 {/* </Link> */}
@@ -267,7 +267,7 @@ const ExpertsCollection = () => {
                   className="group flex items-center"
                 > */}
 
-                <span className="group-hover:text-accent font-display dark:text-jacarta-200 text-sm font-semibold">
+                <span className="group-hover:text-jacarta-500 font-display dark:text-jacarta-200 text-sm font-semibold">
                   DM : 60 min
                 </span>
                 {/* </Link> */}
@@ -302,7 +302,7 @@ const ExpertsCollection = () => {
               </figure>
               <div className="mt-7 flex items-center justify-between">
                 {/* <Link href={`/item/${itemLink}`}> */}
-                <span className="font-display text-jacarta-700 hover:text-accent text-base dark:text-white">
+                <span className="font-display text-jacarta-700 hover:text-jacarta-500 text-base dark:text-white">
                   Expert's name
                 </span>
                 {/* </Link> */}
@@ -329,7 +329,7 @@ const ExpertsCollection = () => {
                   className="group flex items-center"
                 > */}
 
-                <span className="group-hover:text-accent font-display dark:text-jacarta-200 text-sm font-semibold">
+                <span className="group-hover:text-jacarta-500 font-display dark:text-jacarta-200 text-sm font-semibold">
                   DM : 60 min
                 </span>
                 {/* </Link> */}
@@ -364,7 +364,7 @@ const ExpertsCollection = () => {
               </figure>
               <div className="mt-7 flex items-center justify-between">
                 {/* <Link href={`/item/${itemLink}`}> */}
-                <span className="font-display text-jacarta-700 hover:text-accent text-base dark:text-white">
+                <span className="font-display text-jacarta-700 hover:text-jacarta-500 text-base dark:text-white">
                   Expert's name
                 </span>
                 {/* </Link> */}
@@ -391,7 +391,7 @@ const ExpertsCollection = () => {
                   className="group flex items-center"
                 > */}
 
-                <span className="group-hover:text-accent font-display dark:text-jacarta-200 text-sm font-semibold">
+                <span className="group-hover:text-jacarta-500 font-display dark:text-jacarta-200 text-sm font-semibold">
                   DM : 60 min
                 </span>
                 {/* </Link> */}

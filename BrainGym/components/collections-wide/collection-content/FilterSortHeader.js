@@ -4,7 +4,7 @@ const FilterSortHeader = () => {
   return (
     <div className="flex flex-wrap justify-between">
       <div className="flex space-x-2 mb-2">
-        <button className="js-collections-toggle-filters flex h-10 group flex-shrink-0 items-center justify-center space-x-1 rounded-lg border border-jacarta-100 bg-white py-1.5 px-4 font-display text-sm font-semibold text-jacarta-500 hover:bg-accent hover:border-accent dark:hover:bg-accent dark:border-jacarta-600 dark:bg-jacarta-700">
+        <button className="js-collections-toggle-filters flex h-10 group flex-shrink-0 items-center justify-center space-x-1 rounded-lg border border-jacarta-100 bg-white py-1.5 px-4 font-display text-sm font-semibold text-jacarta-500 hover:bg-jacarta-500 hover:border-accent dark:hover:bg-jacarta-500 dark:border-jacarta-600 dark:bg-jacarta-700">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -19,7 +19,7 @@ const FilterSortHeader = () => {
             Filters
           </span>
         </button>
-        <button className="lex h-10 group flex-shrink-0 items-center justify-center space-x-1 rounded-lg border border-jacarta-100 bg-white py-1.5 px-4 font-medium text-2xs hover:bg-accent hover:border-accent dark:hover:bg-accent dark:border-jacarta-600 dark:bg-jacarta-700">
+        <button className="lex h-10 group flex-shrink-0 items-center justify-center space-x-1 rounded-lg border border-jacarta-100 bg-white py-1.5 px-4 font-medium text-2xs hover:bg-jacarta-500 hover:border-accent dark:hover:bg-jacarta-500 dark:border-jacarta-600 dark:bg-jacarta-700">
           <span className="mt-0.5 dark:text-white group-hover:text-white">
             Clear All
           </span>

@@ -18,7 +18,7 @@ const ImageTitle = ({ text, image, input }) => {
             >
               <input
                 type="search"
-                className="text-jacarta-700 placeholder-jacarta-500 focus:ring-accent border-jacarta-100 w-full rounded-2xl border py-[0.6875rem] px-4 pl-10 bg-white"
+                className="text-jacarta-700 placeholder-jacarta-500 focus:ring-jacarta-500 border-jacarta-100 w-full rounded-2xl border py-[0.6875rem] px-4 pl-10 bg-white"
                 placeholder="Search"
               />
               <span className="absolute left-0 top-0 flex h-full w-12 items-center justify-center rounded-2xl">

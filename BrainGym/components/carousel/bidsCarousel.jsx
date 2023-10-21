@@ -71,7 +71,7 @@ const BidsCarousel = () => {
                   </figure>
                   <div className="mt-4 flex items-center justify-between">
                     <Link href={"/item/" + itemLink}>
-                      <span className="font-display text-jacarta-700 hover:text-accent text-base dark:text-white" style={{ fontSize: "20px"}}>
+                      <span className="font-display text-jacarta-700 hover:text-jacarta-500 text-base dark:text-white" style={{ fontSize: "20px" }}>
                         {title}
                       </span>
                     </Link>
@@ -84,10 +84,10 @@ const BidsCarousel = () => {
                           alt="icon"
                           className="w-3 h-3 mr-1"
                         />
-                        
+
                       </Tippy>
                       <span className="text-green text-sm font-medium tracking-tight">
-                        {star} 
+                        {star}
                       </span>
                     </span>
                   </div>
@@ -106,7 +106,7 @@ const BidsCarousel = () => {
                     <button
                       type="button"
                       className="text-accent font-display text-sm font-semibold"
-                      // onClick={() => dispatch(bidsModalShow())}
+                    // onClick={() => dispatch(bidsModalShow())}
                     >
                       Book a Session
                     </button>

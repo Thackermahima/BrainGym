@@ -131,7 +131,7 @@ const GridItems = () => {
 
             <Link
               href="/collection/avatar_1"
-              className="mt-5 mb-2 flex items-center font-display text-base text-jacarta-700 hover:text-accent dark:text-white dark:hover:text-accent"
+              className="mt-5 mb-2 flex items-center font-display text-base text-jacarta-700 hover:text-jacarta-500 dark:text-white dark:hover:text-jacarta-500"
             >
               {item.title}
               {item.verified && (

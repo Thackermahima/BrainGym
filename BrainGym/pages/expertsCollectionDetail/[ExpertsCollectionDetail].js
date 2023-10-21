@@ -30,15 +30,15 @@ const ExpertsCollectionDetail = () => {
                         </figure>
                         <div className="mt-7  items-center justify-between" style={{ textAlign: "center" }} >
 
-                            <span className="font-display text-jacarta-700 hover:text-accent text-base dark:text-white " >
+                            <span className="font-display text-jacarta-700 hover:text-jacarta-500 text-base dark:text-white " >
                                 21 DSA
                             </span>
-                            <div className="font-display text-jacarta-700 hover:text-accent text-base dark:text-white mt-5 mb-3">
+                            <div className="font-display text-jacarta-700 hover:text-jacarta-500 text-base dark:text-white mt-5 mb-3">
 
 
                                 <Link
                                     href="/collection/explore_collection"
-                                    className=" mt-5 text-accent shadow-white-volume hover:bg-accent-dark hover:shadow-accent-volume w-36 rounded-full bg-white py-3 px-8 text-center font-semibold transition-all hover:text-white "
+                                    className=" mt-5 text-accent shadow-white-volume hover:bg-jacarta-500-dark hover:shadow-accent-volume w-36 rounded-full bg-white py-3 px-8 text-center font-semibold transition-all hover:text-white "
                                 >
                                     Buy for : 1 MNT
                                 </Link>
@@ -48,8 +48,8 @@ const ExpertsCollectionDetail = () => {
                     </div>
                 </article>
 
-                
-              
+
+
 
             </div>
 

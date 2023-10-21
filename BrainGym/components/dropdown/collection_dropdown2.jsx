@@ -22,8 +22,8 @@ const Collection_dropdown2 = ({ data, collection }) => {
       <div
         className={
           dropdown
-            ? "overlay h-[100vh] dropdown-toggle w-[100vw] fixed top-0 left-0 opacity-0 show bg-red z-40 cursor-default"
-            : "overlay h-[100vh] w-[100vw] fixed top-0 left-0 opacity-0 hidden bg-red z-40 cursor-default"
+            ? "overlay h-[100vh] dropdown-toggle w-[100vw] fixed top-0 left-0 opacity-0 show bg-red   cursor-default"
+            : "overlay h-[100vh] w-[100vw] fixed top-0 left-0 opacity-0 hidden bg-red  cursor-default"
         }
         onClick={() => handleDropdown()}
       ></div>
