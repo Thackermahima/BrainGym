@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { MdKeyboardArrowUp } from "react-icons/md";
 
-const footer = () => {
+const Footer = () => {
   const [scrollBtn, setScrollBtn] = useState(false);
 
   useEffect(() => {
@@ -58,4 +58,4 @@ const footer = () => {
   );
 };
 
-export default footer;
+export default Footer;
