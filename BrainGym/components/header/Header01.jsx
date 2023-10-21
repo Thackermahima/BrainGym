@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import DarkMode from "../mode/DarkMode";
-import Logo from "./../../public/images/logo.png";
+import Logo from "./../../public/images/brain_logo.png";
 import WhiteLogo from "./../../public/images/logo_white.png";
 import { v4 as uuidv4 } from "uuid";
 import { useRouter } from "next/router";
@@ -76,9 +76,16 @@ export default function Header01() {
       <div className="flex items-center px-6 py-6 xl:px-24 ">
         <Link className="shrink-0" href="/" >
           <div>
-            <h1 style={{ fontSize: "30px", color: "#8358FF", fontWeight: "bolder" }}>BrainGym</h1>
+          <Image
+            src={Logo}
+            height={128}
+            width={130}
+            alt="brainGym"
+            style={{height:"60px", width:"220px"}}
+          />
+            {/* <h1 style={{ fontSize: "30px", color: "#8358FF", fontWeight: "bolder" }}>BrainGym</h1> */}
           </div>
-
+          
           <div className="hidden dark:hidden">
             <Image
               src={WhiteLogo}
