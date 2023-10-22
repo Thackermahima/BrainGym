@@ -91,7 +91,7 @@ const ExpertsCollectionDetail = () => {
                       }}
                       className=" text-accent shadow-white-volume hover:bg-accent-dark hover:shadow-accent-volume w-56 rounded-full bg-white py-3 px-8 text-center font-semibold transition-all hover:text-white "
                     >
-                      Buy for : {item?.price} ETH
+                      Buy for : {item?.price} AppCoin
                     </button>
                   </div>
 

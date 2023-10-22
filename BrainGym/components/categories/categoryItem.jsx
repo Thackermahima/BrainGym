@@ -66,7 +66,7 @@ const CategoryItem = () => {
                 </div>
                 <div className="mt-2 text-sm">
                   <span className="dark:text-jacarta-200 text-jacarta-700 mr-1">
-                    {item.price} ETH
+                    {item.price} AppCoin
                   </span>
                 </div>
 

@@ -131,7 +131,7 @@ const Item = () => {
                     </span>
                   </Tippy>
                   <span className="text-green text-sm font-medium tracking-tight dark:bg-jacarta-700 rounded-md bg-white p-2">
-                    {collection[0]?.price} ETH
+                    {collection[0]?.price} AppCoin
                   </span>
                 </div>
                 <span className="dark:text-jacarta-300 text-jacarta-400 text-sm dark:bg-jacarta-700 rounded-md bg-white p-2">

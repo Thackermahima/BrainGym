@@ -333,6 +333,7 @@ const Create = () => {
                 <select className="dropdown my-1 cursor-pointer w-full dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 px-3 hover:ring-2 dark:text-white" name="selectedOption" value={chain} onChange={(e) => setChain(e.target.value)}
                 >
                   <option value="Mantle">Mantle</option>
+                  <option value="appcoin">appcoin</option>
                   <option value="Scroll">Scroll</option>
                   <option value="Ethereum">Ethereum</option>
                   <option value=" Polygon(Mumbai)"> Polygon(Mumbai)</option>
