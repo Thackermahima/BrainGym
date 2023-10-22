@@ -108,7 +108,7 @@ export const BrainGymAuthContextProvider = (props) => {
   // }
 
   const getSingleCollection = async (tokenContractAddress) => {
-
+    console.log(tokenContractAddress, "tokenContractAddress");
     const querySnapshot = await getDocs(collectionRef);
     const data = querySnapshot.docs.map((doc) => doc.data());
     console.log("Fetched data:", data);
@@ -281,7 +281,8 @@ export const BrainGymAuthContextProvider = (props) => {
         buyNftToken,
         allCollection,
         storeDataInFirebase,
-        getTokensOfCollection
+        getTokensOfCollection,
+        getSingleCollection
       }}
       {...props}
     >

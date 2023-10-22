@@ -38,6 +38,7 @@ const Item = () => {
   }, [pid]);
 
   const getColection = async () => {
+    console.log(pid, "pid");
     const collection = await getSingleCollection(pid);
     console.log('collection', collection);
     setCollection(collection);
