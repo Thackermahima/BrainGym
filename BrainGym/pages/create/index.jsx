@@ -29,7 +29,9 @@ const Create = () => {
   const [sessionTime, SetSessionTime] = useState("15 min");
   const [numberOfCollection, setNumberOfCollection] = useState();
   const [price, setPrice] = useState();
-  const [chain, setChain] = useState("");
+  const [chain, setChain] = useState("Scroll");
+  const [selectedOffer, setSelectedOffer] = useState("Priority DMs");
+
 
 
 
@@ -44,7 +46,7 @@ const Create = () => {
     console.log(sessionTime);
   };
 
- 
+
   const GenerateCollection = async () => {
 
     const nftCollectionData = {
@@ -53,6 +55,7 @@ const Create = () => {
       price: price,
       chain: chain,
       img: image,
+      selectedOffer: selectedOffer,
       numOfCollection: numberOfCollection,
       sessionTime: sessionTime,
       owner: localStorage.getItem('walletAddress'),
@@ -70,7 +73,9 @@ const Create = () => {
       signer
     );
     const tx = await contract.createNFTCollection("dhruv", "DRV");
+    console.log(tx, '--tx');
     let txc = await tx.wait();
+    console.log(txc, "txc");
     let event = txc.events[0];
     let tokenContractAddress = event.args[1];
     console.log('tokenContractAddress', tokenContractAddress);
@@ -271,14 +276,19 @@ const Create = () => {
                 </div>
               </div>
 
-              {/* dropdown */}
-              <div className="dropdown my-1 cursor-pointer">
-                <Collection_dropdown2
-                  data={collectionDropdown2_data}
-                  collection={true}
-                />
+              {/* dropdown offer */}
+              <div className="dropdown my-1 cursor-pointer" >
+                <select className="dropdown my-1 cursor-pointer w-full dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 px-3 hover:ring-2 dark:text-white" name="selectedOption" value={selectedOffer} onChange={(e) => setSelectedOffer(e.target.value)}
+                >
+                  <option value="1:1 sessions">1:1 sessions</option>
+                  <option value="Priority DMs">Priority DMs</option>
+                  <option value="Digital Product">Digital Product</option>
+                </select>
+
               </div>
             </div>
+
+
 
             {/* <!-- Properties --> */}
 
@@ -318,10 +328,23 @@ const Create = () => {
                 Blockchain
               </label>
 
-              {/* dropdown */}
-              <div className="dropdown relative mb-4 cursor-pointer ">
-                <Collection_dropdown2 data={EthereumDropdown2_data} />
+              {/* dropdown chain */}
+              <div className="dropdown my-1 cursor-pointer" >
+                <select className="dropdown my-1 cursor-pointer w-full dark:bg-jacarta-700 border-jacarta-100 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:placeholder:text-jacarta-300 w-full rounded-lg py-3 px-3 hover:ring-2 dark:text-white" name="selectedOption" value={chain} onChange={(e) => setChain(e.target.value)}
+                >
+                  <option value="Mantle">Mantle</option>
+                  <option value="Scroll">Scroll</option>
+                  <option value="Ethereum">Ethereum</option>
+                  <option value=" Polygon(Mumbai)"> Polygon(Mumbai)</option>
+
+
+                </select>
+
               </div>
+
+              {/* <div className="dropdown relative mb-4 cursor-pointer ">
+                <Collection_dropdown2 data={EthereumDropdown2_data} />
+              </div> */}
             </div>
 
 

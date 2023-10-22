@@ -107,6 +107,24 @@ export const BrainGymAuthContextProvider = (props) => {
   //   })
   // }
 
+  const getSingleCollection = async (tokenContractAddress) => {
+
+    const querySnapshot = await getDocs(collectionRef);
+    const data = querySnapshot.docs.map((doc) => doc.data());
+    console.log("Fetched data:", data);
+    const metadatas = [];
+
+    for (let i = 0; i <= data.length - 1; i++) {
+      if (data[i].tokenContractAddress == tokenContractAddress) {
+        let tokenURI = data[i].url;
+        const response = await fetch(tokenURI);
+        const metadata = await response.json();
+        metadatas.push(metadata);
+      }
+    }
+    return metadatas;
+  }
+
 
   const getTokensOfCollection = async (tokenContractAddress) => {
     console.log("addr:", tokenContractAddress);
@@ -146,7 +164,7 @@ export const BrainGymAuthContextProvider = (props) => {
 
 
   const buyNftToken = async (contractAdd, tokenId, price) => {
-    console.log(contractAdd,tokenId,price);
+    console.log(contractAdd, tokenId, price);
     const provider = await new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     let userAdd = localStorage.getItem("walletAddress");
@@ -159,8 +177,8 @@ export const BrainGymAuthContextProvider = (props) => {
     const value = price + 100000000000000000;
 
 
-// let tx = await contract.purchaseItem(tokenId,)
-    let tx = await contract.purchaseItem(tokenId,userAdd , { value: value.toString() });
+    // let tx = await contract.purchaseItem(tokenId,)
+    let tx = await contract.purchaseItem(tokenId, userAdd, { value: value.toString() });
     let txc = await tx.wait();
   }
 

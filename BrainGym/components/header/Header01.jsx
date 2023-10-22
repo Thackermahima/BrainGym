@@ -52,10 +52,6 @@ export default function Header01() {
   const route = useRouter();
 
 
-  allCollection.map((header) => {
-    console.log('header', header);
-  })
-
   return <>
     {/* main desktop menu sart*/}
     <header className={`js-page-header fixed top-0 z-20 w-full bg-white  transition-colors  shadow-lg`}>
