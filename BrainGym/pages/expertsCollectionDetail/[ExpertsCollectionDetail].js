@@ -22,7 +22,6 @@ const ExpertsCollectionDetail = () => {
 
     return () => clearTimeout(timer);
   }, [contractAdd]);
-  console.log(allNfts, '---alltokens');
 
   const getTokens = async () => {
     let allTokens = await getTokensOfCollection(contractAdd);
