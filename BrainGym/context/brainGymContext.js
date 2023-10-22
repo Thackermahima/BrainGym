@@ -4,8 +4,10 @@ import { Buffer } from 'buffer';
 import { create } from 'ipfs-http-client';
 import { ethers } from 'ethers';
 // import axios from 'axios';
-// import { initializeApp } from "firebase/app";
-// import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, addDoc, getDocs, query, where } from "firebase/firestore";
+import { basicABI } from "../constant/constant";
+import { formatEther } from "ethers/lib/utils";
 
 // import { getDatabase, ref, set } from "firebase/database";
 export const BrainGymAuthContext = createContext(undefined);
@@ -14,7 +16,7 @@ export const BrainGymAuthContextProvider = (props) => {
 
   //   const [walletConnected, setWalletConnected] = useState(false);
   //   const [loading, setLoading] = useState(false);
-  //   const [allNfts, setAllNfts] = useState([]);
+  const [allCollection, setAllCollection] = useState([]);
   //   const [prompt, setPrompt] = useState("");
   //   const [userAdd, setUserAdd] = useState();
   //   const [genRanImgLoding, setGenRanImgLoding] = useState(false);
@@ -22,25 +24,24 @@ export const BrainGymAuthContextProvider = (props) => {
   //   const [signer, setSigner] = useState(null);
 
   //   console.log(allNfts);
-  //   useEffect(() => {
-  //     getSignerFromProvider();
-  //   }, [])
+  useEffect(() => {
+    getCollection();
+  }, [])
 
-  //   const firebaseConfig = {
-  //     apiKey: "AIzaSyDllIicX42GplfgbeZTqZG5aqI_Xg3PUt0",
-  //     authDomain: "supercool-fbc8f.firebaseapp.com",
-  //     projectId: "supercool-fbc8f",
-  //     storageBucket: "supercool-fbc8f.appspot.com",
-  //     messagingSenderId: "76744592998",
-  //     appId: "1:76744592998:web:c7a075000ef0629135e7a7",
-  //     measurementId: "G-QJZKGMDTX3"
-  //   };
+  const firebaseConfig = {
+    apiKey: "AIzaSyDabE8BEXQknn_AJ8i18UNscrI1g_-5h5s",
+    authDomain: "braingym-db041.firebaseapp.com",
+    projectId: "braingym-db041",
+    storageBucket: "braingym-db041.appspot.com",
+    messagingSenderId: "578803923022",
+    appId: "1:578803923022:web:e2928f285bbc318c826b1f"
+  };
 
 
-  //   const app = initializeApp(firebaseConfig);
-  //   // const analytics = getAnalytics(app);
-  //   const firestore = getFirestore();
-  //   const collectionRef = collection(firestore, "TokenUri");
+
+  const app = initializeApp(firebaseConfig);
+  const firestore = getFirestore();
+  const collectionRef = collection(firestore, "NFTCollection");
 
   //   // const database = getDatabase(app);
   //   const totalNfts = async () => {
@@ -53,71 +54,136 @@ export const BrainGymAuthContextProvider = (props) => {
   //     return Number(numOfNfts) + 1;
   //   }
   //   // totalNfts()
-  //   async function storeDataInFirebase(metadataUrl) {
-  //     let tokenid = await totalNfts();
-  //     console.log(tokenid);
-  //     const newData = {
-  //       id: tokenid,
-  //       url: metadataUrl
+
+
+  async function storeDataInFirebase(metadataUrl, tokenContractAddress) {
+    const newData = {
+      userAddress: localStorage.getItem("walletAddress"),
+      url: metadataUrl,
+      tokenContractAddress: tokenContractAddress
+    };
+    const docRef = await addDoc(collectionRef, newData);
+    console.log("Data stored successfully! Document ID:", docRef.id);
+  }
+
+
+  async function getCollection() {
+    try {
+      const querySnapshot = await getDocs(collectionRef);
+      const data = querySnapshot.docs.map((doc) => doc.data());
+      console.log("Fetched data:", data);
+      const metadatas = [];
+
+      for (let i = 0; i <= data.length - 1; i++) {
+        // console.log(data[i], '------------');
+        let tokenURI = data[i].url;
+        // console.log(tokenURI);
+        const response = await fetch(tokenURI);
+        const metadata = await response.json();
+
+        // console.log(await response.json());
+        metadatas.push(metadata);
+      }
+      setAllCollection(metadatas);
+    } catch (error) {
+      console.error("Error fetching data: ", error);
+      return [];
+    }
+    console.log(allCollection);
+  }
+
+  // const getCollection = async () => {
+  //   const q = query(
+  //     collection(db, "NFTCollection"),
+  //     where("userAddress", "==", localStorage.getItem("walletAddress"))
+  //   );
+  //   const querySnapshot = await getDocs(q);
+  //   querySnapshot.forEach((fire) => {
+  //     const data = {
+  //       owner: localStorage.getItem('address'),
   //     };
-  //     const docRef = await addDoc(collectionRef, newData);
-  //     console.log("Data stored successfully! Document ID:", docRef.id);
-  //   }
-  //   // storeDataInFirebase()
+  //     const dataref = doc(db, "TokenUri", fire.id);
+  //     updateDoc(dataref, data);
+  //   })
+  // }
 
 
-  //   // fetchAllDataFromCollection()
+  const getTokensOfCollection = async (tokenContractAddress) => {
+    console.log("addr:", tokenContractAddress);
 
-  //   async function getSignerFromProvider() {
-  //     if (typeof window !== "undefined" && window.ethereum) {
-  //       const provider = new ethers.providers.Web3Provider(window.ethereum);
-  //       setProvider(provider);
-  //       const signer = provider.getSigner();
-  //       setSigner(signer);
-  //     } else {
-  //       console.log('No wallet connected or logged out');
-  //     }
-  //   }
+    const querySnapshot = await getDocs(collectionRef);
+    const data = querySnapshot.docs.map((doc) => doc.data());
+    console.log("Fetched data:", data);
+    const metadatas = [];
+
+    const provider = await new ethers.providers.Web3Provider(window.ethereum);
+    const contract = new ethers.Contract(
+      tokenContractAddress,
+      basicABI,
+      provider
+    );
+    const result = await contract.getCounter();
+    let count = result.toNumber();
+    console.log("cccc:", count);
+
+    for (let i = 0; i <= data.length - 1; i++) {
+      if (data[i].tokenContractAddress == tokenContractAddress) {
+        for (let j = 0; j < count; j++) {
+          let tokenURI = data[i].url;
+          const response = await fetch(tokenURI);
+          const metadata = await response.json();
+          metadata.tokenid = j;
+          console.log('aa in this', metadata);
+          metadatas.push(metadata);
+        }
+      }
+
+    }
+    console.log('final data', metadatas);
+
+    return metadatas;
+  }
 
 
-  //   const login = async () => {
-  //     if (!window.ethereum) return;
-  //     try {
-  //       const accounts = await window.ethereum.request({
-  //         method: "eth_requestAccounts",
-  //       });
-  //       setUserAdd(accounts[0]);
-  //       if (typeof window !== 'undefined') {
-  //         localStorage.setItem('address', accounts[0]);
-  //       }
+  const buyNftToken = async (contractAdd, tokenId, price) => {
+    console.log(contractAdd,tokenId,price);
+    const provider = await new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    let userAdd = localStorage.getItem("walletAddress");
+    console.log(userAdd);
+    const contract = new ethers.Contract(
+      contractAdd,
+      basicABI,
+      signer
+    );
+    const value = price + 100000000000000000;
 
-  //       if (window.ethereum.networkVersion === '80001') {
-  //         setWalletConnected(true);
-  //       } else {
-  //         await window.ethereum.request({
-  //           method: 'wallet_switchEthereumChain',
-  //           params: [{ chainId: '0x13881' }] // Polygon Mumbai chain ID
-  //         });
-  //         setWalletConnected(true);
-  //       }
 
-  //       if (ethereum && ethereum.selectedAddress) {
-  //         const address = await signer.getAddress();
+// let tx = await contract.purchaseItem(tokenId,)
+    let tx = await contract.purchaseItem(tokenId,userAdd , { value: value.toString() });
+    let txc = await tx.wait();
+  }
 
-  //       } else {
-  //         console.log('No wallet connected or logged out');
-  //       }
-  //       getAllNfts();
-  //     } catch (error) {
-  //       console.error('Login error:', error);
-  //     }
-  //     getAllNfts();
-  //   }
 
-  //   const logout = async () => {
-  //     localStorage.removeItem('address');
-  //     setWalletConnected(false);
-  //   }
+
+  const login = async () => {
+    if (!window.ethereum) return;
+    try {
+      const accounts = await window.ethereum.request({
+        method: "eth_requestAccounts",
+      });
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('walletAddress', accounts[0]);
+      }
+
+    } catch (error) {
+      console.error('Login error:', error);
+    }
+  }
+
+  const logout = async () => {
+    localStorage.removeItem('walletAddress');
+  }
 
   const auth =
     "Basic " +
@@ -155,53 +221,8 @@ export const BrainGymAuthContextProvider = (props) => {
   //     }
   //   }
 
-  //   async function getAllNfts() {
-  //     try {
-  //       const querySnapshot = await getDocs(collectionRef);
-  //       const data = querySnapshot.docs.map((doc) => doc.data());
-  //       console.log("Fetched data:", data);
-  //       const metadatas = [];
 
-  //       for (let i = 0; i <= data.length - 1; i++) {
-  //         console.log(data[i], '------------');
-  //         let tokenURI = data[i].url;
-  //         // console.log(tokenURI);
-  //         const response = await fetch(tokenURI);
-  //         const metadata = await response.json();
 
-  //         // console.log(await response.json());
-  //         metadatas.push(metadata);
-  //       }
-  //       setAllNfts(metadatas);
-  //     } catch (error) {
-  //       console.error("Error fetching data: ", error);
-  //       return [];
-  //     }
-  //   }
-
-  //   useState(() => {
-  //     setTimeout(() => {
-  //       console.log('running usestate');
-  //       getAllNfts()
-  //     }, 5000);
-  //   }, [loading])
-
-  //   const maticToUsdPricee = async (_price) => {
-  //     const contractPro = new ethers.Contract(
-  //       SUPER_COOL_NFT_CONTRACT,
-  //       abi,
-  //       provider
-  //     );
-  //     return await contractPro.convertMaticUsd(ethers.utils.parseUnits(_price, 'ether'));
-  //   }
-
-  //   const uploadOnIpfs = async (e) => {
-  //     let dataStringify = JSON.stringify(e);
-  //     const ipfsResult = await client.add(dataStringify);
-  //     const contentUri = `https://superfun.infura-ipfs.io/ipfs/${ipfsResult.path}`;
-
-  //     return contentUri;
-  //   }
   const uploadOnIpfs = async (e) => {
     let dataStringify = JSON.stringify(e);
     const ipfsResult = await client.add(dataStringify);
@@ -233,26 +254,16 @@ export const BrainGymAuthContextProvider = (props) => {
   return (
     <BrainGymAuthContext.Provider
       value={{
-        // login,
-        // logout,
+        login,
+        logout,
         uploadOnIpfs,
-        // allNfts,
         handleImgUpload,
-        // client,
-        // loading,
-        // setLoading,
-        // GenerateNum,
-        // prompt,
-        // setPrompt,
-        // genRanImgLoding,
-        // userAdd,
-        // uploadDatainIpfs,
-        // getAllNfts,
         // getProfileData,
-        // generateText,
-        // storeDataInFirebase,
-        // maticToUsdPricee,
-        // provider
+        getCollection,
+        buyNftToken,
+        allCollection,
+        storeDataInFirebase,
+        getTokensOfCollection
       }}
       {...props}
     >
@@ -260,3 +271,4 @@ export const BrainGymAuthContextProvider = (props) => {
     </BrainGymAuthContext.Provider>
   );
 };
+

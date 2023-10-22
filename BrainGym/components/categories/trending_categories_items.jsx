@@ -13,15 +13,6 @@ const Trending_categories_items = () => {
   const { trendingCategorySorText } = useSelector((state) => state.counter);
   const [filterVal, setFilterVal] = useState(0);
 
-  const handleFilter = (category) => {
-    if (category !== "all") {
-      setItemdata(
-        trendingCategoryData.filter((item) => item.category === category)
-      );
-    } else {
-      setItemdata(trendingCategoryData);
-    }
-  };
 
 
   useEffect(() => {

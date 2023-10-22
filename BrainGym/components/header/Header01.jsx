@@ -9,14 +9,17 @@ import {
   isChildrenPageActive,
   isParentPageActive,
 } from "../../utils/daynamicNavigation";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { BrainGymAuthContext } from "../../context/brainGymContext";
+
 
 export default function Header01() {
   const [toggle, setToggle] = useState(false);
   const [sticky, setSticky] = useState(false);
   const [walletAddress, setWalletAddress] = useState('');
   const [isConnected, setIsConnected] = useState(walletAddress !== '');
-
+  const superCbrainGymContext = React.useContext(BrainGymAuthContext);
+  const { login, logout, allCollection } = superCbrainGymContext;
   // window resize
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -48,27 +51,10 @@ export default function Header01() {
 
   const route = useRouter();
 
-  const connectWallet = async () => {
-    try {
-      // Request connection to the wallet
-      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-      if (accounts.length > 0) {
-        localStorage.setItem('walletAddress', accounts[0]);
-        setWalletAddress(accounts[0]);
-        setIsConnected(true);
-      }
-    } catch (error) {
-      console.error('Error connecting to wallet', error);
-    }
-  };
 
-  const disconnectWallet = () => {
-    setWalletAddress('');
-    setIsConnected(false);
-    localStorage.removeItem('walletAddress');
-
-  };
-
+  allCollection.map((header) => {
+    console.log('header', header);
+  })
 
   return <>
     {/* main desktop menu sart*/}
@@ -157,51 +143,43 @@ export default function Header01() {
 
 
 
-            {isConnected ? (
-              <div>
-                {/* <button onClick={disconnectWallet}>Disconnect Wallet</button> */}
-              </div>
-            ) : (
-              <div>
-                <button
-                  onClick={connectWallet}
-                  className="js-wallet border-jacarta-100 hover:bg-jacarta-500 focus:bg-jacarta-500 group dark:hover:bg-jacarta-500 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
+            <div>
+              {/* <button onClick={disconnectWallet}>Disconnect Wallet</button> */}
+            </div>
+            <div>
+              <button
+                onClick={login}
+                className="js-wallet border-jacarta-100 hover:bg-accent focus:bg-accent group dark:hover:bg-accent flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width={24}
+                  height={24}
+                  className="h-4 w-4 fill-jacarta-700 transition-colors group-hover:fill-white group-focus:fill-white dark:fill-white"
                 >
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path d="M22 6h-7a6 6 0 1 0 0 12h7v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2zm-7 2h8v8h-8a4 4 0 1 1 0-8zm0 3v2h3v-2h-3z" />
+                </svg>
+              </button>
+            </div>
+
+            <div className="js-nav-dropdown group-dropdown relative">
+
+              <div>
+                <button className="dropdown-toggle border-jacarta-100 hover:bg-accent focus:bg-accent group dark:hover:bg-accent ml-2 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     width={24}
                     height={24}
-                    className="h-4 w-4 fill-jacarta-700 transition-colors group-hover:fill-white group-focus:fill-white dark:fill-white"
+                    className="fill-jacarta-700 h-4 w-4 transition-colors group-hover:fill-white group-focus:fill-white dark:fill-white"
                   >
                     <path fill="none" d="M0 0h24v24H0z" />
-                    <path d="M22 6h-7a6 6 0 1 0 0 12h7v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2zm-7 2h8v8h-8a4 4 0 1 1 0-8zm0 3v2h3v-2h-3z" />
+                    <path d="M11 14.062V20h2v-5.938c3.946.492 7 3.858 7 7.938H4a8.001 8.001 0 0 1 7-7.938zM12 13c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6z" />
                   </svg>
                 </button>
               </div>
-            )}
-
-
-            <div className="js-nav-dropdown group-dropdown relative">
-
-
-
-              {isConnected ? (
-                <div>
-                  <button className="dropdown-toggle border-jacarta-100 hover:bg-jacarta-500 focus:bg-jacarta-500 group dark:hover:bg-jacarta-500 ml-2 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      width={24}
-                      height={24}
-                      className="fill-jacarta-700 h-4 w-4 transition-colors group-hover:fill-white group-focus:fill-white dark:fill-white"
-                    >
-                      <path fill="none" d="M0 0h24v24H0z" />
-                      <path d="M11 14.062V20h2v-5.938c3.946.492 7 3.858 7 7.938H4a8.001 8.001 0 0 1 7-7.938zM12 13c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6z" />
-                    </svg>
-                  </button>
-                </div>
-              ) : ""}
 
               <div className="dropdown-menu dark:bg-jacarta-800 group-dropdown-hover:opacity-100 group-dropdown-hover:visible !-right-4 !top-[85%] !left-auto z-10 min-w-[14rem] whitespace-nowrap rounded-xl bg-white transition-all will-change-transform before:absolute before:-top-3 before:h-3 before:w-full lg:absolute lg:grid lg:!translate-y-4 lg:py-4 lg:px-2 lg:shadow-2xl hidden lg:invisible lg:opacity-0">
                 <div>
@@ -287,7 +265,7 @@ export default function Header01() {
                     <path fill="none" d="M0 0h24v24H0z" />
                     <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zM7 11V8l-5 4 5 4v-3h8v-2H7z" />
                   </svg>
-                  <span onClick={disconnectWallet} className="font-display text-jacarta-700 mt-1 text-sm dark:text-white">
+                  <span onClick={logout} className="font-display text-jacarta-700 mt-1 text-sm dark:text-white">
                     Sign out
                   </span>
 
@@ -295,12 +273,12 @@ export default function Header01() {
               </div>
             </div>
             {/* <DarkMode /> */}
-          </div>
+          </div >
           {/* End header right content (metamask and other) for desktop */}
-        </div>
+        </div >
         {/* header menu conent end for desktop */}
 
-        <div className="ml-auto flex lg:hidden">
+        < div className="ml-auto flex lg:hidden" >
           <Link
             href="/profile/user_avatar"
             className="border-jacarta-100 hover:bg-jacarta-500 focus:bg-jacarta-500 group dark:hover:bg-jacarta-500 ml-2 flex h-10 w-10 items-center justify-center rounded-full border bg-white transition-colors hover:border-transparent focus:border-transparent dark:border-transparent dark:bg-white/[.15]"
@@ -336,11 +314,11 @@ export default function Header01() {
               <path d="M18 18v2H6v-2h12zm3-7v2H3v-2h18zm-3-7v2H6V4h12z" />
             </svg>
           </button>
-        </div>
+        </div >
         {/* End header right content  for mobile */}
-      </div>
+      </div >
       {/* End flex item */}
-    </header>
+    </header >
     {/* main desktop menu end */}
 
     {/* start mobile menu and it's other materials  */}
@@ -405,10 +383,7 @@ export default function Header01() {
           </svg>
         </span>
       </form>
-      {/* End search form mobile menu  */}
 
-
-    </div>
-    {/* End mobile menu and it's other materials */}
+    </div >
   </>;
 }

@@ -22,14 +22,14 @@ import { BrainGymAuthContext } from "../../context/brainGymContext";
 const Create = () => {
 
   const superCbrainGymContext = React.useContext(BrainGymAuthContext);
-  const { handleImgUpload, uploadOnIpfs } = superCbrainGymContext;
+  const { handleImgUpload, uploadOnIpfs, storeDataInFirebase, getCollection } = superCbrainGymContext;
   const [image, setImage] = useState();
   const [title, setTitle] = useState();
   const [description, setDescription] = useState();
   const [sessionTime, SetSessionTime] = useState("15 min");
   const [numberOfCollection, setNumberOfCollection] = useState();
   const [price, setPrice] = useState();
-  const [chain, setChain] = useState();
+  const [chain, setChain] = useState("");
 
 
 
@@ -44,24 +44,7 @@ const Create = () => {
     console.log(sessionTime);
   };
 
-
-
-  const getCounter = async () => {
-    const provider = await new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSigner();
-    let contractAdd = '0x00E1a7Ab90D26BBf6e4EA66Ab488ff438c2C3675';
-    const contract = new ethers.Contract(
-      contractAdd,
-      basicABI,
-      provider
-    );
-    console.log(contract);
-    const result = await contract.getTokenCounter();
-    console.log(result.toNumber());
-
-  }
-
-
+ 
   const GenerateCollection = async () => {
 
     const nftCollectionData = {
@@ -76,11 +59,10 @@ const Create = () => {
     }
 
     console.log(nftCollectionData);
-    let metadataurl = await uploadOnIpfs(nftCollectionData);
-    console.log(metadataurl);
 
 
-    const provider = await new ethers.providers.Web3Provider(window.ethereum);
+
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const contract = new ethers.Contract(
       RECORD_KEEPER_CONTRACT,
@@ -89,14 +71,22 @@ const Create = () => {
     );
     const tx = await contract.createNFTCollection("dhruv", "DRV");
     let txc = await tx.wait();
+    let event = txc.events[0];
+    let tokenContractAddress = event.args[1];
+    console.log('tokenContractAddress', tokenContractAddress);
+
     if (txc) {
+
+      console.log(tokenContractAddress, "token add");
+
+      nftCollectionData.tokenContractAddress = tokenContractAddress;
+
+      let metadataurl = await uploadOnIpfs(nftCollectionData);
+      console.log(metadataurl);
+      await storeDataInFirebase(metadataurl, tokenContractAddress);
       console.log(txc, "Successfully created!");
     }
 
-    let event = txc.events[0];
-    console.log(event, "Event");
-    let tokenContractAddress = event.args[1];
-    console.log(tokenContractAddress, "token add");
     let address = localStorage.getItem("walletAddress")
 
     let transactionBulkMint = await contract.bulkMintERC721(
@@ -106,7 +96,9 @@ const Create = () => {
       parseInt(price),
     );
     let txb = await transactionBulkMint.wait();
+    // console.log('bulk tx', txb);
     console.log('bulk tx', txb);
+    await getCollection();
   }
 
   return (
